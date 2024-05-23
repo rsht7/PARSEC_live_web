@@ -5,7 +5,7 @@ import {useEffect, useState} from 'react'
 
 import Singleevent from '../Singleevent'
 
-import parsec_bg from './parsec_bg.mp4'
+// import parsec_bg from './parsec_bg.mp4'
 import logo from './logo.png'
 import homepic2 from './homepic2.jpeg'
 import Newsletter from '../Newsletter'
