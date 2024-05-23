@@ -1,0 +1,235 @@
+/* google font */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;800& family=VT323&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+erif
+/* layout */
+
+:root {
+--primary: #1aac83;
+--error:#e7195a;
+
+}
+
+body {
+
+  background: #201e1e; 
+  font-family: 'Poppins',sans-serif;
+  margin: 0;
+}
+.main{
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  
+   
+}
+
+video{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  
+}
+
+header {
+  position: fixed;
+  justify-content: space-between;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0); /* Set your desired background color */
+  color: white; /* Set the text color */
+  display:flex;
+  align-items: center;
+  padding: 20px 30px;
+  font-family: 'Lato', sans-serif;
+  z-index: 1000;
+  width: 100%;
+  
+}
+
+.site-name {
+  text-decoration: none;
+  color: white; /* Set the text color for the site name */
+}
+
+/* .site-name h2 {
+  margin: 0;
+} */
+
+.nav-content {
+  display: flex;
+}
+
+.nav-content a {
+  text-decoration: none;
+  color: white; /* Set the default text color for navigation links */
+  margin-right: 40px;
+  transition: color 0.3s ease; /* Add a smooth transition effect for text color */
+  
+}
+
+.nav-content a:hover {
+  color: rgb(18, 147, 186); /* Set the text color for navigation links on hover */
+}
+.pages{
+  width: 100%;
+  padding: 0;
+  color: aliceblue;
+}
+.workouts{
+  margin-left: 5%;
+}
+
+.contactpg-lhsrhs{
+  display: flex;
+  margin-top: 10%;
+  
+}
+
+.contactpg-lhs{
+  width: 50%;
+  margin-left: 5%;
+}
+.contactpg-lhs h1{
+  font-size:300%;
+}
+form{
+  width: 200%;
+}
+.create{
+  display:grid;
+  align-items: center;
+  justify-content: space-between;
+  /* justify-content: center; */
+  width:50%;
+  margin-left:10%;
+}
+.create input{
+  margin-bottom: 10%;
+  width: 200%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.create label{
+  margin-bottom: 5%;
+  font-size: small;
+  font-weight: bold;  
+}
+.querylbl{
+  /* margin-top: 5%; */
+  margin-bottom: 10%;
+}
+.queryinp{
+  margin-top: 10%;
+  height: 100%;
+}
+
+.btn{
+  margin-top: 15%;
+  background-image:linear-gradient(to right,rgba(52, 171, 223, 0.744),rgb(14, 14, 185));
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 2s ease-in;
+  width: 200%;
+  font-weight: bold;
+  
+  
+}
+.btn:hover{
+  background-image: linear-gradient(to left, rgb(194, 66, 87),rgb(183, 31, 31));
+  cursor: pointer;
+  
+ 
+}
+.wrap-footer{
+  background-color: rgb(40, 45, 50);
+  width: 100%;
+  /* position: absolute; */
+  color: aliceblue;
+  font-family: 'Lato', sans-serif;
+}
+
+.notlast-div{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+}
+.foot-add{
+  display: flex;
+  align-items: center;
+  width: 50%;
+  
+
+
+}
+.foot-add h2{
+  font-size:300%;
+  margin-left: 5%;
+  
+}
+
+.foot-add p{
+    margin-left: 10%;
+    font-weight: 300;
+    font-size: 200%;
+    
+}
+
+.map{
+  margin-top: 20%;
+  width: 100%
+}
+
+.map iframe{
+  
+  width: 100%;
+}
+
+.last-div{
+  background-color: black;
+  height: 200px;
+}
+
+
+/* responsive 600px>> */
+
+.contact-lhsrhs {
+  display: flex;
+  margin-top: 20%;
+  margin-bottom: 5%;
+  width: 100%;
+  flex-direction: column;
+  padding: 5%;
+}
+
+
+/* CONTACT TEXT  */
+
+
+.contact-lhs{
+  width: 100%;
+  margin-left: 0;
+  /* padding: 5%; */
+  
+}
+.contact-lhs h1{
+  font-size:200%;
+  
+}
+
+.contact-rhs{
+  display:grid;
+  align-items: center;
+  width:100%;
+  margin-left:0;
+}

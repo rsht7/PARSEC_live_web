@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "dotenv": "^16.4.1",
+    "styled-components": "^6.1.8"
+  }
+}
