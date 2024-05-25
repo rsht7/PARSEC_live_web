@@ -569,7 +569,7 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 5vh 5vw;
-  background-image:url('G:\UNIVERSITY\PARSEC\frontend\public\assets\nwsltr22.jpeg');
+  background-image: url('../public/assets/nwsltr22.jpeg');
   background-size: cover;
   
 }
@@ -1655,9 +1655,8 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 2vh 2vw;
-    background-image:url('G:\UNIVERSITY\PARSEC\frontend\public\assets\nwsltr22.jpeg');
+    background-image: url('../public/assets/nwsltr22.jpeg');
     background-size: cover;
-    
   }
   
   
