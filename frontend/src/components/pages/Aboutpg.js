@@ -3,6 +3,7 @@ import aboutpic2 from './aboutpic2.jpeg'
 import Headname from '../Headname'
 import elipic from './elicrpd2.png'
 import sherinpic from './sherin2.png'
+import newstltterpic from '../compassets/nwsltr22.jpeg'
 
 
 
@@ -38,26 +39,33 @@ const About = () => {
                 <p className='abt-t3'>Sherin & Eli</p>
 
             </div>
+            <div className='newsletter-wrapper'>
+                <div className='newsletter'>
+                    <img src={newstltterpic}></img>
+                    <div className='news-lhsrhs'>
+                        <div className='news-lhs'>
+                            <p className='newshead'>Experience the magic that only live performances can offer.</p>
+                            <p className='newsbelowhead'> Exercitation eiusmod et officia excepteur aute quis.</p>
+                        </div>
+                        <div className='news-rhs'>
+                            <form>
+                                <input className='nws-inp'
+                                type='email'
+                                placeholder='YOUR EMAIL'
+                                // value={email}
 
-            <div className='newsletter'>
-                <div className='news-lhs'>
-                    <p className='newshead'>Nostrud ad esse consectetur sit reprehenderit gshd fhj .</p>
-                    <p className='newsbelowhead'> Exercitation eiusmod et officia excepteur aute quis.</p>
+                                />
+                                <button className='nws-subs'>SUBSCRIBE</button>
+                        
+                        
+                            </form>
+                        </div>                        
+                    </div> 
+                
                 </div>
-                <div className='news-rhs'>
-                    <form>
-                        <input className='nws-inp'
-                            type='email'
-                            placeholder='YOUR EMAIL'
-                            // value={email}
 
-                        />
-                        <button className='nws-subs'>SUBSCRIBE</button>
-                        
-                        
-                    </form>
-                </div> 
             </div>
+           
 
             <div className='our-story'>
                 <div className='os-lhs'>
