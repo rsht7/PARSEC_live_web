@@ -322,7 +322,7 @@ header {
 }
 
 .events-container h1 {
-  font-family: Caudex;
+  font-family: "Caudex", serif;
   font-size: 52px;
   font-weight: 700;
   line-height: 70px;
@@ -335,8 +335,10 @@ header {
   flex-wrap: wrap;
   justify-content: center;
   gap: 1.5rem;
-  max-width: 90%; /* 4 cards of 300px width + gaps */
-  margin: 0 auto;
+  /* max-width: 90%; 4 cards of 300px width + gaps */
+  /* margin: 0 auto; */
+  margin: 0 6vw;
+  padding: 0;
 }
 
 .event-item {
@@ -364,7 +366,7 @@ header {
 }
 
 .event-details h3 {
-  font-family: Caudex;
+  font-family: "Caudex", serif;
   font-size: 24px;
   font-weight: 700;
   line-height: 36px;
@@ -373,7 +375,7 @@ header {
 }
 
 .event-details .event-date {
-  font-family: Caudex;
+  font-family: "Caudex", serif;
   font-size: 14px;
   font-weight: 400;
   line-height: 14px;
@@ -411,7 +413,7 @@ header {
 }
 
 .read-more-btn {
-  font-family: Inter;
+  font-family: "Inter", sans-serif;
   font-size: 15px;
   font-weight: 600;
   line-height: 16px;
@@ -427,7 +429,7 @@ header {
   padding: 15px 17.02px 14px 17px;
   gap: 0px;
   opacity: 0px;
-  font-family: Inter;
+  font-family: "Inter", sans-serif;
   font-size: 15px;
   font-weight: 600;
   line-height: 16px;
@@ -456,7 +458,7 @@ h1 {
 @media (max-width: 768px) {
   .events-list {
     max-width: 100%;
-    padding: 0 1rem;
+    padding: 0;
   }
   
   .event-item {
@@ -648,6 +650,8 @@ h1 {
   font-weight: 600;
   height: 100%;
   width: 35%;
+  background-color: white;
+  color: black;
 }
 
 
@@ -1027,6 +1031,7 @@ h1 {
 .contact-lhs h1{
   margin-top: 0;
   font-size : 3.38vmax;
+  text-align: left;
 }
 
 .contact-icons{
@@ -1099,6 +1104,7 @@ h1 {
   box-sizing: border-box;
   width: 100%;
   color: white;
+  letter-spacing: 1px;
   
 
 }
@@ -1132,6 +1138,7 @@ h1 {
   padding: 10px;
   color: white;
   font-family: "Inter", sans-serif;
+  letter-spacing: 1px;
   /* align-items: self-end; */
 }
 
@@ -1149,6 +1156,7 @@ h1 {
   /* font-weight: bold; */
   font-family: "Inter", sans-serif;
   font-weight: 600;
+  letter-spacing: 1px;
 
 }
 
@@ -1758,8 +1766,16 @@ h1 {
 
 
 
+/* EVENTS PAGE */
 
-
+.events-container h1 {
+  font-family: "Caudex", serif;
+  font-size: 3.5vmax;
+  font-weight: 700;
+  line-height: 70px;
+  text-align: center;
+  margin-top: 0%;
+}
 
 
 
@@ -1970,6 +1986,8 @@ h1 {
     font-family: "Inter", sans-serif;
     /* padding: 3vh; */
     height: 6vh;
+    background-color: white;
+    color: black;
   }
 
 
@@ -2351,6 +2369,7 @@ h1 {
     text-align: center;
     align-content: center;
     font-size: 4vw;
+    color: black;
     
   }
   
