@@ -12,6 +12,7 @@ const Navbar = () => {
     
     const [isScrollingUp, setIsScrollingUp] = useState(true);
     const [lastScrollY, setLastScrollY] = useState(0);
+    const [showNav, setShowNav] = useState(false);
 
     const handleScroll = () => {
         if (window.scrollY < lastScrollY) {
@@ -26,8 +27,14 @@ const Navbar = () => {
     window.addEventListener('scroll', handleScroll);
     return () => {
       window.removeEventListener('scroll', handleScroll);
+    
     };
+    
   }, [lastScrollY]);
+
+  const toggleNav = () => {
+    setShowNav(!showNav);
+};
 
 
 
@@ -55,16 +62,18 @@ const Navbar = () => {
                     <img src={fulllogo}></img>
                     </Link> 
                 </h1>
-                <ul className='nav-links'> 
-                    <li><Link to='/'>
-                            HOME
-                        </Link>
-                    </li>    
-                           
-                    <li><Link to='/event'>
-                            EVENTS
-                        </Link>
-                    </li> 
+                <div className={`hamburger ${showNav ? 'open' : ''}`} onClick={toggleNav}>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+                <ul className={`nav-links ${showNav ? 'show' : ''}`}>
+                    <li>
+                        <Link to="/">HOME</Link>
+                    </li>
+                    <li>
+                        <Link to="/event">EVENTS</Link>
+                    </li>
                     <li>
                         <Link to='/about'>
                              ABOUT US
