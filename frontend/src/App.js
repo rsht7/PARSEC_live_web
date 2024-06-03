@@ -33,6 +33,11 @@ function App() {
               element={<About/>}
             
             />
+            {/* <Route
+              path='/events/:id'
+              element={}
+            />   */}
+
           </Routes>
         </div>
         <Footer/>

@@ -67,8 +67,8 @@ const Home = ()=> {
                 <div className='event-wrapper'>
                     <p className='upc-event'>Upcoming Event</p>
                     <div className='home-event'>
-                        {events && events.map((sevent) => (
-                            <Singleevent key={sevent._id} event = {sevent} />
+                        {events && events.map((event) => (
+                            <Singleevent key={event._id} event = {event} />
                         ))}
 
                     </div>
