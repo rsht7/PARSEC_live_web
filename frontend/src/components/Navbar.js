@@ -9,23 +9,7 @@ import { useState, useEffect } from 'react'
 
 const Navbar = () => {
 
-    // const [isScrolling, setIsScrolling] = useState(false);
-
-    // useEffect(() => {
-    // let timeoutId;
-
-    // const handleScroll = () => {
-    //   setIsScrolling(true);
-    //   clearTimeout(timeoutId);
-    //   timeoutId = setTimeout(() => setIsScrolling(false), 3000);
-    // };
-
-    // window.addEventListener('scroll', handleScroll);
-
-    // return () => {
-    //   window.removeEventListener('scroll', handleScroll);
-    // };
-    // }, []);
+    
     const [isScrollingUp, setIsScrollingUp] = useState(true);
     const [lastScrollY, setLastScrollY] = useState(0);
 
