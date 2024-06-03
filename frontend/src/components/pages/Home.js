@@ -1,5 +1,5 @@
 import {useEffect, useState} from 'react'
-
+import { Link } from 'react-router-dom'; // Import Link from react-router-dom
 //components
 // import WorkoutDetails from '../WorkoutDetails'
 
@@ -28,7 +28,7 @@ const Home = ()=> {
 
 
 
-    const [events, setEvents] = useState(null)
+    const [events, setEvents] = useState([]); // Initialize with empty array
 
     useEffect(() => {
         const fetchEvents = async () => {
@@ -64,13 +64,31 @@ const Home = ()=> {
 
                 </div> */}
 
-                <div className='event-wrapper'>
+                {/* <div className='event-wrapper'>
                     <p className='upc-event'>Upcoming Event</p>
                     <div className='home-event'>
                         {events && events.map((sevent) => (
                             <Singleevent key={sevent._id} event = {sevent} />
                         ))}
 
+                    </div>
+                </div> */}
+                <div className="events-container">
+                    <h1>Upcoming Events</h1>
+                    <div className="events-list">
+                        {events.map(event => (
+                            <div key={event._id} className="event-item">
+                                <img src={event.img} alt={event.title} className="event-image" />
+                                <div className="event-details">
+                                    <h3>{event.title}</h3>
+                                    <p className="event-date">{event.date}</p>
+                                    <div className="event-buttons">
+                                        <button className="buy-now-btn">Buy Now</button>
+                                        <Link to={`/event/${event._id}`} className="read-more-btn">Read More</Link>
+                                    </div>
+                                </div>
+                            </div>
+                        ))}
                     </div>
                 </div>
                 <Newsletter/>
