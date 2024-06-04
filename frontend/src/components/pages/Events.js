@@ -24,27 +24,28 @@ const Events = () => {
 
     return (
         <div className='total-event'>
-            <Headname name='Events' pic={contactpic} />
-            <div className="events-container">
-            <h1 style={{ marginTop: '2.5%' }}>Upcoming Events</h1>
-                <div className="events-list">
-                    {events.map(event => (
-                        <div key={event._id} className="event-item">
-                            <img src={event.img} alt={event.title} className="event-image" />
-                            <div className="event-details">
-                                <h3>{event.title}</h3>
-                                <p className="event-date">{event.date}</p>
-                                <div className="event-buttons">
-                                    <button className="buy-now-btn">Buy Now</button>
-                                    <Link to={`/event/${event._id}`} className="read-more-btn">Read More</Link>
-                                </div>
-                            </div>
+            <Headname name='up_Events' pic={contactpic} />
+            <div className="up_events-container">
+                <h1 style={{ marginTop: '2.5%' }}>Upcoming Events</h1>
+                <div className="up_events-slider">
+                {events.map(event => (
+                    <div key={event._id} className="up_event-item">
+                    <img src={event.img} alt={event.title} className="up_event-image" />
+                    <div className="up_event-details">
+                        <h3>{event.title}</h3>
+                        <p className="up_event-date">{event.date}</p>
+                        <div className="up_event-buttons">
+                        <button className="up_buy-now-btn">Buy Now</button>
+                        <Link to={`/event/${event._id}`} className="up_read-more-btn">Read More</Link>
                         </div>
-                    ))}
+                    </div>
+                    </div>
+                ))}
                 </div>
             </div>
             <Newsletter />
         </div>
+
     );
 };
 
