@@ -91,10 +91,8 @@ const Home = ()=> {
                         ))}
                     </div>
                 </div>
-                <Newsletter/>
-
-
-                
+                <Newsletter/>   
+                   
         </div>
      
         
