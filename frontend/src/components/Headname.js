@@ -1,4 +1,5 @@
 
+import {Link} from 'react-router-dom'
 import logo from './compassets/logo.png'
 
 
@@ -14,7 +15,7 @@ const Headname =(props)=>{
             
             <div className='Page-head'>
                 <p className='page-name'>{props.name}</p>
-                <p className='page-path'>Home &gt; {props.name}</p>
+                <p className='page-path'><Link to='/'>Home</Link> &gt; {props.name}</p>
 
             </div>
 

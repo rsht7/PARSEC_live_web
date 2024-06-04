@@ -35,8 +35,8 @@ header {
   top: 0;
   z-index: 1000;
   backdrop-filter: blur(3px);
-  transition: backdrop-filter 0.3s ease;
-  height: 10.8vh;
+  transition: backdrop-filter 0.8s ease;
+  height: 12vh;
   background-color: transparent;
   font-weight: 600;
   padding-top: 2px;
@@ -46,7 +46,7 @@ header {
   
 }
 .header.hide {
-  top: -10.8vh; /* Hide the header when scrolling down */
+  top: -12vh; /* Hide the header when scrolling down */
 }
 
 .header.show {
@@ -129,14 +129,14 @@ header {
 
 .cart-btn {
   background-color: white;
-  width: 9.76vw;
-  height: 3.515vw;
+  width: 7.5vw;
+  height: 3vw;
   text-align: center;
   color: #171515;
-  font-weight: 600;
+  font-weight: 700;
   font-family: "Inter", sans-serif;
   border: none;
-  font-size: 0.976vmax;
+  font-size: 1.17vmax;
   letter-spacing: 1px;
   cursor: pointer;
 }
@@ -322,7 +322,7 @@ header {
 }
 
 .events-container h1 {
-  font-family: Caudex;
+  font-family: "Caudex", serif;
   font-size: 52px;
   font-weight: 700;
   line-height: 70px;
@@ -335,8 +335,10 @@ header {
   flex-wrap: wrap;
   justify-content: center;
   gap: 1.5rem;
-  max-width: 90%; /* 4 cards of 300px width + gaps */
-  margin: 0 auto;
+  /* max-width: 90%; 4 cards of 300px width + gaps */
+  /* margin: 0 auto; */
+  margin: 0 6vw;
+  padding: 0;
 }
 
 .event-item {
@@ -364,7 +366,7 @@ header {
 }
 
 .event-details h3 {
-  font-family: Caudex;
+  font-family: "Caudex", serif;
   font-size: 24px;
   font-weight: 700;
   line-height: 36px;
@@ -373,7 +375,7 @@ header {
 }
 
 .event-details .event-date {
-  font-family: Caudex;
+  font-family: "Caudex", serif;
   font-size: 14px;
   font-weight: 400;
   line-height: 14px;
@@ -411,7 +413,7 @@ header {
 }
 
 .read-more-btn {
-  font-family: Inter;
+  font-family: "Inter", sans-serif;
   font-size: 15px;
   font-weight: 600;
   line-height: 16px;
@@ -427,7 +429,7 @@ header {
   padding: 15px 17.02px 14px 17px;
   gap: 0px;
   opacity: 0px;
-  font-family: Inter;
+  font-family: "Inter", sans-serif;
   font-size: 15px;
   font-weight: 600;
   line-height: 16px;
@@ -456,7 +458,7 @@ h1 {
 @media (max-width: 768px) {
   .events-list {
     max-width: 100%;
-    padding: 0 1rem;
+    padding: 0;
   }
   
   .event-item {
@@ -485,6 +487,10 @@ h1 {
 .upc-event{
   font-size: 3.38vmax;
   margin-top: 0;
+}
+.home-event{
+  display: flex;
+  flex-direction: column;
 }
 
 
@@ -565,7 +571,18 @@ h1 {
   font-family: "Inter", sans-serif;
   font-weight: 600;
   color: rgba(122, 122, 122, 1);
+
+}
+.se-buttons a{
+  text-decoration: none;
+  font-size: 0.98vmax;
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  color: rgba(122, 122, 122, 1);
+}
+
 } */
+
 
 .newsletter-wrap{
   /* display: flex;
@@ -633,6 +650,8 @@ h1 {
   font-weight: 600;
   height: 100%;
   width: 35%;
+  background-color: white;
+  color: black;
 }
 
 
@@ -706,7 +725,7 @@ h1 {
 }
 .page-img{
   height: 33.6vmax;
-  margin-top: 0;
+  margin-top: 14vh;
   /* width: 88vw;
   justify-self: center; */
   margin-left: 6vw;
@@ -726,7 +745,7 @@ h1 {
 
 .Page-head{
   position: absolute;
-  top: 21.6vmax;
+  top: 33vmax;
   margin:0 8vw 0 0;
   right: 0;
   display: flex;
@@ -742,6 +761,13 @@ h1 {
   font-weight: 400;
   font-size: 1vmax;
   text-align: right;
+}
+
+.page-path a{
+  text-decoration: none;
+  color: white;
+  font-weight: 400;
+  font-size: 1vmax;
 }
 
 
@@ -773,7 +799,7 @@ h1 {
   color: rgba(122, 122, 122, 1);
   font-weight: 400;
   padding: 0 4.15vw;
-  margin: 1.36vw 0;
+  margin: 2vw 0;
 
 }
 .abt-t3{
@@ -782,28 +808,49 @@ h1 {
   margin: 0;
 }
 
-
-.newsletter{
-  height: 19.5vmax;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 5vh 5vw;
-  background-image: url('../public/assets/nwsltr22.jpeg');
-  background-size: cover;
-  
+.newsletter-wrapper {
+  height: 19.5vw;
+  margin: 4vw 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 100%);
 }
 
 
+.newsletter {  
+  display: flex;
+  position: relative;
+  width: 88vw;
+  margin: 0;
+  height: 100% ;
+  height: 100%;
+}
+
+.newsletter img{
+  position: relative;
+  object-fit: cover;
+  width: 100%;
+  /* height: 100%;
+   */
+}
+.news-lhsrhs{
+  position: absolute;
+  display: flex;
+  height: 100%;
+  /* width: 100%; */
+}
 
 .news-lhs{
   display: flex;
   flex-direction: column;
-  width: 48%;
+  width: 50%;
+  padding: 3.9vw;
+  box-sizing: border-box;
+  justify-content: space-around;
+
 }
 
 .newshead{
-  font-size: 2.34vmax;
+  font-size: 2.34vw;
+  margin: 0;
 }
 
 .newsbelowhead{
@@ -812,7 +859,10 @@ h1 {
 
 
 .news-rhs{
-  width: 48%;
+  width: 50%;
+  align-self: center;
+  padding: 3.9vw;
+  box-sizing: border-box;
 }
 .news-rhs form{
   display: flex;
@@ -820,6 +870,7 @@ h1 {
   justify-content: space-between;
   height: 3.515vw;
   font-family: "Inter", sans-serif;
+  width: 100%;
  
   
 }
@@ -980,6 +1031,7 @@ h1 {
 .contact-lhs h1{
   margin-top: 0;
   font-size : 3.38vmax;
+  text-align: left;
 }
 
 .contact-icons{
@@ -1052,6 +1104,7 @@ h1 {
   box-sizing: border-box;
   width: 100%;
   color: white;
+  letter-spacing: 1px;
   
 
 }
@@ -1085,6 +1138,7 @@ h1 {
   padding: 10px;
   color: white;
   font-family: "Inter", sans-serif;
+  letter-spacing: 1px;
   /* align-items: self-end; */
 }
 
@@ -1102,6 +1156,7 @@ h1 {
   /* font-weight: bold; */
   font-family: "Inter", sans-serif;
   font-weight: 600;
+  letter-spacing: 1px;
 
 }
 
@@ -1124,7 +1179,7 @@ h1 {
   bottom: 20px;
   right: 1vw;
   z-index: 999; /* Ensure it appears above other content */
-  width: 3.5vmax; /* Adjust the width and height as per your icon size */
+  width: 3vmax; /* Adjust the width and height as per your icon size */
   opacity: 0.7;
   cursor: pointer;
 }
@@ -1301,7 +1356,7 @@ h1 {
 .subs{
   background-color: white;
   /* height: 3em; */
-  width: 10.5vw;
+  width: 40%;
   text-align: center;
   align-content: center;
   width: 40%;
@@ -1316,6 +1371,7 @@ h1 {
   background-image: linear-gradient(to left,rgb(20, 4, 93),rgb(76, 6, 101));
   color: white;
   cursor: pointer;
+  border: none;
   /* background-color: aqua; */
 }
 /* .subs a{
@@ -1337,22 +1393,13 @@ h1 {
   font-size: 0.911vmax;
   
 }
-.foot-cont-mail{
-  width: 25%;
-}
 
 
-.foot-cpr{
-  width: 30%;
-}
 .foot-cont-mail ul{
   display: flex;
   list-style-type: none;
   padding: 0;
-  justify-content: space-between;
-  
-
- 
+  gap: 4vw;
   
 }
 
@@ -1360,7 +1407,8 @@ h1 {
   display: flex;
   list-style-type: none;
   padding: 0;
-  justify-content: space-between;
+  gap: 4vw;
+  
 }
 
 
@@ -1368,7 +1416,7 @@ h1 {
 
 /* Add additional styles as needed */
 
- @media (max-width: 600px) {
+ @media (max-width: 550px) {
 
 
 /* HEADER */
@@ -1718,8 +1766,16 @@ h1 {
 
 
 
+/* EVENTS PAGE */
 
-
+.events-container h1 {
+  font-family: "Caudex", serif;
+  font-size: 3.5vmax;
+  font-weight: 700;
+  line-height: 70px;
+  text-align: center;
+  margin-top: 0%;
+}
 
 
 
@@ -1752,6 +1808,7 @@ h1 {
   .contact-lhs{
     width: 100%;
     margin: 0;
+    margin-bottom: 2vh;
     /* padding: 5%; */ 
   }
   .contact-lhs h1{
@@ -1786,7 +1843,7 @@ h1 {
   
   .contact-icon img{
     width: auto;
-    height: 7vh;
+    height: 5vh;
   }
   
   
@@ -1866,25 +1923,23 @@ h1 {
     margin: 0;
   }
   
-
-  .newsletter{
-    /* height: 19.5vmax; */
-    height: fit-content;
+  .newsletter-wrapper{
+    height: 40vh;
+    margin: 4vw 0;
+  }
+  
+  .news-lhsrhs{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    align-items: center;
-    padding: 2vh 2vw;
-    background-image: url('../public/assets/nwsltr22.jpeg');
-    background-size: cover;
+
   }
-  
-  
   
   .news-lhs{
     display: flex;
     flex-direction: column;
     width: 100%;
+    padding-bottom: 0;
   }
   
   .newshead{
@@ -1900,6 +1955,7 @@ h1 {
   
   .news-rhs{
     width: 100%;
+    padding-top: 0;
   }
   .news-rhs form{
     display: flex;
@@ -1930,6 +1986,8 @@ h1 {
     font-family: "Inter", sans-serif;
     /* padding: 3vh; */
     height: 6vh;
+    background-color: white;
+    color: black;
   }
 
 
@@ -1976,9 +2034,16 @@ h1 {
 
   
   .os-names{
-    font-size:larger;
+    font-size:1.75vmax;
   }
-  
+  .sherin{
+    padding: 2vh;
+    box-sizing: border-box;
+  }
+  .eli{
+    padding: 2vh;
+    box-sizing: border-box;
+  }
 
   .os-info{
     position: relative;
@@ -2045,6 +2110,10 @@ h1 {
     font-weight: 400;
     font-size: 2.3vmax;
     text-align: right;
+  }
+  .page-path a{
+    font-weight: 400;
+    font-size: 2.3vmax;
   }
   
 
@@ -2194,7 +2263,7 @@ h1 {
   } */
   .ulb input{
     padding-left: 4px;
-    font-size: 4vw
+    font-size: 4vw;
   }
   
   
@@ -2207,6 +2276,7 @@ h1 {
     text-align: center;
     align-content: center;
     font-size: 4vw;
+    color: black;
     
   }
   
@@ -2264,3 +2334,360 @@ h1 {
 
 
 
+
+@media (max-width: 850px) and (min-width: 550px){
+  
+  .cart-btn {
+    display: none;
+  }
+
+
+  .navbar img {
+    margin: 0;
+    width: 20vw;
+    color: white;
+  }
+  /* HOMEPAGE */
+
+
+
+  .main{
+    /* display: flex; */
+    margin-top: 12vh;
+    margin-left: 6vw;
+    margin-right: 6vw; 
+    margin-bottom: 3em;
+    height: 50vh;
+    justify-content: center;
+    position: relative;
+    /* text-align: center; */
+    
+  }
+
+  .se-buttons button{
+    width: 46.875%;
+    font-size: 1.25vw;
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
+    border: none;
+  }
+  .se-buttons a{
+    text-decoration: none;
+    font-size: 1.25vw;
+    
+  }
+  .main-newsletter-stuff button{
+    font-size: 1.25vw;
+    font-family: "Inter", sans-serif;
+    width: 35%;
+  }
+
+  .main-newsletter-stuff input{
+    font-size: 1.25vw;
+    
+    padding-left: 1vw;
+    border: none;
+    width: 60%;
+    border: 2px solid #ffffff;
+    
+  }
+
+
+
+  /* ABOUT PAGE */
+
+  .nws-inp{
+    width: 60%;
+    border: 2px solid #ffffff;
+    font-size: 1.25vw;
+    padding-left: 1vw;
+    
+    /* padding: 3vh; */
+    /* height: 70%; */
+  }
+  .nws-subs{
+    width: 35%;
+    font-size: 1.25vw;
+    /* padding: 3vh; */
+    /* height: 70%; */
+  }
+
+  .our-story{
+    display: flex;
+    flex-direction: column;
+    height:auto;
+    margin: 6vh 0;
+    justify-content: space-between;
+    background-color: rgba(84, 79, 79, 0.3);
+  }
+
+  .os-lhs{
+    width:auto;
+    padding: 2vh;
+  }
+  
+
+  .os-head{
+    margin: 0;
+  }
+  
+  .os-belowhead{
+    font-size: 2vw;
+    color: rgba(122, 122, 122, 1);
+    
+  }
+  
+  .os-below2{
+    font-size: 2vw;
+  }
+
+  .os-rhs{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    /* height: fit-content; */
+    
+  }
+
+  
+  .os-names{
+    font-size:larger;
+  }
+  
+
+  .os-info{
+    position: relative;
+    bottom: 0;
+   
+  }
+  
+
+  /* CONTACT PAGE */
+  
+  .contact-icons{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    
+  }
+  
+  
+  /* FOOTER */
+  
+  .foottwo-a{
+    font-size: 1.25vw;
+  }
+  .ula{
+    width: 35vw;
+    gap: 1.25vw;
+  
+  }
+  
+  .ulb{
+    width: 35vw;
+  }
+  
+  .ulb input{
+    font-size: 1.25vw;
+  }
+  
+  .subs{
+    font-size: 1.25vw;
+
+
+
+  }
+
+
+  .foottwo-b{
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    height: 30%;
+    margin-top: 1vh;
+    font-size: 1vw;
+
+    
+  }
+  
+  
+  .foot-cont-mail ul{
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    
+    
+    
+  }
+  
+  .foot-cpr ul{
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    
+  }
+  
+  
+
+
+
+
+
+
+
+
+
+}
+
+@media (max-width: 1380px) and (min-width:850px){
+
+
+  
+/* ABOUT PAGE */
+
+  .our-story{
+    display: flex;
+    flex-direction: column;
+    height:auto;
+    margin: 6vh 0;
+    justify-content:space-between;
+    background-color: rgba(84, 79, 79, 0.3);
+  }
+
+  .os-lhs{
+    width:auto;
+    padding: 2vh;
+    
+  }
+  
+
+  .os-head{
+    margin: 0;
+  }
+  
+  .os-belowhead{
+    font-size: 1.5vw;
+    color: rgba(122, 122, 122, 1);
+    
+  }
+  
+  .os-below2{
+    font-size: 1.5vw;
+  }
+
+  .os-rhs{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 2vh;
+    box-sizing: border-box;
+    /* height: fit-content; */
+    
+  }
+
+  
+  .os-names{
+    font-size:larger;
+  }
+  .eli{
+    width: 30%;
+  }
+  .sherin{
+    width: 30%;
+  }
+
+  .os-info{
+    position: relative;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+   
+  }
+  .os-info img{
+    width:100%;
+    object-fit: cover;
+    height: 100%;
+    position: relative;
+    z-index: -99;
+    /* box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5); */
+    
+  }
+  
+
+  /* CONTACT PAGE */
+
+  .contact-icons{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    
+  }
+  .contact-icon img{
+    width: auto;
+    height: 4vh;
+  }
+
+  .contact-icon-info{
+    padding: 1vh;
+    box-sizing: border-box;
+  }
+
+
+
+
+  /* FOOTER */
+
+
+  .foottwo-a{
+    font-size: 1.25vw;
+  }
+  .ula{
+    width: 45vw;
+    gap: 1.9vw;
+  
+  }
+  
+  .ulb{
+    width: 35vw;
+  }
+  
+  .ulb input{
+    font-size: 1.25vw;
+  }
+  
+  .subs{
+    font-size: 1.25vw;
+  }
+  
+  .foottwo-b{
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    height: 30%;
+    margin-top: 1vh;
+    font-size: 0.911vmax;
+    
+  }
+  
+  .foot-cont-mail ul{
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    
+       
+  }
+  
+  .foot-cpr ul{
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    
+  }
+  
+  
+
+  
+  
+  }

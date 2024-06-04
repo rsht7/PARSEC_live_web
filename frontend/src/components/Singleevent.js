@@ -1,4 +1,4 @@
-
+import {Link} from 'react-router-dom'
 
 
 
@@ -24,7 +24,7 @@ const Singleevent = ({event})=> {
 
                 <div className="se-buttons">
                     <button>GET TICKETS</button>
-                    <p>READ MORE</p>
+                    <p><Link to=''>READ MORE</Link></p>
 
                 </div>
                 

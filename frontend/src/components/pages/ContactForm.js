@@ -44,7 +44,7 @@ const ContactForm = () => {
                 // setPhone('')
                 setQuery('')
                 setError(null)
-                console.log('We have recieved your message!', json)
+                // console.log('We have recieved your message!', json)
                 setConfirm('We have recieved your message!')
             }
     
@@ -65,7 +65,7 @@ const ContactForm = () => {
                     <div className='contact-icons'>
                         <div className='contact-icon'>
                             <img src={phonepic} alt='X'></img>
-                            <div>
+                            <div className='contact-icon-info'>
                                 <p>Contact</p>
                                 <p>+1(202)-4914515</p>
                             </div>

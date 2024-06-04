@@ -18,11 +18,13 @@ function App() {
         <Scrollbtn />
         <div className='pages'>
           <Routes>
+
             <Route path='/' element={<Home />} />
             <Route path='/event' element={<Events />} />
             <Route path='/contactus' element={<ContactForm />} />
             <Route path='/about' element={<About />} />
             <Route path="/event/:id" element={<EventDetails />} />
+
           </Routes>
         </div>
         <Footer />

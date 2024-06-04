@@ -1,3 +1,6 @@
+
+
+
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom'; 
 import Headname from '../Headname';
@@ -20,8 +23,8 @@ const Events = () => {
     }, []);
 
     return (
-        <div className='total'>
-            <Headname name='Home > Events' pic={contactpic} />
+        <div className='total-event'>
+            <Headname name='Events' pic={contactpic} />
             <div className="events-container">
             <h1 style={{ marginTop: '2.5%' }}>Upcoming Events</h1>
                 <div className="events-list">
@@ -46,3 +49,4 @@ const Events = () => {
 };
 
 export default Events;
+
