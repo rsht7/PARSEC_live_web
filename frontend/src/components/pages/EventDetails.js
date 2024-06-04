@@ -2,9 +2,9 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import Headname from '../Headname';
 import homepic2 from './homepic2.jpeg';
-import facebook3 from '../compassets/facebook3.png'
-import instagram from '../compassets/instagram.png'
-import Newsletter from '../Newsletter'
+import facebook3 from '../compassets/facebook3.png';
+import instagram from '../compassets/instagram.png';
+import Newsletter from '../Newsletter';
 
 function EventDetails() {
   const { id } = useParams();
@@ -13,9 +13,9 @@ function EventDetails() {
   useEffect(() => {
     // Fetch event details using the ID from the URL
     fetch(`/api/events/${id}`)
-      .then(response => response.json())
-      .then(data => setEvent(data))
-      .catch(error => console.error('Error fetching event details:', error));
+      .then((response) => response.json())
+      .then((data) => setEvent(data))
+      .catch((error) => console.error('Error fetching event details:', error));
   }, [id]);
 
   if (!event) {
@@ -30,7 +30,7 @@ function EventDetails() {
           <div className="page-container">
             <div className="left-side">
               <div className="event-info">
-              <h4 className="event-date" style={{ margin: '1rem' }}>{event.date}</h4>
+                <h4 className="event-date" style={{ margin: '1rem' }}>{event.date}</h4>
                 <h3 className="event-title">{event.title}</h3>
                 <p className="event-text">{event.text}</p>
                 <p className="event-text">{event.text}</p>
@@ -46,7 +46,7 @@ function EventDetails() {
                 <div className="icons">
                   {/* Add your share icons here */}
                   <span><img src={facebook3} alt="Facebook Icon" /></span>
-                  <span><img src={instagram}></img></span>
+                  <span><img src={instagram} alt="Instagram Icon" /></span>
                 </div>
               </div>
             </div>
@@ -60,14 +60,21 @@ function EventDetails() {
                     <span>Ticket Price</span>
                   </div>
                   <div className="input-line">
-                  <input type="number" id="quantity" name="quantity" min="1" defaultValue="1" style={{
-                      fontFamily: 'Caudex',
-                      fontSize: '24px',
-                      fontWeight: '700',
-                      lineHeight: '20px',
-                      letterSpacing: '0.01em',
-                      textAlign: 'left'
-                    }} />
+                    <input
+                      type="number"
+                      id="quantity"
+                      name="quantity"
+                      min="1"
+                      defaultValue="1"
+                      style={{
+                        fontFamily: 'Caudex',
+                        fontSize: '1.5625vw',
+                        fontWeight: '700',
+                        lineHeight: '1.302083',
+                        letterSpacing: '0.01em',
+                        textAlign: 'left',
+                      }}
+                    />
                     <span className="price">$ 25.00</span>
                     <button type="button" className="cart-button">ADD TO CART</button>
                   </div>
@@ -77,7 +84,7 @@ function EventDetails() {
           </div>
         </div>
       </div>
-      <Newsletter/>
+      <Newsletter />
       <style>
         {`
           @import url('https://fonts.googleapis.com/css2?family=Caudex:wght@400;700&display=swap');
@@ -90,11 +97,11 @@ function EventDetails() {
             height: 100vh;
             position: relative;
           }
-          
+
           .page-body {
             font-family: Arial, sans-serif;
             width: 90%;
-            max-width: 1280px;
+            max-width: 83.3vw;
             height: auto;
             backdrop-filter: blur(8px);
             display: flex;
@@ -104,283 +111,278 @@ function EventDetails() {
             box-sizing: border-box;
             margin: auto;
           }
-          
+
           .page-container {
             display: flex;
             width: 100%;
             height: 100%;
-            flex-direction: column;
+            flex-direction: row;
           }
-          
+
           .left-side, .right-side {
-            padding: 20px;
+            padding: 1.302vw;
             box-sizing: border-box;
           }
-          
+
           .left-side {
-            flex: 1;
             display: flex;
             flex-direction: column;
-            gap: 16px;
+            gap: 1.041vw;
           }
-          
+
           .right-side {
             display: flex;
             flex-direction: column;
             align-items: flex-start;
           }
-          
+
           .event-title,
           .event-text, .time-location h4 {
             margin: 1rem 0;
           }
-          
+
           .event-info {
             width: 100%;
             gap: 0px;
           }
-          
+
           .event-date {
             font-family: 'Caudex', serif;
-            font-size: 16px;
+            font-size: 1.041vw;
             font-weight: 400;
-            line-height: 22px;
+            line-height: 1.4322916vw;
             letter-spacing: 0.01em;
             text-align: left;
           }
-          
+
           .event-title {
             font-family: 'Caudex', serif;
-            font-size: 48px;
+            font-size: 3.125vw;
             font-weight: 700;
-            line-height: 60px;
+            line-height: 3.90625vw;
             text-align: left;
           }
-          
+
           .event-text {
             font-family: 'Caudex', serif;
-            font-size: 16px;
+            font-size: 1.041vw;
             font-weight: 400;
-            line-height: 20px;
+            line-height: 1.302083vw;
             letter-spacing: 0.01em;
             text-align: left;
           }
-          
+
           .time-location {
             width: 100%;
             gap: 0px;
             margin: 0.5rem 0;
           }
-          
+
           .time-location h4 {
             font-family: Caudex;
-            font-size: 30px;
+            font-size: 1.953125vw;
             font-weight: 700;
-            line-height: 28px;
+            line-height: 1.822916vw;
             text-align: left;
             margin: 0.5rem 0;
           }
-          
+
           .time-location .event-date, 
           .time-location .event-location {
             font-family: Caudex;
-            font-size: 16px;
+            font-size: 1.041vw;
             font-weight: 400;
             text-align: left;
           }
-          
+
           .event-location {
             font-family: 'Caudex', serif;
-            font-size: 16px;
+            font-size: 1.041vw;
             font-weight: 400;
-            line-height: 20px;
+            line-height: 1.302083vw;
             letter-spacing: 0.01em;
             text-align: left;
           }
-          
+
           .event-image {
             width: 100%;
-            max-width: 492px;
+            max-width: 32.03125vw;
             height: auto;
-            margin-bottom: 20px;
+            margin-bottom: 1.302083vw;
           }
-          
+
           .booking {
             width: 100%;
-            max-width: 424px;
+            max-width: 27.60416vw;
             display: flex;
             flex-direction: column;
             justify-content: flex-start;
             align-items: flex-start;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            margin-top: 20px;
+            margin-top: 1.302083vw;
           }
-          
+
           .booking h4 {
             font-family: Caudex;
-            font-size: 30px;
+            font-size: 1.953125vw;
             font-weight: 700;
-            line-height: 28px;
+            line-height: 1.822916vw;
             text-align: left;
             margin: 5% 0%;
           }
-          
+
           .ticket-info {
             display: flex;
             flex-direction: column;
             width: 100%;
           }
-          
+
           .ticket-info .info-line {
             display: flex;
             gap: 10%;
             align-items: center;
             width: 100%;
-            margin-bottom: 10px;
+            margin-bottom: 0.6510416vw;
             font-family: Caudex;
-            font-size: 16px;
+            font-size: 1.0416vw;
             font-weight: 400;
-            line-height: 18px;
+            line-height: 1.171875vw;
             letter-spacing: 0.01em;
             text-align: left;
           }
-          
+
           .ticket-info .input-line {
             display: flex;
             justify-content: space-between;
             width: 100%;
             align-items: center;
           }
-          
+
           .ticket-info .input-line input {
-            width: 66px;
-            height: 54px;
+            width: 4.296875vw;
+            height: 3.515625vw;
             border-radius: 1px 0px 0px 0px;
           }
-          
+
           .price {
             font-family: Caudex;
-            font-size: 24px;
+            font-size: 1.5625vw;
             font-weight: 700;
-            line-height: 20px;
+            line-height: 1.302083vw;
             letter-spacing: 0.01em;
             text-align: left;
           }
-          
+
           .cart-button {
             width: 100%;
-            max-width: 190px;
-            height: 54px;
-            padding: 0px 38px;
+            max-width: 12.3697916vw;
+            height: 3.515625vw;
+            padding: 0px 2.4739583vw;
             font-weight: 700;
             border: none;
             cursor: pointer;
           }
-          
+
           .cart-button:hover {
             background-color: #0056b3;
           }
-          
+
           .share {
             margin: 1rem 0;
           }
-          
+
           .share .icons img {
-            margin-right: 10px;
+            margin-right: 0.6510416vw;
             cursor: pointer;
-            width: 16px;
-            height: 16px;
+            width: 1.0416vw;
+            height: 1.0416vw;
           }
-          
+
           .share .icons img:hover {
             text-decoration: underline;
           }
-          
+
           /* Responsive Styles */
           @media (min-width: 768px) {
             .page-container {
               flex-direction: row;
             }
-          
             .left-side, .right-side {
               width: 50%;
             }
           }
-          
+
           @media (max-width: 767px) {
-            .page-container {
-              flex-direction: column;
-            }
-          
             .left-side, .right-side {
               width: 100%;
-              padding: 10px;
+              padding: 0.6510416vw;
             }
-          
+
             .right-side {
+              order: 2;
               flex-direction: column; /* Stack content vertically */
             }
-          
+
             .event-title {
-              font-size: 36px;
-              line-height: 44px;
+              font-size: 2.34375vw;
+              line-height: 2.864583vw;
             }
-          
+
             .time-location h4 {
-              font-size: 24px;
-              line-height: 28px;
+              font-size: 1.5625vw;
+              line-height: 1.822916vw;
             }
-          
+
             .event-image {
               max-width: 100%;
               height: auto;
             }
           }
-          
-          
+
           @media (max-width: 480px) {
+            .page-container {
+              flex-direction: column;
+            }
+            
             .event-title {
-              font-size: 28px;
-              line-height: 34px;
+              font-size: 1.822916vw;
+              line-height: 2.2135416vw;
             }
-          
+
             .event-text, .event-date, .event-location {
-              font-size: 14px;
-              line-height: 18px;
+              font-size: 0.9114583vw;
+              line-height: 1.171875vw;
             }
-          
+
             .time-location h4 {
-              font-size: 20px;
-              line-height: 24px;
+              font-size: 1.302083vw;
+              line-height: 1.5625vw;
             }
-          
+
             .price {
-              font-size: 20px;
-              line-height: 24px;
+              font-size: 1.302083vw;
+              line-height: 1.5625vw;
             }
-          
+
             .cart-button {
               width: 100%;
-              padding: 10px;
-              font-size: 16px;
+              padding: 0.6510416vw;
+              font-size: 1.0416vw;
             }
-          
+
             .share .icons img {
-              width: 14px;
-              height: 14px;
+              width: 0.9114583vw;
+              height: 0.9114583vw;
             }
-          
+
             .booking {
-              margin-top: 10px;
+              margin-top: 0.6510416vw;
             }
-          
-            /* Adjustments for the right-side */
+
             .right-side {
-              padding: 10px; /* Adjust padding to avoid overlapping */
+              padding: 0.6510416vw; 
             }
           }
-          
-          
         `}
       </style>
     </div>
