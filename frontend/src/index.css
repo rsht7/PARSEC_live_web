@@ -35,8 +35,8 @@ header {
   top: 0;
   z-index: 1000;
   backdrop-filter: blur(3px);
-  transition: backdrop-filter 0.3s ease;
-  height: 10.8vh;
+  transition: backdrop-filter 0.8s ease;
+  height: 12vh;
   background-color: transparent;
   font-weight: 600;
   padding-top: 2px;
@@ -46,7 +46,7 @@ header {
   
 }
 .header.hide {
-  top: -10.8vh; /* Hide the header when scrolling down */
+  top: -12vh; /* Hide the header when scrolling down */
 }
 
 .header.show {
@@ -129,14 +129,14 @@ header {
 
 .cart-btn {
   background-color: white;
-  width: 9.76vw;
-  height: 3.515vw;
+  width: 7.5vw;
+  height: 3vw;
   text-align: center;
   color: #171515;
-  font-weight: 600;
+  font-weight: 700;
   font-family: "Inter", sans-serif;
   border: none;
-  font-size: 0.976vmax;
+  font-size: 1.17vmax;
   letter-spacing: 1px;
   cursor: pointer;
 }
@@ -725,7 +725,7 @@ h1 {
 }
 .page-img{
   height: 33.6vmax;
-  margin-top: 0;
+  margin-top: 14vh;
   /* width: 88vw;
   justify-self: center; */
   margin-left: 6vw;
@@ -745,7 +745,7 @@ h1 {
 
 .Page-head{
   position: absolute;
-  top: 21.6vmax;
+  top: 33vmax;
   margin:0 8vw 0 0;
   right: 0;
   display: flex;
@@ -799,7 +799,7 @@ h1 {
   color: rgba(122, 122, 122, 1);
   font-weight: 400;
   padding: 0 4.15vw;
-  margin: 1.36vw 0;
+  margin: 2vw 0;
 
 }
 .abt-t3{
@@ -2430,10 +2430,32 @@ h1 {
 
 @media (max-width: 850px) and (min-width: 550px){
   
+  .cart-btn {
+    display: none;
+  }
 
 
+  .navbar img {
+    margin: 0;
+    width: 20vw;
+    color: white;
+  }
   /* HOMEPAGE */
 
+
+
+  .main{
+    /* display: flex; */
+    margin-top: 12vh;
+    margin-left: 6vw;
+    margin-right: 6vw; 
+    margin-bottom: 3em;
+    height: 50vh;
+    justify-content: center;
+    position: relative;
+    /* text-align: center; */
+    
+  }
 
   .se-buttons button{
     width: 46.875%;
