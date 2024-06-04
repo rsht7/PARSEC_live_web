@@ -62,11 +62,7 @@ const Navbar = () => {
                     <img src={fulllogo}></img>
                     </Link> 
                 </h1>
-                <div className={`hamburger ${showNav ? 'open' : ''}`} onClick={toggleNav}>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                </div>
+                
                 <ul className={`nav-links ${showNav ? 'show' : ''}`}>
                     <li>
                         <Link to="/">HOME</Link>
@@ -88,7 +84,11 @@ const Navbar = () => {
                 </ul>
                 {/* <Link className='cart-btn'  to=''>CART</Link> */}
                 <button className='cart-btn'>CART</button>
-                
+                <div className={`hamburger ${showNav ? 'open' : ''}`} onClick={toggleNav}>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
                       
             </nav> 
                 
