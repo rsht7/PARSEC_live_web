@@ -36,7 +36,7 @@ const Events = () => {
                         <h3>{event.title}</h3>
                         <p className="up_event-date">{event.date}</p>
                         <div className="up_event-buttons">
-                        <button className="up_buy-now-btn">BUY NOW</button>
+                        <button className="up_buy-now-btn">BOOK NOW</button>
                         <Link to={`/event/${event._id}`} className="up_read-more-btn">READ MORE</Link>
                         </div>
                     </div>
