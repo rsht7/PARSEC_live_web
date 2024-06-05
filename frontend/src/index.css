@@ -50,7 +50,7 @@ header {
 }
 
 .header.show {
-  top: 0; /* Show the header when scrolling up */
+  top: 0; 
 }
 
 /* .navbar-hide {
@@ -176,6 +176,19 @@ header {
   transform: rotate(45deg) translate(-5px, -5px);
 }
 
+
+
+@media only screen and (max-width: 549px) {
+  .hamburger {
+    margin-right: 7%;
+  }
+
+  .nav-links.show {
+    font-size: 3vw;
+  }
+}
+
+
 @media only screen and (max-width: 768px) {
   .navbar {
     padding: 0 1em; 
@@ -194,8 +207,18 @@ header {
   
   .nav-links.show {
     display: flex; 
+    border-bottom: #000;
+    text-align: right;
+    box-sizing: border-box;
+    width: 100vw;
+    padding-right: 10%;
+    background-color: #000;
   }
-  
+
+  .nav-links a {
+    font-size: 2vw; 
+  }
+
   .hamburger {
     display: flex; 
     justify-content: center; 
@@ -203,6 +226,7 @@ header {
     cursor: pointer;
   }
 }
+
 
 
 /* a.cart-btn{
@@ -336,31 +360,42 @@ header {
 
 .events-container h1 {
   font-family: "Caudex", serif;
-  font-size: 52px;
+  font-size: 3.385416vw;
   font-weight: 700;
-  line-height: 70px;
+  line-height: 4.5572916vw;
   text-align: center;
   margin-top: 0%;
 }
 
 .events-list {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
-  gap: 1.5rem;
-  /* max-width: 90%; 4 cards of 300px width + gaps */
-  /* margin: 0 auto; */
-  margin: 0 6vw;
+  width: 100%;
+  margin: 2.5vw auto;
   padding: 0;
+  gap: 2.60416vw;
+  flex-wrap: wrap;
 }
 
 .event-item {
   position: relative;
-  width: 300px;
-  height: 440px;
-  opacity: 1;
+  overflow: hidden;
   transition: opacity 0.3s ease;
-  overflow: hidden; /* Ensure the zoomed image doesn't overflow the card */
+}
+
+.corner-event {
+  width: 26.0416vw;
+  height: 32.55208vw;
+}
+
+.middle-event {
+  width: 26.0416vw;
+  height: 32.55208vw;
+  transition: transform 0.3s ease;
+}
+
+.middle-event:hover {
+  transform: translateY(-2.5vw);
 }
 
 .event-details {
@@ -380,18 +415,18 @@ header {
 
 .event-details h3 {
   font-family: "Caudex", serif;
-  font-size: 24px;
+  font-size: 1.5625vw;
   font-weight: 700;
-  line-height: 36px;
+  line-height: 2.34375vw;
   text-align: left;
   margin: 0%;
 }
 
 .event-details .event-date {
   font-family: "Caudex", serif;
-  font-size: 14px;
+  font-size: 0.9114583vw;
   font-weight: 400;
-  line-height: 14px;
+  line-height: 0.9114583vw;
   text-align: left;
   margin-top: 0%;
 }
@@ -400,23 +435,242 @@ header {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.3s ease; /* Add transition for the zoom effect */
+  transition: transform 0.3s ease;
 }
 
 .event-buttons {
-  display: none; /* Hide buttons by default */
-  justify-content: space-between;
-  gap: 0px;
+  display: none;
+  gap: 1vw;
 }
 
 .event-item:hover .event-buttons {
-  display: flex; /* Show buttons on hover */
+  display: flex;
 }
 
 .buy-now-btn,
 .read-more-btn {
+  width: 8.204427083vw;
+  height: 2.9296875vw;
+  padding: 0.5vw;
+  color: #fff;
+  border: none;
+  text-decoration: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Inter", sans-serif;
+  font-size: 0.9765625vw;
+  font-weight: 600;
+  line-height: 1.0416vw;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+.read-more-btn {
+  font-family: "Inter", sans-serif;
+  font-size: 0.9765625vw;
+  font-weight: 600;
+  line-height: 1.0416vw;
+  letter-spacing: 1px;
+  text-align: center;
+  margin-top: -0.5vw;
+}
+
+.buy-now-btn {
+  background-color: #fff;
+  color: #000;
+}
+
+.event-date {
+  color: #fff;
+  opacity: 1;
+}
+
+.event-item:hover .event-date {
+  opacity: 1;
+}
+
+.event-item:hover .event-image {
+  transform: scale(1.1);
+}
+
+h1 {
+  text-align: center;
+}
+
+.see-more-container {
+  text-align: center;
+  margin-top: 1.302083vw;
+}
+
+.see-more-btn {
+  font-family: "Inter", sans-serif;
+  font-size: 0.9765625vw;
+  font-weight: 600;
+  color: #fff;
+  text-decoration: none;
+  border-bottom: 2px solid red;
+  padding-bottom: 5px;
+  width: 7.03125vw;
+  height: 2.4739583vw;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .buy-now-btn,
+  .read-more-btn {
+    font-size: 0.9vw;
+    width: 10vw;
+    height: 3vw;
+  }
+
+  .see-more-btn {
+    font-size: 1.5vw;
+  }
+}
+
+@media (max-width: 1032px) {
+  .buy-now-btn,
+  .read-more-btn {
+    width: 8vw;
+    height: 3vw;
+  }
+}
+
+@media (max-width: 768px) {
+  .buy-now-btn,
+  .read-more-btn {
+    width: 7vw;
+    height: 2.5vw;
+  }
+}
+
+@media (max-width: 480px) {
+  .buy-now-btn,
+  .read-more-btn {
+    font-size: 0.8vw;
+    width: 8vw;
+    height: 2.2vw;
+  }
+}
+
+
+/* UPCOMING EVENTS (EVENTS PAGE) */
+
+.up_events-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+  overflow-x: hidden; 
+}
+
+.up_event-item:hover .up_event-image {
+  transform: scale(1.1); /* Zoom in the image on hover */
+}
+
+.up_events-container h1 {
+  font-family: "Caudex", serif;
+  font-size: 3.385416vw;
+  font-weight: 700;
+  line-height: 4.5572916vw;
+  text-align: center;
+  margin-top: 0%;
+}
+
+.up_events-slider {
+  display: flex;
+  gap: 1rem; 
+  padding: 1rem 0; 
+  scroll-snap-type: x mandatory; 
+  box-sizing: border-box;
+  width: 100%; 
+}
+
+.up_event-item {
+  position: relative;
+  width: 18.22916vw;
+  height: 28.64583vw;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+  overflow: hidden; 
+  flex: 0 0 auto; 
+  scroll-snap-align: start; 
+}
+
+.up_event-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease; 
+}
+
+.up_event-item:hover .up_event-image {
+  transform: scale(1.1); /* Zoom in the image on hover */
+}
+
+.up_event-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0); /* Transparent background */
+  transition: background 0.3s ease; 
+  opacity: 0; 
+}
+
+.up_event-details {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 5%;
+  box-sizing: border-box;
+  color: #fff;
+  transition: opacity 0.3s ease; 
+  z-index: 1;
+}
+
+.up_event-details h3 {
+  font-family: "Caudex", serif;
+  font-size: 1.5625vw;
+  font-weight: 700;
+  line-height: 2.34375vw;
+  text-align: left;
+  margin: 0%;
+}
+
+.up_event-details .event-date {
+  font-family: "Caudex", serif;
+  font-size: 0.9114583vw;
+  font-weight: 400;
+  line-height: 0.9114583vw;
+  text-align: left;
+  margin-top: 0%;
+}
+
+.up_event-buttons {
+  display: none;
+  justify-content: space-between;
+  gap: 0px;
+}
+
+.up_event-item:hover .up_event-buttons {
+  display: flex; /* Show buttons on hover */
+}
+
+.up_buy-now-btn,
+.up_read-more-btn {
   width: 126.02px;
-  height: 45px;
+  height: 2.9296875vw;
   padding: 15px 17.02px 14px 17px;
   color: #fff;
   border: none;
@@ -425,70 +679,85 @@ header {
   gap: 0px;
 }
 
-.read-more-btn {
+.up_read-more-btn {
   font-family: "Inter", sans-serif;
-  font-size: 15px;
+  font-size: 0.9765625vw;
   font-weight: 600;
-  line-height: 16px;
+  line-height: 1.0416vw;
   letter-spacing: 1px;
   text-align: center;
 }
 
-.buy-now-btn {
+.up_buy-now-btn {
   background-color: #fff;
   color: #000;
-  width: 126.02px;
-  height: 45px;
+  width: 8.204427083vw;
+  height: 2.9296875vw;
   padding: 15px 17.02px 14px 17px;
   gap: 0px;
   opacity: 0px;
   font-family: "Inter", sans-serif;
-  font-size: 15px;
+  font-size: 0.9765625vw;
   font-weight: 600;
   line-height: 16px;
   letter-spacing: 1px;
   text-align: center;
 }
 
-.event-date {
+.up_event-date {
   color: #fff;
-  opacity: 1; /* Show date by default */
+  opacity: 1; 
 }
 
-.event-item:hover .event-date {
-  opacity: 1; /* Ensure date remains visible on hover */
-}
-
-.event-item:hover .event-image {
-  transform: scale(1.1); /* Zoom in the image on hover */
+.up_event-item:hover .up_event-date {
+  opacity: 1; 
 }
 
 h1 {
-  text-align: center; /* Center align the "Upcoming Events" text */
+  text-align: center; 
 }
 
-/* Responsive */
 @media (max-width: 768px) {
-  .events-list {
-    max-width: 100%;
-    padding: 0;
+  .up_events-slider {
+    flex-wrap: nowrap;
   }
   
-  .event-item {
-    width: calc(50% - 0.8rem);
-    margin-bottom: 1.6rem;
+  .up_event-item {
+    width: 14.322916vw; 
   }
 }
 
 @media (max-width: 480px) {
-  .event-item {
-    width: 100%;
+  .up_event-item {
+    width: 11.71875vw; 
   }
 }
 
+@keyframes slide-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
 
+@keyframes slide-right {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
 
+.up_events-slider:hover {
+  animation: slide-left 20s linear infinite alternate;
+}
 
+.up_event-item:hover .up_event-image {
+  transform: scale(1.1); 
+}
 
 /* OLD UPCOMING EVENTS CSS */
 
@@ -712,6 +981,7 @@ h1 {
   box-sizing: border-box;
   color: white;
 }
+
 /* WORKOUT CARD CSS */
 
 
