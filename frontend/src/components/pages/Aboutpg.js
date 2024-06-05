@@ -36,7 +36,7 @@ const About = () => {
                     consequat mollit. Exercitation est minim dolore et. Pariatur ea ut pariatur do irure.Voluptate eiusmod consectetur.
 
                 </p>
-                <p className='abt-t3'>Sherin & Eli</p>
+                <p className='abt-t3'>~ Sherin & Eli ~</p>
 
             </div>
             <div className='newsletter-wrapper'>
