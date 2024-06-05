@@ -42,7 +42,7 @@ const Footer = () =>{
                 
                 <form className='ulb'>
 
-                  <input type='email' placeholder='JOIN OUR NEWSLETTER'/>
+                  <input type='email' placeholder='Join our newsletter'/>
                   <button className='subs'>SUBSCRIBE</button>
                   {/* <li className='ul-b1'><p >JOIN OUR NEWSLETTER</p></li>
                   <li className='subs'><Link >SUBSCRIBE</Link></li> */}
