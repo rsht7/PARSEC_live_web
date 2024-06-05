@@ -661,12 +661,14 @@ h1 {
   line-height: 4.55vw;
   text-align: center;
   margin-bottom: 0;
+  color: #c4bdbd;
 
 }
 
 .main-newsletter-stuff h2{
   font-size: 1.1vw;
   line-height: 1.56vw;
+  font-weight: 400;
   text-align: center;
 }
 
@@ -701,13 +703,13 @@ h1 {
 .main-newsletter-stuff input{
   font-size: 2.03vmin;
   font-family: "Inter", sans-serif;
-  letter-spacing: 1px;
+  
   font-weight: 600;
   height: 100%;
   padding-left: 1vw;
   border: none;
   width: 60%;
-  border: 2px solid #ffffff;
+  border: 1px solid #ffffff;
   background-color: rgba(0, 0, 0, 0.9);
   box-sizing: border-box;
   color: white;
@@ -809,7 +811,7 @@ h1 {
 }
 .page-path{
   font-weight: 400;
-  font-size: 1vmax;
+  font-size: 1.5vmax;
   text-align: right;
 }
 
@@ -817,7 +819,7 @@ h1 {
   text-decoration: none;
   color: white;
   font-weight: 400;
-  font-size: 1vmax;
+  font-size: 1.5vmax;
 }
 
 
@@ -848,7 +850,7 @@ h1 {
   font-size: 1.3vmax;
   color: rgba(122, 122, 122, 1);
   font-weight: 400;
-  padding: 0 4.15vw;
+  padding: 0;
   margin: 2vw 0;
 
 }
@@ -919,6 +921,7 @@ h1 {
 
 .newsbelowhead{
   font-size: 0.911vmax;
+  color: rgb(157, 154, 154);
 }
 
 
@@ -941,14 +944,14 @@ h1 {
 
 .nws-inp{
   width: 60%;
-  border: 2px solid #ffffff;
+  border: 1px solid #b0aeae;
   background-color: rgba(0, 0, 0, 0.9);
   box-sizing: border-box;
   color: white;
   font-weight: 600;
   padding-left: 1vw;
   font-family: "Inter", sans-serif;
-  letter-spacing: 1px;
+  letter-spacing: 0.3px;
   /* padding: 3vh; */
   /* height: 70%; */
 }
@@ -1096,11 +1099,16 @@ h1 {
   margin-top: 0;
   font-size : 3.38vmax;
   text-align: left;
+  
+}
+.contact-lhs p{
+  color: rgba(194, 194, 194, 1);
 }
 
 .contact-icons{
   display: flex;
   justify-content: space-between;
+  margin-top:4vw ;
   
   
 }
@@ -1110,6 +1118,13 @@ h1 {
   align-items: center;
   gap: 1.5vw;
 }
+
+.contact-icon-info p{
+  color: white;
+  font-weight: 600;
+  margin: 0 0 0.6vw 0;
+}
+
 
 .contact-icon img{
   width: auto;
@@ -1137,6 +1152,7 @@ h1 {
   width:50%;
   align-items: self-end;
 
+
   /* margin-left:10%; */
 }
 
@@ -1145,6 +1161,7 @@ h1 {
   display: flex;
   justify-content: space-between;
   margin-bottom: 2%;
+  margin-top: 3%;
   
 }
 
@@ -1219,7 +1236,7 @@ h1 {
   width: 100%;
   /* font-weight: bold; */
   font-family: "Inter", sans-serif;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 1px;
 
 }
@@ -1304,7 +1321,8 @@ h1 {
   justify-content: space-between;
   height: 70%;
   font-size: 2.03vmin;
-  color: rgb(120, 127, 134);
+  /* color: rgb(120, 127, 134); */
+  color: white;
   border-bottom: #bbbbbb2c 0.5px solid;
   letter-spacing: 1%;
 }
@@ -1343,7 +1361,8 @@ h1 {
 
 .foottwo-a a{
   text-decoration: none;
-  color: rgb(120, 127, 134);
+  /* color: rgb(120, 127, 134); */
+  color: white;
   align-content: center;
 
 }
@@ -1406,9 +1425,10 @@ h1 {
   padding-left: 10px;
   font-family: "Inter", sans-serif;
   font-size: 2.03vmin;
-  letter-spacing: 0.5px;
-  border: none;
-  font-weight: 600;
+  /* letter-spacing: 0.5px; */
+  border: 1px solid #454444;
+  /* border: none; */
+  font-weight: 500;
   color: white;
   
 }
@@ -1430,7 +1450,7 @@ h1 {
   font-size: 2.03vmin;
   border: none;
   letter-spacing: 1px;
-  font-weight: 600;
+  font-weight: 700;
   
 }
 .subs:hover {
@@ -1474,6 +1494,7 @@ h1 {
   list-style-type: none;
   padding: 0;
   gap: 4vw;
+  color: #7a7777;
   
 }
 
@@ -1495,7 +1516,7 @@ h1 {
     z-index: 1000;
     /* backdrop-filter: blur(2px);
     transition: backdrop-filter 0.3s ease; */
-    height: 10.8vh;
+    height: 9.8vh;
     background-color: transparent;
     font-weight: 600;
     padding: 2px 4vw 0 4vw;
@@ -1739,7 +1760,7 @@ h1 {
   /* display: flex;
   justify-content: center; */
   margin: 5vmax 6vw 5vmax 6vw;
-  height: 35vh;
+  height: 30vh;
  
   
   
@@ -1786,46 +1807,48 @@ h1 {
   line-height: 4.55vw;
   text-align: center;
   margin-bottom: 0;
-  margin-top: 0;
+  margin-top: 1vw;
 
 }
 
 .main-newsletter-stuff h2{
-  font-size: 2vmax;
+  font-size: 1.75vmax;
   line-height: 2.2vmax;
   text-align: center;
+  margin-bottom: 0;
 }
 
 .main-newsletter-stuff form{
-  width: 100%;
+  width: 80%;
   display: flex;
   justify-content: space-between;
   margin-top: 1.75vw;
   flex-direction: column;
-  height: 14vh;
+  height: 11vh;
+  align-self: center;
 }
 
 .main-newsletter-stuff button{
-  font-size: 4vw;
+  font-size: 3.5vw;
   font-family: "Inter", sans-serif;
   border: none;
   letter-spacing: 1px;
-  font-weight: 600;
-  height: 6vh;
+  font-weight: 700;
+  height: 5vh;
   width: 100%;
 }
 
 
 .main-newsletter-stuff input{
-  font-size: 4vw;
+  font-size: 3.5vw;
   font-family: "Inter", sans-serif;
-  letter-spacing: 1px;
+ 
   font-weight: 600;
-  height: 6vh;
-  padding-left: 4px;
+  height: 5vh;
+  padding-left: 10px;
   border: none;
   width: 100%;
-  border: 2px solid #ffffff;
+  border: 1px solid #ffffff;
   background-color: rgba(0, 0, 0, 0.9);
   box-sizing: border-box;
   color: white;
@@ -2304,7 +2327,7 @@ h1 {
     padding: 0 6vw 5vh 6vw;
     font-weight: 600;
     
-    height: 55vh;
+    height: 53vh;
     /* width: 100vw; */
    
     
@@ -2328,13 +2351,14 @@ h1 {
     margin: 0;
   }
   .footone ul img{
-    width: 8vw;
+    width: 6vw;
+    
 
   }
   
   .footone ul{
     display: flex;
-    gap: 8vw;
+    gap: 5vw;
     list-style-type: none;
     align-self: self-start;
     margin: 0;
@@ -2354,7 +2378,7 @@ h1 {
     flex-direction: column;
     align-items:self-start;
     height: 70%;
-    font-size: 4vw;
+    font-size: 3.8vw;
     color: rgb(120, 127, 134);
     border-bottom: #bbbbbb2c 1px solid;
     justify-content: initial;
@@ -2412,7 +2436,7 @@ h1 {
     display: flex;
     flex-direction: row;
     width: 100%;
-    height: 6vh;
+    height: 5vh;
   }
   /* .ul-b1{
     border: 1px solid white;
@@ -2422,8 +2446,8 @@ h1 {
     padding-left: 4px;
   } */
   .ulb input{
-    padding-left: 4px;
-    font-size: 4vw;
+    padding-left: 12px;
+    font-size: 3.5vw;
   }
   
   
@@ -2431,11 +2455,11 @@ h1 {
   .subs{
     background-color: white;
     /* height: 3em; */
-    width: 40%;
+    width: 35%;
     height: 100%;
     text-align: center;
     align-content: center;
-    font-size: 4vw;
+    font-size: 3.5vw;
     color: black;
     
   }
@@ -2448,7 +2472,7 @@ h1 {
     height: 20%;
     margin-top: 1vh;
     font-size: 1.75vh;
-    gap: 1.5vh;
+    gap: 0.01vh;
     
   }
   
@@ -2474,6 +2498,7 @@ h1 {
     font-size: 1.25vh;
     justify-content: space-between;
     
+    
   }
 
 
@@ -2481,6 +2506,7 @@ h1 {
     flex-direction: column;
     justify-content: space-between;
     gap: 1vh;
+    font-size: 1.75vh;
     
   }
   
@@ -2554,6 +2580,9 @@ h1 {
     
   
   }
+  .Page-head{
+    top: 38vh;
+  }
 
   .se-buttons button{
     width: 46.875%;
@@ -2572,40 +2601,43 @@ h1 {
     /* display: flex;
     justify-content: center; */
     margin: 5vmax 6vw 5vmax 6vw;
-    height: 40vw;
+    height: 30vw;
     
   }
   
   .main-newsletter-stuff{
     width: 60vw;
-    top: 20%;
+    top: 10%;
 
   }
 
   .main-newsletter-stuff h1{
     font-size: 5vw;
     margin-top: 0;
+    
   }
   .main-newsletter-stuff h2{
     font-size: 2vw;
-    margin-top: 3vh;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+    line-height: 20px;
   }
   .main-newsletter-stuff form{
-    height: 4vw;
+    height: 5vw;
   }
   .main-newsletter-stuff button{
-    font-size: 1.25vw;
+    font-size: 1.5vw;
     font-family: "Inter", sans-serif;
     width: 35%;
   }
 
   .main-newsletter-stuff input{
-    font-size: 1.25vw;
+    font-size: 1.5vw;
     
-    padding-left: 1vw;
+    padding-left: 2vw;
     border: none;
     width: 60%;
-    border: 2px solid #ffffff;
+    border: 1px solid #ffffff;
     
   }
 
@@ -2617,10 +2649,17 @@ h1 {
   .abt-text{
     box-sizing: border-box;
     height: 20vh;
+    margin-bottom: 2vh;
+  }
+  .abt-t2{
+    font-size: 1.5vmax;
+  }
+  .abt-t3{
+    font-size: 1.7vmax;
   }
 
   .newsletter-wrapper{
-    height: 40vw;
+    height: 32vw;
   }
   .news-lhsrhs{
     flex-direction: column;
@@ -2630,23 +2669,25 @@ h1 {
     width: 100%;
   }
   .newshead{
-    font-size:5vw ;
+    font-size:3vw ;
   }
   .newsbelowhead{
-    font-size:2.5vw ;
+    font-size:2vw ;
   }
   .news-rhs{
-    width: 100%;
+    width: 80%;
     padding: 0 3.9vw;
+    align-self: self-start;
+
   }
   .news-rhs form{
-    height: 4vw;
+    height: 6vw;
   }
 
   .nws-inp{
     width: 60%;
-    border: 2px solid #ffffff;
-    font-size: 1.25vw;
+    border: 1px solid #b0aeae;
+    font-size: 1.75vw;
     padding-left: 1vw;
     
     /* padding: 3vh; */
@@ -2654,7 +2695,8 @@ h1 {
   }
   .nws-subs{
     width: 35%;
-    font-size: 1.25vw;
+    font-size: 1.75vw;
+    
     /* padding: 3vh; */
     /* height: 70%; */
   }
@@ -2699,7 +2741,10 @@ h1 {
 
   
   .os-names{
-    font-size:larger;
+    font-size: 2vh;
+  }
+  .os-position{
+    font-size: 1.1vh;
   }
   
 
@@ -2711,40 +2756,88 @@ h1 {
   
 
   /* CONTACT PAGE */
-  
+
+  .contact-lhsrhs{
+    margin-top: 4vh;
+  }
+  .contact-lhs{
+    width: 40%;
+  }
+  .contact-lhs p{
+    font-size: 1.25vh;
+    
+  }
   .contact-icons{
     display: flex;
-    justify-content: space-between;
+    gap: 2vh;
     flex-direction: column;
     
   }
-  
+
+  .contact-icon img{
+    height: 3.5vh;
+  }
+
+  .contact-rhs{
+    width: 60%;
+  }
+  .contact-n-e{
+    flex-direction: column;
+  }
+  .cont-e{
+    width: 100%;
+  }
+  .cont-n{
+    width: 100%;
+  }
+  .queryinp{
+    height: 10vh;
+    min-height: 10vh;
+  }
   
   /* FOOTER */
   
+  .footer{
+    height: 30vw;
+  }
+  .footone{
+    height: 15vw;
+  }
+  .footone img{
+    width: 20vw;
+  }
+
+  .footone ul img{
+    width: 3vw;
+  }
+
+
+  .foottwo{
+    height: 14vw;
+  }
   .foottwo-a{
-    font-size: 1.25vw;
+    font-size: 1.8vw;
+    
   }
   .ula{
-    width: 35vw;
-    gap: 1.25vw;
+    width: 40vw;
+    gap: 1.75vw;
   
   }
   
   .ulb{
-    width: 35vw;
-    height: 4vw;
+    width: 37vw;
+    height: 5vw;
   }
   
   .ulb input{
-    font-size: 1.25vw;
-    height: 4vw;
+    font-size: 1.5vw;
+    width: 70%;
+    
   }
   
   .subs{
-    font-size: 1.25vw;
-
-
+    font-size: 1.5vw;
 
   }
 
@@ -2755,7 +2848,9 @@ h1 {
     justify-content: space-between;
     height: 30%;
     margin-top: 1vh;
-    font-size: 1vw;
+    font-size: 1.35vw;
+    /* flex-direction: column; */
+    
 
     
   }
@@ -2765,6 +2860,7 @@ h1 {
     display: flex;
     list-style-type: none;
     padding: 0;
+    gap: 2vw;
     
     
     
@@ -2774,6 +2870,7 @@ h1 {
     display: flex;
     list-style-type: none;
     padding: 0;
+    gap: 2vw;
     
   }
   
@@ -2877,7 +2974,7 @@ h1 {
 
 
   /* FOOTER */
-
+  
 
   .foottwo-a{
     font-size: 1.25vw;
