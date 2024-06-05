@@ -4,7 +4,7 @@ import logo from './compassets/logo.png'
 
 
 
-const Headname =(props)=>{
+const Headname = (props) =>{
         return(
         <div className='head-name'> 
 
@@ -15,7 +15,7 @@ const Headname =(props)=>{
             
             <div className='Page-head'>
                 <p className='page-name'>{props.name}</p>
-                <p className='page-path'><Link to='/'>Home</Link> &gt; {props.name}</p>
+                <p className='page-path'><Link to="/">Home</Link> &gt; {props.name}</p>
 
             </div>
 
