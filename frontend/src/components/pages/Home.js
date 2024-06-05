@@ -45,8 +45,8 @@ const Home = () => {
                                 <h3>{event.title}</h3>
                                 <p className="event-date">{event.date}</p>
                                 <div className="event-buttons">
-                                    <button className="buy-now-btn">Buy Now</button>
-                                    <Link to={`/event/${event._id}`} className="read-more-btn">Read More</Link>
+                                    <button className="buy-now-btn">GET TICKETS</button>
+                                    <Link to={`/event/${event._id}`} className="read-more-btn">READ MORE</Link>
                                 </div>
                             </div>
                         </div>
