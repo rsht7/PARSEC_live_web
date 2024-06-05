@@ -730,7 +730,7 @@ h1 {
   color: #000;
   width: 8.204427083vw;
   height: 2.9296875vw;
-  padding: 15px 17.02px 14px 17px;
+  padding: 0.5vmin;
   gap: 0px;
   opacity: 0px;
   font-family: "Inter", sans-serif;
@@ -788,9 +788,9 @@ h1 {
   }
 }
 
-.up_events-slider:hover {
+/* .up_events-slider:hover {
   animation: slide-left 20s linear infinite alternate;
-}
+} */
 
 .up_event-item:hover .up_event-image {
   transform: scale(1.1); 
@@ -3106,16 +3106,268 @@ h1 {
 
 
 
+}
 
 
 
 
+
+
+@media (max-width: 1030px) and (min-width:850px){
+
+  .main{
+    /* display: flex; */
+    margin-top: 12vh;
+    margin-left: 6vw;
+    margin-right: 6vw; 
+    margin-bottom: 3em;
+    height: 40vh;
+    justify-content: center;
+    position: relative;
+    /* text-align: center; */
+    
+  }
+
+  .main h1{
+    font-size: 5.2vw;
+    font-weight: 700;
+    letter-spacing: 1px;
+    line-height: 5.85vw;
+    position: relative;
+    padding: 12vw 10vw 0 10vw;
+    text-align: center;
+    
+  
+  }
+  .newsletter-wrap{
+    /* display: flex;
+    justify-content: center; */
+    margin: 5vmax 6vw 5vmax 6vw;
+    height: 30vw;
+    
+  }
+  
+  .main-newsletter-stuff{
+    width: 60vw;
+    top: 10%;
+
+  }
+
+  .main-newsletter-stuff h1{
+    font-size: 5vw;
+    margin-top: 0;
+    
+  }
+  .main-newsletter-stuff h2{
+    font-size: 2vw;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+    line-height: 20px;
+  }
+  .main-newsletter-stuff form{
+    height: 5vw;
+  }
+  .main-newsletter-stuff button{
+    font-size: 1.5vw;
+    font-family: "Inter", sans-serif;
+    width: 35%;
+  }
+
+  .main-newsletter-stuff input{
+    font-size: 1.5vw;
+    
+    padding-left: 2vw;
+    border: none;
+    width: 60%;
+    border: 1px solid #ffffff;
+    
+  }
+  /* ABOUT PAGE */
+  .newsbelowhead{
+    font-size: 1vw;
+  }
+  .our-story{
+    display: flex;
+    height:auto;
+    margin: 6vh 0;
+    justify-content:space-between;
+    background-color: rgba(84, 79, 79, 0.3);
+  }
+
+   .os-lhs{
+    width: 40%;
+    padding: 2vh;
+    
+  }
+  
+  .os-rhs{
+    width: 55%;
+    align-self: center;
+  }
+
+  .os-head{
+    margin: 0;
+  }
+  
+  .os-belowhead{
+    font-size: 1.5vw;
+    color: rgba(122, 122, 122, 1);
+    
+  }
+  
+  .os-below2{
+    font-size: 1.5vw;
+  }
+
+  
+  .os-names{
+    font-size:larger;
+  }
+  
+
+  .os-info{
+    position: relative;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+   
+  }
+  .os-info img{
+    width:100%;
+    object-fit: cover;
+    height: 100%;
+    position: relative;
+    z-index: -99;
+    /* box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5); */
+    
+  }
+  
+
+  /* CONTACT PAGE */
+
+  .contact-icons{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    
+  }
+  .contact-icon img{
+    width: auto;
+    height: 4vh;
+  }
+
+  .contact-icon-info{
+    padding: 1vh;
+    box-sizing: border-box;
+  }
+  
+
+
+
+
+  /* FOOTER */
+  
+
+  .foottwo-a{
+    font-size: 1.25vw;
+  }
+  .ula{
+    width: 45vw;
+    gap: 1.9vw;
+  
+  }
+  
+  .ulb{
+    width: 35vw;
+  }
+  
+  .ulb input{
+    font-size: 1.25vw;
+  }
+  
+  .subs{
+    font-size: 1.25vw;
+  }
+  
+  .foottwo-b{
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    height: 30%;
+    margin-top: 1vh;
+    font-size: 0.911vmax;
+    
+  }
+  
+  .foot-cont-mail ul{
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    
+       
+  }
+  
+  .foot-cpr ul{
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    
+  }
+  
 
 
 }
 
-@media (max-width: 1380px) and (min-width:850px){
 
+
+
+
+
+
+
+@media (max-width: 1380px) and (min-width:1030px){
+
+
+  
+
+
+  .main-newsletter-stuff{
+    width: 60vw;
+    top: 10%;
+
+  }
+
+  .main-newsletter-stuff h1{
+    font-size: 5vw;
+    margin-top: 0;
+    
+  }
+  .main-newsletter-stuff h2{
+    font-size: 2vw;
+    margin-top: 3vh;
+    margin-bottom: 1vh;
+    line-height: 28px;
+  }
+  .main-newsletter-stuff form{
+    height: 4vw;
+    width: 50vw;
+    align-self: center;
+  }
+  .main-newsletter-stuff button{
+    font-size: 1.25vw;
+    font-family: "Inter", sans-serif;
+    width: 25%;
+  }
+
+  .main-newsletter-stuff input{
+    font-size: 1.25vw;
+    
+    padding-left: 2vw;
+    border: none;
+    width: 70%;
+    border: 1px solid #ffffff;
+    
+  }
 
   
 /* ABOUT PAGE */
