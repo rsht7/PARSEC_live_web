@@ -5,6 +5,7 @@ import homepic2 from './homepic2.jpeg';
 import facebook3 from '../compassets/facebook3.png';
 import instagram from '../compassets/instagram.png';
 import Newsletter from '../Newsletter';
+import{Link} from 'react-router-dom'
 
 function EventDetails() {
   const { id } = useParams();
@@ -25,21 +26,22 @@ function EventDetails() {
   return (
     <div className="total">
       <Headname name={`Events > ${event.title}`} pic={homepic2} />
+      <div className='back-link'>  <Link to='/event'>&#10094; ALL EVENTS </Link></div>
       <div className="eventDet-container">
         <div className="page-body">
           <div className="page-container">
             <div className="left-side">
               <div className="event-info">
-                <h4 className="event-date" style={{ margin: '1rem' }}>{event.date}</h4>
+                <h4 className="event-date" style={{ }}>{event.date}</h4>
                 <h3 className="event-title">{event.title}</h3>
                 <p className="event-text">{event.text}</p>
                 <p className="event-text">{event.text}</p>
               </div>
               <div className="time-location">
                 <h4>Time & Location</h4>
-                <p className="event-date">{event.date}, {event.time}</p>
+                <p className="event-date-time">{event.date}, {event.time}</p>
                 <p className="event-location">{event.location}</p>
-                <p className="event-location">Terms and Conditions</p>
+                <p className="event-terms">Terms and Conditions</p>
               </div>
               <div className="share">
                 <p>Share this event</p>
@@ -73,6 +75,7 @@ function EventDetails() {
                         lineHeight: '1.302083',
                         letterSpacing: '0.01em',
                         textAlign: 'left',
+                        border:'none',
                       }}
                     />
                     <span className="price">$ 25.00</span>
@@ -88,28 +91,54 @@ function EventDetails() {
       <style>
         {`
           @import url('https://fonts.googleapis.com/css2?family=Caudex:wght@400;700&display=swap');
+          
 
+
+          .back-link{
+            margin:4vmin 6vw;
+            font-family: "Inter", sans-serif;
+            font-weight:600;
+            letter-spacing:1px;
+          }
+          .back-link a{
+            font-family: "Inter", sans-serif;
+            font-weight:700;
+            letter-spacing:1px;
+            text-decoration:none;
+            color:white;
+          }
+          
+          .back-link a:hover{
+            text-decoration: underline 2px;
+            text-decoration-color: rgb(179, 3, 3);
+            text-decoration-style: solid ;
+            color: rgba(194, 194, 194, 1);
+            text-underline-offset: 0.68vh;
+          }
           .eventDet-container {
             display: flex;
             justify-content: center;
             align-items: center;
-            width: 100vw;
-            height: 100vh;
+            
+            // height: 100vh;
             position: relative;
+            margin-top:0;
           }
 
           .page-body {
             font-family: Arial, sans-serif;
-            width: 90%;
-            max-width: 83.3vw;
-            height: auto;
-            backdrop-filter: blur(8px);
+            
+            height:max-content;
+        
+            backdrop-filter: blur(2px);
             display: flex;
             flex-direction: column;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            padding: 20px;
+            width:100%
             box-sizing: border-box;
-            margin: auto;
+            margin: 0 6vw;
+            background: rgba(27, 27, 27, 0.4);
+
           }
 
           .page-container {
@@ -117,23 +146,27 @@ function EventDetails() {
             width: 100%;
             height: 100%;
             flex-direction: row;
+            justify-content:space-between;
           }
 
           .left-side, .right-side {
-            padding: 1.302vw;
+            padding: 1.5vw 1.302vw ;
             box-sizing: border-box;
+            
           }
 
           .left-side {
             display: flex;
             flex-direction: column;
             gap: 1.041vw;
+            width:55%;
           }
 
           .right-side {
             display: flex;
             flex-direction: column;
             align-items: flex-start;
+            width:40%;
           }
 
           .event-title,
@@ -153,6 +186,9 @@ function EventDetails() {
             line-height: 1.4322916vw;
             letter-spacing: 0.01em;
             text-align: left;
+            margin-left:0;
+            margin-top:0;
+            margin-bottom:0;
           }
 
           .event-title {
@@ -161,6 +197,8 @@ function EventDetails() {
             font-weight: 700;
             line-height: 3.90625vw;
             text-align: left;
+            margin-top:0.5rem;
+            margin-bottom:1.5rem;
           }
 
           .event-text {
@@ -170,6 +208,7 @@ function EventDetails() {
             line-height: 1.302083vw;
             letter-spacing: 0.01em;
             text-align: left;
+            color: rgba(194, 194, 194, 1);
           }
 
           .time-location {
@@ -202,12 +241,36 @@ function EventDetails() {
             line-height: 1.302083vw;
             letter-spacing: 0.01em;
             text-align: left;
+            color: rgba(194, 194, 194, 1);
+            margin-top:0;
+          }
+
+          .event-date-time{
+            font-family: 'Caudex', serif;
+            font-size: 1.041vw;
+            font-weight: 400;
+            line-height: 1.302083vw;
+            letter-spacing: 0.01em;
+            text-align: left;
+            color: rgba(194, 194, 194, 1);
+            margin-bottom:1vmin;
+            margin-top:4vmin;
+          }
+          .event-terms{
+            font-family: 'Caudex', serif;
+            font-size: 1.041vw;
+            font-weight: 400;
+            line-height: 1.302083vw;
+            letter-spacing: 0.01em;
+            text-align: left;
+            color: rgba(194, 194, 194, 1);
+            margin-top:4vmin;
           }
 
           .event-image {
             width: 100%;
             max-width: 32.03125vw;
-            height: auto;
+            height: 40vh;
             margin-bottom: 1.302083vw;
           }
 
@@ -219,7 +282,7 @@ function EventDetails() {
             justify-content: flex-start;
             align-items: flex-start;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            margin-top: 1.302083vw;
+            margin-top: 1.102083vw;
           }
 
           .booking h4 {
@@ -250,6 +313,9 @@ function EventDetails() {
             letter-spacing: 0.01em;
             text-align: left;
           }
+          .info-line{
+            color: rgba(194, 194, 194, 1);
+          }
 
           .ticket-info .input-line {
             display: flex;
@@ -278,17 +344,22 @@ function EventDetails() {
             max-width: 12.3697916vw;
             height: 3.515625vw;
             padding: 0px 2.4739583vw;
-            font-weight: 700;
+            font-weight: 600;
             border: none;
             cursor: pointer;
+            font-family: "Inter", sans-serif;
+            // letter-spacing: 1px;
+            font-size: 2.03vmin;
           }
 
           .cart-button:hover {
-            background-color: #0056b3;
+            background-image: linear-gradient(to left,rgb(20, 4, 93),rgb(76, 6, 101));
+            color: white;
           }
 
           .share {
             margin: 1rem 0;
+            font-family: Caudex;
           }
 
           .share .icons img {
@@ -307,9 +378,9 @@ function EventDetails() {
             .page-container {
               flex-direction: row;
             }
-            .left-side, .right-side {
-              width: 50%;
-            }
+            // .left-side, .right-side {
+            //   width: 50%;
+            // }
           }
 
           @media (max-width: 767px) {

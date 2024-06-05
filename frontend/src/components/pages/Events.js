@@ -24,9 +24,10 @@ const Events = () => {
 
     return (
         <div className='total-event'>
-            <Headname name='up_Events' pic={contactpic} />
+            <Headname name='Events' pic={contactpic} />
             <div className="up_events-container">
-                <h1 style={{ marginTop: '2.5%' }}>Upcoming Events</h1>
+                <h1 style={{ marginTop: '2.5%'
+}}>Upcoming Events</h1>
                 <div className="up_events-slider">
                 {events.map(event => (
                     <div key={event._id} className="up_event-item">
@@ -35,8 +36,8 @@ const Events = () => {
                         <h3>{event.title}</h3>
                         <p className="up_event-date">{event.date}</p>
                         <div className="up_event-buttons">
-                        <button className="up_buy-now-btn">Buy Now</button>
-                        <Link to={`/event/${event._id}`} className="up_read-more-btn">Read More</Link>
+                        <button className="up_buy-now-btn">BUY NOW</button>
+                        <Link to={`/event/${event._id}`} className="up_read-more-btn">READ MORE</Link>
                         </div>
                     </div>
                     </div>

@@ -34,7 +34,7 @@ header {
   width: 100%;
   top: 0;
   z-index: 1000;
-  backdrop-filter: blur(3px);
+  backdrop-filter: blur(4px);
   transition: backdrop-filter 0.8s ease;
   height: 12vh;
   background-color: transparent;
@@ -365,6 +365,9 @@ header {
   line-height: 4.5572916vw;
   text-align: center;
   margin-top: 0%;
+  color: rgba(210, 210, 210, 1);
+  margin-bottom: 1vmin;
+
 }
 
 .events-list {
@@ -386,6 +389,7 @@ header {
 .corner-event {
   width: 26.0416vw;
   height: 32.55208vw;
+  transition: transform 0.3s ease;
 }
 
 .middle-event {
@@ -395,6 +399,9 @@ header {
 }
 
 .middle-event:hover {
+  transform: translateY(-2.5vw);
+}
+.corner-event:hover {
   transform: translateY(-2.5vw);
 }
 
@@ -475,6 +482,8 @@ header {
   letter-spacing: 1px;
   text-align: center;
   margin-top: -0.5vw;
+  color: rgba(194, 194, 194, 1);
+    
 }
 
 .buy-now-btn {
@@ -501,7 +510,7 @@ h1 {
 
 .see-more-container {
   text-align: center;
-  margin-top: 1.302083vw;
+  margin-top: 0;
 }
 
 .see-more-btn {
@@ -510,10 +519,16 @@ h1 {
   font-weight: 600;
   color: #fff;
   text-decoration: none;
-  border-bottom: 2px solid red;
   padding-bottom: 5px;
   width: 7.03125vw;
   height: 2.4739583vw;
+}
+.see-more-container a:hover {
+  text-decoration: underline 2px;
+  text-decoration-color: rgb(179, 3, 3);
+  text-decoration-style: solid;
+  color: rgba(194, 194, 194, 1);
+  text-underline-offset: 0.68vh;
 }
 
 /* Responsive */
@@ -558,13 +573,16 @@ h1 {
 
 /* UPCOMING EVENTS (EVENTS PAGE) */
 
+
 .up_events-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
+  
   box-sizing: border-box;
   overflow-x: hidden; 
+  margin: 0 6vw;
+  
 }
 
 .up_event-item:hover .up_event-image {
@@ -578,20 +596,27 @@ h1 {
   line-height: 4.5572916vw;
   text-align: center;
   margin-top: 0%;
+  color: rgba(210, 210, 210, 1);
+
 }
 
 .up_events-slider {
   display: flex;
-  gap: 1rem; 
+  gap: 1.73vw;
   padding: 1rem 0; 
-  scroll-snap-type: x mandatory; 
+  /* scroll-snap-type: x mandatory;  */
   box-sizing: border-box;
-  width: 100%; 
+  width: 100%;
+   
+  overflow-x: scroll;
+}
+.up_events-slider::-webkit-scrollbar{
+  width: 0;
 }
 
 .up_event-item {
   position: relative;
-  width: 18.22916vw;
+  width: 19.53vw;
   height: 28.64583vw;
   opacity: 1;
   transition: opacity 0.3s ease;
@@ -605,6 +630,18 @@ h1 {
   height: 100%;
   object-fit: cover;
   transition: transform 0.3s ease; 
+
+}
+.up_event-item::after{
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) -18.07%, rgba(0, 0, 0, 0.3) 83.86%);
+  z-index: 1;
 }
 
 .up_event-item:hover .up_event-image {
@@ -636,7 +673,7 @@ h1 {
   box-sizing: border-box;
   color: #fff;
   transition: opacity 0.3s ease; 
-  z-index: 1;
+  z-index: 2;
 }
 
 .up_event-details h3 {
@@ -1050,7 +1087,7 @@ h1 {
   width: 100%;
   height: 100%;
   /* background: rgba(0, 0, 0, 0.508); */
-  background: linear-gradient(180deg, #292b2cc4 0%, rgba(18, 18, 18, 0) 100%);
+  background: linear-gradient(180deg, #292b2c81 0%, rgba(18, 18, 18, 0) 100%);
 
 
   z-index: 1;
@@ -1068,21 +1105,25 @@ h1 {
 .Page-head{
   position: absolute;
   top: 33vmax;
-  margin:0 8vw 0 0;
+  /* top: 50%; */
+  margin:0 8vw 2vmax 0;
   right: 0;
   display: flex;
   flex-direction: column;
+  gap: 1vmin;
+  z-index: 2;
   
 }
 .page-name{
   font-weight: 700 ;
   font-size: 3.125vmax ;
-  margin: auto;
+  margin: 0;
 }
 .page-path{
   font-weight: 400;
   font-size: 1.5vmax;
   text-align: right;
+  margin-top: 0;
 }
 
 .page-path a{
@@ -1755,7 +1796,7 @@ h1 {
   display: flex;
   list-style-type: none;
   padding: 0;
-  gap: 4vw;
+  gap: 2vw;
   
 }
 
@@ -1763,7 +1804,7 @@ h1 {
   display: flex;
   list-style-type: none;
   padding: 0;
-  gap: 4vw;
+  gap: 0.3vw;
   color: #7a7777;
   
 }
@@ -1860,7 +1901,7 @@ h1 {
 
 .main{
   /* display: flex; */
-  margin: 14vh 4vh 4vh 4vh;
+  margin: 11vh 4vh 4vh 4vh;
   height: 35vh;
   justify-content: center;
   position: relative;
@@ -2168,7 +2209,7 @@ h1 {
   .contact-lhs{
     width: 100%;
     margin: 0;
-    margin-bottom: 2vh;
+    /* margin-bottom: 2vh; */
     /* padding: 5%; */ 
   }
   .contact-lhs h1{
@@ -2189,8 +2230,9 @@ h1 {
 
   .contact-icons{
     display: flex;
-    justify-content: space-between;
+    gap: 2vh;
     flex-direction: column;
+    margin: 3.6vh 0;
     
     
   }
@@ -2198,7 +2240,12 @@ h1 {
   .contact-icon{
     display: flex;
     align-items: center;
-    gap: 1.5vw;
+    gap: 4vw;
+  }
+  .contact-icon-info{
+    gap: 0.8vh;
+    display: flex;
+    flex-direction: column;
   }
   
   .contact-icon img{
@@ -2244,6 +2291,8 @@ h1 {
   }
   .queryinp{
     width: 100%;
+    height: 15vh;
+    min-height: 15vh;
   }
   
 
@@ -2460,7 +2509,9 @@ h1 {
     display: flex;
     flex-direction: column;
     
+    
   }
+  
   .page-name{
     font-weight: 700 ;
     font-size: 5.125vmax ;
