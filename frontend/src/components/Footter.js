@@ -69,7 +69,9 @@ const Footer = () =>{
             <div className='foot-cpr'>
               <ul >
                 <li> &copy; 2024 Parsec LIVE</li>
+                <li>|</li>
                 <li>All Rights Reserved</li>
+                <li>|</li>
                 <li>Privacy Policy</li>
               </ul> 
               
