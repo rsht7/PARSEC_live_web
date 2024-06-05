@@ -74,7 +74,7 @@ const ContactForm = () => {
 
                         <div className='contact-icon'>
                             <img src={emailpic} alt='X'></img>
-                            <div>
+                            <div className='contact-icon-info'>
                                 <p>Email</p>
                                 <p>contact@parseclive.com</p>
                             </div>
@@ -96,7 +96,7 @@ const ContactForm = () => {
                                 type='text' 
                                 onChange={(e) => setName(e.target.value)}
                                 value={name}
-                                placeholder='YOUR NAME'
+                                placeholder='Your name'
                             />    
 
                     
@@ -111,7 +111,7 @@ const ContactForm = () => {
                                 type='email'
                                 onChange={(e) => setMail(e.target.value)}
                                 value={email}
-                                placeholder='YOUR EMAIL'
+                                placeholder='Your email'
                             />
 
                          </div>
@@ -125,7 +125,7 @@ const ContactForm = () => {
                             type='text'
                             onChange={(e)=> setQuery(e.target.value)}
                             value={query}
-                            placeholder='PLEASE TYPE YOUR MESSAGE HERE'
+                            placeholder='Please type your message'
                         />
                         <button className='btn'>SEND MESSAGE</button>
 
