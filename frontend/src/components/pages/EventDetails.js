@@ -22,10 +22,11 @@ function EventDetails() {
   if (!event) {
     return <div>Loading...</div>;
   }
+  
 
   return (
     <div className="total">
-      <Headname name={`Events > ${event.title}`} pic={homepic2} />
+      <Headname name={<Link to='/event' style={{textDecoration:'none',color:'white',}}>Events</Link>} eventname={`> ${event.title}`} pic={homepic2} />
       <div className='back-link'>  <Link to='/event'>&#10094; ALL EVENTS </Link></div>
       <div className="eventDet-container">
         <div className="page-body">
@@ -137,7 +138,7 @@ function EventDetails() {
             width:100%
             box-sizing: border-box;
             margin: 0 6vw;
-            background: rgba(27, 27, 27, 0.4);
+            background: rgba(60, 60, 60, 0.4);
 
           }
 
@@ -150,7 +151,7 @@ function EventDetails() {
           }
 
           .left-side, .right-side {
-            padding: 1.5vw 1.302vw ;
+            padding: 3vw 1.802vw ;
             box-sizing: border-box;
             
           }
@@ -208,13 +209,15 @@ function EventDetails() {
             line-height: 1.302083vw;
             letter-spacing: 0.01em;
             text-align: left;
-            color: rgba(194, 194, 194, 1);
+            color: rgba(122, 122, 122, 1);
+
           }
 
           .time-location {
             width: 100%;
             gap: 0px;
             margin: 0.5rem 0;
+            
           }
 
           .time-location h4 {
@@ -241,7 +244,7 @@ function EventDetails() {
             line-height: 1.302083vw;
             letter-spacing: 0.01em;
             text-align: left;
-            color: rgba(194, 194, 194, 1);
+            color: rgba(122, 122, 122, 1);
             margin-top:0;
           }
 
@@ -252,18 +255,18 @@ function EventDetails() {
             line-height: 1.302083vw;
             letter-spacing: 0.01em;
             text-align: left;
-            color: rgba(194, 194, 194, 1);
+            color: rgba(122, 122, 122, 1);
             margin-bottom:1vmin;
             margin-top:4vmin;
           }
           .event-terms{
             font-family: 'Caudex', serif;
-            font-size: 1.041vw;
+            font-size: 0.8vw;
             font-weight: 400;
             line-height: 1.302083vw;
             letter-spacing: 0.01em;
             text-align: left;
-            color: rgba(194, 194, 194, 1);
+            color: rgba(122, 122, 122, 1);
             margin-top:4vmin;
           }
 

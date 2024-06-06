@@ -1,5 +1,5 @@
 
-import topbtn2 from './compassets/topbtn2.png'
+import topbtn4 from './compassets/topbtn4.png'
 
 
 const Scrollbtn = ()=> {
@@ -14,7 +14,7 @@ const Scrollbtn = ()=> {
       <div className="scrollbtn" >  
         
         <img
-            src={topbtn2}
+            src={topbtn4}
             alt="Top"
             className="scroll-top-icon"
             onClick={scrollToTop}
