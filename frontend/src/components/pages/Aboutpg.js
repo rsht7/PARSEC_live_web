@@ -44,14 +44,14 @@ const About = () => {
                     <img src={newstltterpic}></img>
                     <div className='news-lhsrhs'>
                         <div className='news-lhs'>
-                            <p className='newshead'>Experience the magic that only live performances can offer.</p>
+                            <p className='newshead'>Experience The Magic That Only Live Performances Can Offer.</p>
                             <p className='newsbelowhead'> Exercitation eiusmod et officia excepteur aute quis.</p>
                         </div>
                         <div className='news-rhs'>
                             <form>
                                 <input className='nws-inp'
                                 type='email'
-                                placeholder='YOUR EMAIL'
+                                placeholder='Your email'
                                 // value={email}
 
                                 />

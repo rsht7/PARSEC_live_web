@@ -11,6 +11,7 @@ const Newsletter =() => {
 
                     <img src={newsletterimg}></img>
                     <div className="main-newsletter-stuff">
+                        <div className='main-nsl-stuff-text'>
                         <h1>
                             Let us keep you posted!
 
@@ -19,7 +20,12 @@ const Newsletter =() => {
                             Join our newsletter and follow us on social media for access to exclusive discounts and featured promotions.
 
                         </h2>
-                        <form>
+                            
+                            
+                        </div>
+                            
+                       <div className='main-nsl-form'>
+                       <form>
                             <input 
                                 type="email"
                                 placeholder="Your email"
@@ -27,6 +33,12 @@ const Newsletter =() => {
                             />
                             <button>SUBSCRIBE</button>
                         </form>
+                        
+                        
+                        
+                        
+                        </div> 
+                        
 
                     </div>
 
