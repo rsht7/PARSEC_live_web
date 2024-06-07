@@ -2,7 +2,8 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Headname from '../Headname';
 import Newsletter from '../Newsletter';
-import contactpic from './contactcover.jpg';
+import eventspic from './events-page-pic.jpeg';
+
 
 const Events = () => {
 
@@ -41,7 +42,7 @@ const Events = () => {
 
     return (
         <div className='total-event'>
-            <Headname name='Events' pic={contactpic} />
+            <Headname name='Events' pic={eventspic} />
             <div className="up_events-container">
                 <h1>Upcoming Events</h1>
                 <div className="up_events-slider">
