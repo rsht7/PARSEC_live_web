@@ -616,10 +616,10 @@ h1 {
 
 /* UPCOMING EVENTS (EVENTS PAGE) */
 .up_events-container {
-  max-width: 1360px;
+  max-width: 88.5416vw;
   margin: 0 auto;
-  padding: 20px;
-  text-align: text;
+  padding: 1.302083vw;
+  text-align: left;
 }
 
 .up_events-container h1 {
@@ -628,7 +628,7 @@ h1 {
   font-weight: 700;
   line-height: 4.5572916vw;
   text-align: center;
-  margin-top: 0%;
+  margin-top: 0;
   color: rgba(210, 210, 210, 1);
   margin: 1vmin 0 5vmin 0;
 }
@@ -637,13 +637,13 @@ h1 {
   display: flex;
   flex-wrap: nowrap;
   overflow: hidden;
-  gap: 20px;
+  gap: 1.302083vw;
   justify-content: left;
 }
 
 .up_event-item {
-  width: 320px;
-  height: 450px;
+  width: 20.83vw;
+  height: 29.296875vw;
   position: relative;
   overflow: hidden;
   transition: all 0.3s ease;
@@ -660,7 +660,7 @@ h1 {
   bottom: 0;
   left: 0;
   width: 100%;
-  padding: 10px;
+  padding: 0.6510416vw;
   text-align: left;
   transition: all 0.3s ease;
   padding-left: 1.5vw;
@@ -668,27 +668,28 @@ h1 {
 
 .up_event-details h3 {
   font-family: "Caudex", serif;
-  margin: 5px 0 0;
+  margin: -5vw 0 0 0;
   font-size: 1.5625vw;
-  width: 251px;
-  height: 36px;
+  width: 16.34114583vw;
+  height: 2.34375vw;
   opacity: 0.9;
-  line-height: 16px;
+  line-height: 1.0416vw;
 }
 
 .up_event-date {
   font-family: "Caudex", serif;
-  margin: -0.8vw 0 1vw 0; 
+  margin: -0.8vw 0 1vw 0;
   font-size: 0.9114583vw;
   color: #fff;
-  width: 103px;
-  height: 14px;
+  width: 6.70572916vw;
+  height: 0.9114583vw;
   opacity: 0.9;
+  line-height: 2.0416vw;
 }
 
 .up_event-buttons {
   display: none;
-  margin-top: 10px;
+  margin-top: 1.5vw;
   margin-bottom: -2vw;
   gap: 1.5vw;
 }
@@ -699,7 +700,7 @@ h1 {
   gap: 2vw;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  font-size: 15px;
+  font-size: 0.9765625vw;
   font-weight: 700;
   width: 9.204427083vw;
   height: 2.9296875vw;
@@ -708,13 +709,13 @@ h1 {
 .up_buy-now-btn {
   background-color: #fff;
   color: #000;
-  border: 2px solid #fff;
+  border: 0.1302083vw solid #fff;
 }
 
 .up_read-more-btn {
   color: #fff;
   text-decoration: none;
-  padding: 12px 16px;
+  padding: 0.78125vw 1.0416vw;
 }
 
 .up_read-more-btn:hover {
@@ -725,7 +726,7 @@ h1 {
 }
 
 .up_event-item:hover .up_event-details {
-  bottom: 40px;
+  bottom: 2.60416vw;
 }
 
 .up_event-item:hover .up_event-buttons {
@@ -741,13 +742,13 @@ h1 {
 .dots-container {
   display: flex;
   justify-content: center;
-  margin-top: 20px;
+  margin-top: 1.302083vw;
 }
 
 .dot {
-  height: 9px;
-  width: 9px;
-  margin: 0 5px;
+  height: 0.5859375vw;
+  width: 0.5859375vw;
+  margin: 0 0.32552083vw;
   background-color: #bbb;
   border-radius: 50%;
   display: inline-block;
@@ -759,6 +760,69 @@ h1 {
   background: #7A7A7A;
 }
 
+/* Responsive Styles for Mobile */
+@media (max-width: 550px) {
+  .up_events-container h1 {
+    font-family: "Caudex", serif;
+    font-size: 7.385416vw;
+    font-weight: 700;
+    line-height: 4.5572916vw;
+    text-align: center;
+    margin-top: 0;
+    color: rgba(210, 210, 210, 1);
+    margin: 6vmin 0 7vmin 0;
+  }
+
+  .up_events-slider {
+    display: flex;
+    flex-direction: column;
+    overflow: visible;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .up_event-item {
+    width: 93%;
+    height: 90vw;
+  }
+
+  .dots-container {
+    display: none;
+  }
+
+  .up_event-details h3, .up_event-date {
+    padding-left: 4.5vw;
+  }
+
+  .up_event-details h3 {
+    font-size: 5.5vw;
+    width: 100%;
+  }
+
+  .up_event-details .up_event-date {
+    font-size: 3.5vw;
+    color: rgba(194, 194, 194, 1);
+    width: 100%;
+    line-height: 13vw;
+    margin-bottom: 11vw;
+  }
+
+  .up_event-buttons {
+    justify-content: flex-start;
+    gap: 5vw;
+  }
+
+  .up_buy-now-btn,
+  .up_read-more-btn {
+    font-size: 3.5vw;
+    width: 40%;
+    height: 8vw;
+  }
+
+  .up_read-more-btn {
+    padding-top: 1.98125vw;
+  }
+}
 
 /* .up_events-slider:hover {
   animation: slide-left 20s linear infinite alternate;
