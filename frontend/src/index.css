@@ -593,11 +593,11 @@ h1 {
 
   .event-details h3 {
     font-size: 5.5vw;
-    line-height: 8vw;
+    line-height: 13vw;
   }
 
   .event-details .event-date {
-    font-size: 2.5vw;
+    font-size: 3vw;
     color: rgba(194, 194, 194, 1);
   }
 
