@@ -8,6 +8,12 @@ import Newsletter from '../Newsletter';
 import contactpic from './contactcover.jpg'; // Ensure this path is correct
 
 const Events = () => {
+
+    useEffect(()=>{
+        window.scrollTo(0,0);
+    },[]);
+
+    
     const [events, setEvents] = useState([]); // Initialize with empty array
 
     useEffect(() => {

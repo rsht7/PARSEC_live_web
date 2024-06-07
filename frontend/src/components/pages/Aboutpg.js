@@ -1,4 +1,5 @@
 // import logo from './logo.png'
+import { useEffect } from 'react'
 import aboutpic2 from './aboutpic2.jpeg'
 import Headname from '../Headname'
 import elipic from './elicrpd2.png'
@@ -8,6 +9,12 @@ import newstltterpic from '../compassets/nwsltr22.jpeg'
 
 
 const About = () => {
+
+
+    useEffect(()=>{
+        window.scrollTo(0,0);
+    },[]);
+
     return(
         <div className="about-complete">
             {/* <div className='bglogo'>

@@ -13,7 +13,7 @@ const Newsletter =() => {
                     <div className="main-newsletter-stuff">
                         <div className='main-nsl-stuff-text'>
                         <h1>
-                            Let us keep you posted!
+                            Let Us Keep You Posted!
 
                         </h1>
                         <h2>
@@ -33,10 +33,7 @@ const Newsletter =() => {
                             />
                             <button>SUBSCRIBE</button>
                         </form>
-                        
-                        
-                        
-                        
+                                                                               
                         </div> 
                         
 
