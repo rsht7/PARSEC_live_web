@@ -1,4 +1,4 @@
-import {useState} from 'react'
+import {useState,useEffect} from 'react'
 import contactpic from './contactcover.jpg'
 import Headname from '../Headname'
 import emailpic from './email.png'
@@ -9,6 +9,12 @@ import phonepic from './phone.png'
 
 
 const ContactForm = () => {
+
+    useEffect(()=>{
+        window.scrollTo(0,0);
+    },[]);
+
+
     const [name , setName] = useState('')
     // const [phone, setPhone] = useState('')
     const [email , setMail] = useState('')
@@ -66,7 +72,7 @@ const ContactForm = () => {
                         <div className='contact-icon'>
                             <img src={phonepic} alt='X'></img>
                             <div className='contact-icon-info'>
-                                <p>Contact</p>
+                                <h1>Contact</h1>
                                 <p>+1(202)-4914515</p>
                             </div>
 
@@ -75,7 +81,7 @@ const ContactForm = () => {
                         <div className='contact-icon'>
                             <img src={emailpic} alt='X'></img>
                             <div className='contact-icon-info'>
-                                <p>Email</p>
+                                <h1>Email</h1>
                                 <p>contact@parseclive.com</p>
                             </div>
 
@@ -91,7 +97,7 @@ const ContactForm = () => {
 
                     <div className='contact-n-e'>
                         <div className='cont-n'>
-                            <label>Name *</label>
+                            <label>Name <span>*</span></label>
                             <input 
                                 type='text' 
                                 onChange={(e) => setName(e.target.value)}
@@ -106,7 +112,7 @@ const ContactForm = () => {
                    
 
                         <div className='cont-e'>
-                            <label>Email *</label>
+                            <label>Email <span>*</span></label>
                             <input 
                                 type='email'
                                 onChange={(e) => setMail(e.target.value)}
@@ -119,7 +125,7 @@ const ContactForm = () => {
 
                     </div>
                     <div className='msg-box'>
-                        <label >Message *</label>
+                        <label >Message <span>*</span></label>
                         <textarea 
                             className='queryinp'
                             type='text'

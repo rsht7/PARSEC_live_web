@@ -5,8 +5,18 @@ import Newsletter from '../Newsletter';
 import contactpic from './contactcover.jpg';
 
 const Events = () => {
-    const [events, setEvents] = useState([]);
+
+    
     const [currentSlide, setCurrentSlide] = useState(0);
+
+
+    useEffect(()=>{
+        window.scrollTo(0,0);
+    },[]);
+
+    
+    const [events, setEvents] = useState([]); // Initialize with empty array
+
 
     useEffect(() => {
         const fetchEvents = async () => {
