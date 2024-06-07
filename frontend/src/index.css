@@ -699,6 +699,23 @@ h1 {
   transition: all 0.3s ease;
 }
 
+.up_event-item {
+  width: 20.83vw;
+  height: 29.296875vw;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  opacity: 0;
+  transform: translateY(100px);
+}
+
+.up_event-item.animate {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+
 .up_event-image {
   width: 100%;
   height: 100%;
