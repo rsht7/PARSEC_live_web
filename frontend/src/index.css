@@ -619,7 +619,18 @@ h1 {
   max-width: 1360px;
   margin: 0 auto;
   padding: 20px;
+  text-align: text;
+}
+
+.up_events-container h1 {
+  font-family: "Caudex", serif;
+  font-size: 3.385416vw;
+  font-weight: 700;
+  line-height: 4.5572916vw;
   text-align: center;
+  margin-top: 0%;
+  color: rgba(210, 210, 210, 1);
+  margin: 1vmin 0 5vmin 0;
 }
 
 .up_events-slider {
@@ -627,7 +638,7 @@ h1 {
   flex-wrap: nowrap;
   overflow: hidden;
   gap: 20px;
-  justify-content: center;
+  justify-content: left;
 }
 
 .up_event-item {
@@ -652,11 +663,13 @@ h1 {
   padding: 10px;
   text-align: left;
   transition: all 0.3s ease;
+  padding-left: 1.5vw;
 }
 
 .up_event-details h3 {
+  font-family: "Caudex", serif;
   margin: 5px 0 0;
-  font-size: 18px;
+  font-size: 1.5625vw;
   width: 251px;
   height: 36px;
   opacity: 0.9;
@@ -664,8 +677,9 @@ h1 {
 }
 
 .up_event-date {
+  font-family: "Caudex", serif;
   margin: -0.8vw 0 1vw 0; 
-  font-size: 14px;
+  font-size: 0.9114583vw;
   color: #fff;
   width: 103px;
   height: 14px;
@@ -681,13 +695,14 @@ h1 {
 
 .up_buy-now-btn,
 .up_read-more-btn {
+  font-family: "Inter", sans-serif;
   gap: 2vw;
   cursor: pointer;
   transition: background-color 0.3s ease;
   font-size: 15px;
   font-weight: 700;
-  width: 50%;
-  height: 3vw;
+  width: 9.204427083vw;
+  height: 2.9296875vw;
 }
 
 .up_buy-now-btn {
@@ -699,7 +714,14 @@ h1 {
 .up_read-more-btn {
   color: #fff;
   text-decoration: none;
-  padding: 8px 16px;
+  padding: 12px 16px;
+}
+
+.up_read-more-btn:hover {
+  text-decoration: underline 2px;
+  text-decoration-color: rgb(179, 3, 3);
+  text-decoration-style: solid;
+  text-underline-offset: 0.68vh;
 }
 
 .up_event-item:hover .up_event-details {
@@ -723,8 +745,8 @@ h1 {
 }
 
 .dot {
-  height: 15px;
-  width: 15px;
+  height: 9px;
+  width: 9px;
   margin: 0 5px;
   background-color: #bbb;
   border-radius: 50%;
@@ -734,7 +756,7 @@ h1 {
 }
 
 .dot.active {
-  background-color: #717171;
+  background: #7A7A7A;
 }
 
 
