@@ -39,7 +39,7 @@ function EventDetails() {
           <div className="page-container">
             <div className="left-side">
               <div className="event-info">
-                <h4 className="event-date" style={{ }}>{event.date}</h4>
+                <h4 className="event-date-ie" style={{ }}>{event.date}</h4>
                 <h3 className="event-title">{event.title}</h3>
                 <p className="event-text">{event.text}</p>
                 <p className="event-text">{event.text}</p>
@@ -62,7 +62,7 @@ function EventDetails() {
               </div>
             </div>
             <div className="right-side">
-              <img src={event.img} alt="Event-Image" className="event-image" />
+              <img src={event.img} alt="Event-Image" className="event-image-landscape" />
               <div className='ticket-booking'>
                 <h3>Book Tickets</h3>
                 <div className='form-labels'>
