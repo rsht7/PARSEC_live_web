@@ -1091,7 +1091,7 @@ h1 {
   height:30vh;
 }
 
-.event-date {
+.event-date-ie {
   font-family: 'Caudex', serif;
   font-size: 1.041vw;
   font-weight: 400;
@@ -1185,11 +1185,12 @@ h1 {
   margin-top:4vmin;
 }
 
-.event-image {
+.event-image-landscape {
   width: 100%;
   /* max-width: 32.03125vw; */
   height: 30vh;
   margin-bottom: 3vw;
+  object-fit: cover;
 }
 .event-image-phone{
   display: none;
@@ -2530,7 +2531,7 @@ h1 {
 .left-side{
   width: 100%;
 }
-.event-image{
+.event-image-landscape{
   display: none;
 
 }
@@ -3438,7 +3439,7 @@ h1 {
       line-height: 1.822916vw;
     }
 
-    .event-image {
+    .event-image-landscape {
       max-width: 100%;
       height: auto;
     }
