@@ -3,10 +3,18 @@ import { Link } from 'react-router-dom';
 //components
 import Singleevent from '../Singleevent';
 import logo from './logo.png';
+import playcircle from './playbtn-circle.png'
+import playtriangle from './playbtn.png' 
 import homepic2 from './homepic2.jpeg';
 import Newsletter from '../Newsletter';
 
 const Home = () => {
+
+    useEffect(()=>{
+        window.scrollTo(0,0);
+    },[]);
+
+    
     const [events, setEvents] = useState([]);
 
     useEffect(() => {
@@ -29,8 +37,18 @@ const Home = () => {
                 <img src={logo} alt="Logo" />
             </div>
             <div className="main">
-                <img src={homepic2} alt="Home" />
+                <img src={homepic2} alt="Home" className='main-img'/>
                 <h1>Lorem Ipsum Dolor sit Amet</h1>
+                <div className='icondiv' >
+                    <img src={playcircle} className='circle-icon'></img>
+                    <div className='triangle-div'><img src={playtriangle}className='triangle-icon'></img>
+                    </div>
+                </div>
+                <div className="herovid-see-more-container">
+                    <Link to="/event" className="herovid-see-more-btn">SEE MORE</Link>
+                </div>
+                
+                
             </div>
             <div className="events-container">
                 <h1>Upcoming Events</h1>

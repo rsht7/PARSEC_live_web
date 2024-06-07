@@ -1,12 +1,17 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import Headname from '../Headname';
 import Newsletter from '../Newsletter';
 import contactpic from './contactcover.jpg';
 
 const Events = () => {
-    const [events, setEvents] = useState([]);
     const [currentSlide, setCurrentSlide] = useState(0);
+    const [events, setEvents] = useState([]);
+    const eventContainerRef = useRef(null);
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
 
     useEffect(() => {
         const fetchEvents = async () => {
@@ -20,6 +25,30 @@ const Events = () => {
         fetchEvents();
     }, []);
 
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate');
+                    } else {
+                        entry.target.classList.remove('animate');
+                    }
+                });
+            },
+            { threshold: 0.1 }
+        );
+
+        const eventItems = eventContainerRef.current.querySelectorAll('.up_event-item');
+        eventItems.forEach((item) => {
+            observer.observe(item);
+        });
+
+        return () => {
+            observer.disconnect();
+        };
+    }, [events, currentSlide]);
+
     const slides = [];
     for (let i = 0; i < events.length; i += 4) {
         slides.push(events.slice(i, i + 4));
@@ -32,7 +61,7 @@ const Events = () => {
     return (
         <div className='total-event'>
             <Headname name='Events' pic={contactpic} />
-            <div className="up_events-container">
+            <div className="up_events-container" ref={eventContainerRef}>
                 <h1>Upcoming Events</h1>
                 <div className="up_events-slider">
                     {slides[currentSlide] && slides[currentSlide].map(event => (
