@@ -583,7 +583,7 @@ h1 {
   .events-list {
     flex-direction: column;
     align-items: center;
-    gap: 4.60416vw;;
+    gap: 4.60416vw;
   }
 
   .event-item {
@@ -593,7 +593,7 @@ h1 {
 
   .event-details h3 {
     font-size: 5.5vw;
-    line-height: 13vw;
+    line-height: 1.5vw;
   }
 
   .event-details .event-date {
@@ -1238,7 +1238,7 @@ h1 {
 .newsletter-wrapper {
   height: 19.5vw;
   margin: 4vw 0;
-  /* background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 100%); */
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 100%);
 }
 
 
@@ -1283,10 +1283,9 @@ h1 {
   display: flex;
   flex-direction: column;
   width: 50%;
-  padding: 5vw 3.9vw;
+  padding: 3.9vw;
   box-sizing: border-box;
   justify-content: space-around;
-  /* gap: 0.02vw; */
 
 }
 
@@ -1298,7 +1297,6 @@ h1 {
 .newsbelowhead{
   font-size: 0.911vmax;
   color: rgb(157, 154, 154);
-  margin-top: 0;
 }
 
 
@@ -1329,7 +1327,6 @@ h1 {
   padding-left: 1vw;
   font-family: "Inter", sans-serif;
   letter-spacing: 0.3px;
-  font-size: 2.03vmin;
   /* padding: 3vh; */
   /* height: 70%; */
 }
@@ -1343,7 +1340,6 @@ h1 {
   font-family: "Inter", sans-serif;
   letter-spacing: 1px;
   border: none;
-  font-size: 2.03vmin;
   /* padding: 3vh; */
   /* height: 70%; */
 }
@@ -1442,6 +1438,7 @@ h1 {
 .os-info p{
   margin: 0;
 }
+
 
 
 
