@@ -1,39 +1,27 @@
-import React, { useState, useEffect } from 'react';
-import topbtn4 from './compassets/topbtn4.png';
 
-const Scrollbtn = () => {
-  const [isVisible, setIsVisible] = useState(false);
+import topbtn4 from './compassets/topbtn4.png'
 
-  const handleScroll = () => {
-    const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
-    setIsVisible(scrollTop > 0);
-  };
 
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    });
-  };
-
-  useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
+const Scrollbtn = ()=> {
+    const scrollToTop = () => {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth" // Smooth scrolling behavior
+      });
     };
-  }, []); 
+  
+    return (
+      <div className="scrollbtn" >  
+        
+        <img
+            src={topbtn4}
+            alt="Top"
+            className="scroll-top-icon"
+            onClick={scrollToTop}
+        />
 
-  return (
-    <div className="scrollbtn" style={{ display: isVisible ? 'block' : 'none' }}>
-      <img
-        src={topbtn4}
-        alt="Top"
-        className="scroll-top-icon"
-        onClick={scrollToTop}
-      />
-    </div>
-  );
-};
-
-export default Scrollbtn;
+      </div>
+    );
+  }
+  
+  export default Scrollbtn;
