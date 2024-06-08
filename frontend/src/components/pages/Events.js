@@ -2,7 +2,8 @@ import { useEffect, useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import Headname from '../Headname';
 import Newsletter from '../Newsletter';
-import contactpic from './contactcover.jpg';
+import eventspic from './events-page-pic.jpeg';
+
 
 const Events = () => {
     const [currentSlide, setCurrentSlide] = useState(0);
@@ -60,8 +61,13 @@ const Events = () => {
 
     return (
         <div className='total-event'>
-            <Headname name='Events' pic={contactpic} />
+
+            
             <div className="up_events-container" ref={eventContainerRef}>
+
+            <Headname name='Events' pic={eventspic} />
+      
+
                 <h1>Upcoming Events</h1>
                 <div className="up_events-slider">
                     {slides[currentSlide] && slides[currentSlide].map(event => (
