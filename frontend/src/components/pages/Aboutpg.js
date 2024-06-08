@@ -1,5 +1,5 @@
 // import logo from './logo.png'
-import { useEffect } from 'react'
+import React, { useEffect, useRef } from 'react';
 import aboutpic2 from './aboutpic2.jpeg'
 import Headname from '../Headname'
 import elipic from './elicrpd2.png'
@@ -9,6 +9,36 @@ import newstltterpic from '../compassets/nwsltr22.jpeg'
 
 
 const About = () => {
+    const newsletterRef = useRef(null);
+
+    useEffect(() => {
+        const handleIntersection = (entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.querySelector('.news-lhs').classList.add('animate');
+                    entry.target.querySelector('.news-rhs').classList.add('animate');
+                } else {
+                    entry.target.querySelector('.news-lhs').classList.remove('animate');
+                    entry.target.querySelector('.news-rhs').classList.remove('animate');
+                }
+            });
+        };
+
+        const observer = new IntersectionObserver(handleIntersection, {
+            root: null,
+            threshold: 0.1, 
+        });
+
+        if (newsletterRef.current) {
+            observer.observe(newsletterRef.current);
+        }
+
+        return () => {
+            if (newsletterRef.current) {
+                observer.unobserve(newsletterRef.current);
+            }
+        };
+    }, []);
 
 
     useEffect(()=>{
@@ -46,7 +76,7 @@ const About = () => {
                 <p className='abt-t3'>~ Sherin & Eli ~</p>
 
             </div>
-            <div className='newsletter-wrapper'>
+            <div className='newsletter-wrapper' ref={newsletterRef}>
                 <div className='newsletter'>
                     <img src={newstltterpic}></img>
                     <div className='news-lhsrhs'>

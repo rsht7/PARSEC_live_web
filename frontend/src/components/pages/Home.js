@@ -1,6 +1,5 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
-//components
 import Singleevent from '../Singleevent';
 import logo from './logo.png';
 import playcircle from './playbtn-circle.png'
@@ -9,13 +8,12 @@ import homepic2 from './homepic2.jpeg';
 import Newsletter from '../Newsletter';
 
 const Home = () => {
-
-    useEffect(()=>{
-        window.scrollTo(0,0);
-    },[]);
-
-    
     const [events, setEvents] = useState([]);
+    const eventContainerRef = useRef(null);
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
 
     useEffect(() => {
         const fetchEvents = async () => {
@@ -28,6 +26,30 @@ const Home = () => {
         };
         fetchEvents();
     }, []);
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate');
+                    } else {
+                        entry.target.classList.remove('animate');
+                    }
+                });
+            },
+            { threshold: 0.1 }
+        );
+
+        const eventItems = eventContainerRef.current.querySelectorAll('.event-item');
+        eventItems.forEach((item) => {
+            observer.observe(item);
+        });
+
+        return () => {
+            observer.disconnect();
+        };
+    }, [events]);
 
     const displayedEvents = events.slice(0, 3);
 
@@ -47,10 +69,8 @@ const Home = () => {
                 <div className="herovid-see-more-container">
                     <Link to="/event" className="herovid-see-more-btn">SEE MORE</Link>
                 </div>
-                
-                
             </div>
-            <div className="events-container">
+            <div className="events-container" ref={eventContainerRef}>
                 <h1>Upcoming Events</h1>
                 <div className="events-list">
                     {displayedEvents.map((event, index) => (
