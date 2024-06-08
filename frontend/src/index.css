@@ -341,7 +341,7 @@ header {
   letter-spacing: 1px;
   line-height: 5.85vw;
   position: relative;
-  padding: 12vw 20vw 4vw 20vw;
+  padding: 15vw 20vw 4vw 20vw;
   text-align: center;
   z-index: 2;
   margin: 0;
@@ -353,7 +353,7 @@ header {
 .icondiv{
   z-index: 2;
   position: relative;
-  margin: 0 auto;
+  margin: 3vh auto;
   height: auto;
   display: flex;
   justify-content: center;
@@ -376,7 +376,7 @@ header {
 
 .herovid-see-more-container{
   z-index: 4;
-  margin: 4% 0;
+  margin: 2% 0;
 }
 .herovid-see-more-container a{
   text-decoration: none;
@@ -3409,6 +3409,9 @@ h1 {
 
 @media (max-width: 850px) and (min-width: 550px){
   
+
+
+  
   .cart-btn {
     display: none;
   }
@@ -3444,7 +3447,7 @@ h1 {
 
   .main{
     /* display: flex; */
-    margin-top: 12vh;
+    margin-top: 13vh;
     margin-left: 6vw;
     margin-right: 6vw; 
     margin-bottom: 3em;
@@ -3461,10 +3464,21 @@ h1 {
     letter-spacing: 1px;
     line-height: 5.85vw;
     position: relative;
-    padding: 12vw 10vw 0 10vw;
+    padding: 25vw 10vw 0 10vw;
     text-align: center;
+    height: 50%;
+    
     
   
+  }
+
+  .icondiv{
+    margin-top: 3vh;
+    
+  }
+
+  .circle-icon{
+      width: 9vw;
   }
   .Page-head{
     top: 38vh;
@@ -3854,8 +3868,8 @@ h1 {
 
 @media (max-width: 1030px) and (min-width:850px){
 
-  .main{
-    /* display: flex; */
+  /* .main{
+    
     margin-top: 12vh;
     margin-left: 6vw;
     margin-right: 6vw; 
@@ -3863,7 +3877,7 @@ h1 {
     height: 40vh;
     justify-content: center;
     position: relative;
-    /* text-align: center; */
+    
     
   }
 
@@ -3877,6 +3891,41 @@ h1 {
     text-align: center;
     
   
+  } */
+  .main{
+    /* display: flex; */
+    margin-top: 13vh;
+    margin-left: 6vw;
+    margin-right: 6vw; 
+    margin-bottom: 3em;
+    height: 50vh;
+    justify-content: center;
+    position: relative;
+    /* text-align: center; */
+    
+  }
+
+  .main h1{
+    font-size: 5.2vw;
+    font-weight: 700;
+    letter-spacing: 1px;
+    line-height: 5.85vw;
+    position: relative;
+    padding: 22vw 10vw 0 10vw;
+    text-align: center;
+    height: 50%;
+    
+    
+  
+  }
+
+  .icondiv{
+    margin-top: 3vh;
+    
+  }
+
+  .circle-icon{
+      width: 9vw;
   }
 
 
@@ -5242,12 +5291,12 @@ h1 {
       letter-spacing: 1px;
       line-height: 5.85vw;
       position: relative;
-      padding: 10vw 10vw 0 10vw;
+      padding: 8vw 10vw 0 10vw;
       text-align: center;
       
-      
-    
     }
+
+    
 
     .main-img{
       object-fit: cover;
@@ -5296,7 +5345,7 @@ h1 {
     
     .herovid-see-more-container{
       z-index: 4;
-      margin: 0 ;
+      margin:  2% 0 0 0 ;
       box-sizing: border-box;
       
     }
