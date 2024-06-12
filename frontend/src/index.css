@@ -738,8 +738,12 @@ h1 {
   width: 100%;
   padding: 0.6510416vw;
   text-align: left;
-  transition: all 0.3s ease;
+  transition: all 0.8s cubic-bezier(0.25, 0.1, 0.25, 1);
   padding-left: 1.5vw;
+}
+
+.up_event-item:hover .up_event-details {
+  bottom: 2.60416vw;
 }
 
 .up_event-details h3 {
@@ -905,9 +909,9 @@ h1 {
 } */
 
 .up_event-item:hover .up_event-image {
-  transform: scale(1.1); 
+  transform: scale(1.2);
+  transition: transform 0.5s ease; 
 }
-
 
 /* EVENTS CART PAGE CSS */
 
@@ -978,12 +982,12 @@ h1 {
 
 
 .quantity-input {
-  height: 35px; /* Slightly increased height */
-  width: 50px; /* Decreased width */
-  font-size: 1rem; /* Increased font size */
-  background-color: #f0f0f0; /* Light gray background */
-  border: 1px solid #d3d3d3; /* Slightly darker gray border */
-  text-align: center; /* Center the text */
+  height: 35px; 
+  width: 50px; 
+  font-size: 1rem; 
+  background-color: #f0f0f0;
+  border: 1px solid #d3d3d3; 
+  text-align: center; 
 }
 
 .delete-button {
@@ -1014,11 +1018,11 @@ h1 {
   width: 100%;
   font-size: 1.1vw;
   font-weight: 700;
-  transition: transform 0.2s ease-in-out; /* Added transition for smooth effect */
+  transition: transform 0.2s ease-in-out; 
 }
 
 .checkout-button:hover {
-  transform: scale(1.05); /* Slight zoom in on hover */
+  transform: scale(1.05); 
 }
 
 
