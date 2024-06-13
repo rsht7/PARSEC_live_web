@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState, useRef, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import Headname from '../Headname';
 import Newsletter from '../Newsletter';
@@ -9,6 +9,7 @@ const Events = () => {
     const [currentSlide, setCurrentSlide] = useState(0);
     const [events, setEvents] = useState([]);
     const eventContainerRef = useRef(null);
+    const timerRef = useRef(null);
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -50,12 +51,25 @@ const Events = () => {
         };
     }, [events, currentSlide]);
 
-    const slides = [];
-    for (let i = 0; i < events.length; i += 4) {
-        slides.push(events.slice(i, i + 4));
-    }
+    const slides = useMemo(() => {
+        const generatedSlides = [];
+        for (let i = 0; i < events.length; i += 4) {
+            generatedSlides.push(events.slice(i, i + 4));
+        }
+        return generatedSlides;
+    }, [events]);
+
+    useEffect(() => {
+        timerRef.current = setInterval(() => {
+            const nextSlideIndex = (currentSlide + 1) % slides.length;
+            setCurrentSlide(nextSlideIndex);
+        }, 5000);
+
+        return () => clearInterval(timerRef.current);
+    }, [currentSlide, slides]);
 
     const handleDotClick = (index) => {
+        clearInterval(timerRef.current);
         setCurrentSlide(index);
     };
 

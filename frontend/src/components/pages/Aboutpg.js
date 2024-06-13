@@ -1,209 +1,187 @@
-// import logo from './logo.png'
 import React, { useEffect, useRef } from 'react';
-import aboutpic2 from './aboutpic2.jpeg'
-import Headname from '../Headname'
-import elipic from './eli2.JPG'
-import sherinpic from './sherin1.JPG'
-import newstltterpic from '../compassets/nwsltr22.jpeg'
-
-
+import aboutpic2 from './aboutpic2.jpeg';
+import Headname from '../Headname';
+import elipic from './elicrpd2.png';
+import sherinpic from './sherin2.png';
+import newstltterpic from '../compassets/nwsltr22.jpeg';
 
 const About = () => {
     const newsletterRef = useRef(null);
-    const abtTextRef = useRef(null);
-    
+    const abtT1Ref = useRef(null);
+    const abtT2Ref = useRef(null);
+    const abtT3Ref = useRef(null);
 
     useEffect(() => {
-    //     const handleIntersection = (entries, observer) => {
-    //         entries.forEach(entry => {
-    //             if (entry.isIntersecting) {
-    //                 entry.target.querySelector('.news-lhs').classList.add('animate');
-    //                 entry.target.querySelector('.news-rhs').classList.add('animate');
-    //                 entry.target.querySelector('.abt-text').classList.add('animate');
-                    
-    //             } else {
-    //                 entry.target.querySelector('.news-lhs').classList.remove('animate');
-    //                 entry.target.querySelector('.news-rhs').classList.remove('animate');
-    //                 entry.target.querySelector('.abt-text').classList.remove('animate');
-                    
-    //             }
-    //         });
-    //     };
+        const handleIntersection = (entries) => {
+            entries.forEach(entry => {
+                const newsLhs = entry.target.querySelector('.news-lhs');
+                const newsRhs = entry.target.querySelector('.news-rhs');
+                const abtText = entry.target.querySelector('.abt-text');
 
-    //     const observer = new IntersectionObserver(handleIntersection, {
-    //         root: null,
-    //         threshold: 0.1, 
-    //     });
+                if (entry.isIntersecting) {
+                    if (newsLhs) newsLhs.classList.add('animate');
+                    if (newsRhs) newsRhs.classList.add('animate');
+                    if (abtText) abtText.classList.add('animate');
+                } else {
+                    if (newsLhs) newsLhs.classList.remove('animate');
+                    if (newsRhs) newsRhs.classList.remove('animate');
+                    if (abtText) abtText.classList.remove('animate');
+                }
+            });
+        };
 
-    //     if (newsletterRef.current) {
-    //         observer.observe(newsletterRef.current);
-    //     }
-
-    //     return () => {
-    //         if (newsletterRef.current) {
-    //             observer.unobserve(newsletterRef.current);
-    //         }
-    //     };
-    // }, []);
-
-    const handleIntersection = (entries) => {
-        entries.forEach(entry => {
-            const newsLhs = entry.target.querySelector('.news-lhs');
-            const newsRhs = entry.target.querySelector('.news-rhs');
-            const abtText = entry.target.querySelector('.abt-text-in');
-
-            if (entry.isIntersecting) {
-                if (newsLhs) newsLhs.classList.add('animate');
-                if (newsRhs) newsRhs.classList.add('animate');
-                if (abtText) abtText.classList.add('animate');
-            } else {
-                if (newsLhs) newsLhs.classList.remove('animate');
-                if (newsRhs) newsRhs.classList.remove('animate');
-                if (abtText) abtText.classList.remove('animate');
-            }
+        const observer = new IntersectionObserver(handleIntersection, {
+            root: null,
+            threshold: 0.1,
         });
-    };
 
-    const observer = new IntersectionObserver(handleIntersection, {
-        root: null,
-        threshold: 0.1, 
-    });
+        if (newsletterRef.current) {
+            observer.observe(newsletterRef.current);
+        }
 
-    if (abtTextRef.current) observer.observe(abtTextRef.current);
-    if (newsletterRef.current) observer.observe(newsletterRef.current);
+        return () => {
+            if (newsletterRef.current) {
+                observer.unobserve(newsletterRef.current);
+            }
+        };
+    }, []);
 
-    return () => {
-        if (abtTextRef.current) observer.unobserve(abtTextRef.current);
-        if (newsletterRef.current) observer.unobserve(newsletterRef.current);
-    };
-}, []);
+    //     const handleIntersection = (entries) => {
+//         entries.forEach(entry => {
+//             const newsLhs = entry.target.querySelector('.news-lhs');
+//             const newsRhs = entry.target.querySelector('.news-rhs');
+//             const abtText = entry.target.querySelector('.abt-text-in');
 
+//             if (entry.isIntersecting) {
+//                 if (newsLhs) newsLhs.classList.add('animate');
+//                 if (newsRhs) newsRhs.classList.add('animate');
+//                 if (abtText) abtText.classList.add('animate');
+//             } else {
+//                 if (newsLhs) newsLhs.classList.remove('animate');
+//                 if (newsRhs) newsRhs.classList.remove('animate');
+//                 if (abtText) abtText.classList.remove('animate');
+//             }
+//         });
+//     };
 
+//     const observer = new IntersectionObserver(handleIntersection, {
+//         root: null,
+//         threshold: 0.1, 
+//     });
 
+//     if (abtTextRef.current) observer.observe(abtTextRef.current);
+//     if (newsletterRef.current) observer.observe(newsletterRef.current);
 
+//     return () => {
+//         if (abtTextRef.current) observer.unobserve(abtTextRef.current);
+//         if (newsletterRef.current) observer.unobserve(newsletterRef.current);
+//     };
+// }, []);
 
-    useEffect(()=>{
-        window.scrollTo(0,0);
-    },[]);
+    useEffect(() => {
+        window.scrollTo(0, 0);
 
-    return(
+        const handleScroll = () => {
+            const windowHeight = window.innerHeight;
+
+            [abtT1Ref, abtT2Ref, abtT3Ref].forEach(ref => {
+                const element = ref.current;
+                if (element) {
+                    const rect = element.getBoundingClientRect();
+
+                    if (rect.top >= 0 && rect.bottom <= windowHeight) {
+                        element.classList.add('fade-in');
+                        element.classList.remove('fade-out');
+                    } else {
+                        element.classList.add('fade-out');
+                        element.classList.remove('fade-in');
+                    }
+                }
+            });
+        };
+
+        window.addEventListener('scroll', handleScroll);
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+
+    return (
         <div className="about-complete">
-            {/* <div className='bglogo'>
-                    <img src={logo}></img>
-            </div>
-            <div className='cont-img'><img src={contactpic}></img></div>
-            <div className='PageName'>
-                <h1>About Us</h1>
-                <p>Home &gt; About Us</p>    
-            </div> */}
+            <Headname name='About Us' pic={aboutpic2} />
 
-
-            
-
-        <Headname name='About Us' pic={aboutpic2} />
-
-        <div className='about'>
-           
-            <div className='abt-text' ref={abtTextRef}>
-                <div className='abt-text-in'>
-                <p className='abt-t1'>
-                    Our Story
-                </p>
-                    
-                <p className='abt-t2'> The wife-husband team of Parsec Live is Eli Staples and Sherin Koshy - combining decades of experience from the artistic and the business world, Parsec Live is bringing magic to Washington DC in a style and range normally seen in world entertainment centers.  
-
-                </p>
-                {/* <p className='abt-t3'>~ Sherin & Eli ~</p> */}
-
-
-                </div>
-                
-
-            </div>
-            <div className='newsletter-wrapper' ref={newsletterRef}>
-                <div className='newsletter'>
-                    <img src={newstltterpic}></img>
-                    <div className='news-lhsrhs'>
-                        <div className='news-lhs'>
-                            <p className='newshead'>Experience The Magic That Only Live Performances Can Offer.</p>
-                            <p className='newsbelowhead'> Join our newsletter and follow us on social media for access to exclusive discounts and featured promotions.</p>
-                        </div>
-                        <div className='news-rhs'>
-                            <form>
-                                <input className='nws-inp'
-                                type='email'
-                                placeholder='Your email'
-                                // value={email}
-
-                                />
-                                <button className='nws-subs'>SUBSCRIBE</button>
+            <div className='about'>
+                <div className='abt-text'>
+                    <p className='abt-t1 fade-in' ref={abtT1Ref}>
+                        Entertain, Inspire and Engage
+                    </p>
                         
-                        
-                            </form>
-                        </div>                        
-                    </div> 
-                
+                    <p className='abt-t2 fade-in' ref={abtT2Ref}>
+                        Amet minim esse irure reprehenderit est amet elit irure aliquip cillum. Irure do sit nulla sunt eiusmod
+                        . Aute anim eiusmod pariatur occaecat laboris ipsum. Deserunt nisi amet eiusmod irure. Sint dolor minim 
+                        consequat mollit. Exercitation est minim dolore et. Pariatur ea ut pariatur do irure.Voluptate eiusmod consectetur.
+                    </p>
+
+                    <p className='abt-t3 fade-in' ref={abtT3Ref}>
+                        ~ Sherin & Eli ~
+                    </p>
                 </div>
 
-            </div>
-           
-
-            <div className='our-story'>
-                <div className='os-lhs'>
-                    <p className='os-head'>Our Founders</p>
-                    <p className='os-belowhead'>Eli Staples</p>
-                    <p className='os-below2'> With 30+ years of experience in the music performance world at all levels, Eli has performed and produced with artists all across the spectrum of music, ranging from R&B stars like, Ashanti, Mya and  Robin Thicke, pop stars like Journey, DC’s own Chuck Brown and jazz luminaries like Nneena Freelon, Brian Lynch, Karen Briggs, and Cindy Bradley. With an incredible mastery and repertoire of pop, Latin, R&B, Jazz, Afro-Cuban & classical music, his unique skill set in genre bending acts and performances makes for a rare lens into producing a spectacular musical feast.</p>
-                    <p className='os-belowhead'>Sherin Koshy</p>
-                    <p className='os-below2'>A social change maker with over 20+ years of experience in business development and management, Sherin brings her diverse perspective and experience to creating a sustainable business model for live music aligned to consumer experience.</p>
-
-                </div>
-
-
-                <div className='os-rhs'>
-
-                    <div className='eli'>
-                        <div className='os-info'>
-                            <img src={elipic}></img>
-                            <div className='os-info-text'>
-                                <p className='os-names'>Eli Staples</p>
-                                <p className='os-position'>Co-Founder</p>
+                <div className='newsletter-wrapper' ref={newsletterRef}>
+                    <div className='newsletter'>
+                        <img src={newstltterpic} alt='Newsletter'></img>
+                        <div className='news-lhsrhs'>
+                            <div className='news-lhs'>
+                                <p className='newshead'>Experience The Magic That Only Live Performances Can Offer.</p>
+                                <p className='newsbelowhead'> Exercitation eiusmod et officia excepteur aute quis.</p>
                             </div>
-                            
-                        </div>                       
+                            <div className='news-rhs'>
+                                <form>
+                                    <input className='nws-inp'
+                                    type='email'
+                                    placeholder='Your email'
+                                    />
+                                    <button className='nws-subs'>SUBSCRIBE</button>
+                                </form>
+                            </div>                        
+                        </div> 
                     </div>
-
-                    <div className='sherin'>
-                        <div className='os-info'> 
-                            <img src={sherinpic}></img>
-                            <div className='os-info-text'>
-                                <p className='os-names'>Sherin Koshy</p>
-                                <p className='os-position'>Co-Founder</p> 
-                                                               
-                            </div>                     
-                                                  
-                        </div>  
-                    </div>
-
                 </div>
+                
+                <div className='our-story'>
+                    <div className='os-lhs'>
+                        <p className='os-head'>Our Story</p>
+                        <p className='os-belowhead'>In fugiat dolor anim amet nostrud consectetur quis m esse est minim cupidatat Lorem.</p>
+                        <p className='os-below2'> Voluptate eiusmod consectetur cillum aliqua. Exercitation est minim dolore et. Pariatur ea ut pariatur do irure. Id sunt incididon ea.</p>
+                        <p className='os-below2'>Cupidatat consequat id Lorem nostrud laborum esse est minim cupidatat Lorem. Ullamco voluptate ut ad labore excepteur sunt. Aliqua et enim est anim consectetur.  dolor elit laborum exercitation ut labore ipsum.</p>
+                    </div>
 
+                    <div className='os-rhs'>
+                        <div className='eli'>
+                            <div className='os-info'>
+                                <img src={elipic} alt='Eli Staples'></img>
+                                <div className='os-info-text'>
+                                    <p className='os-names'>Eli Staples</p>
+                                    <p className='os-position'>Co-Founder</p>
+                                </div>
+                            </div>                       
+                        </div>
 
+                        <div className='sherin'>
+                            <div className='os-info'> 
+                                <img src={sherinpic} alt='Sherin Koshy'></img>
+                                <div className='os-info-text'>
+                                    <p className='os-names'>Sherin Koshy</p>
+                                    <p className='os-position'>Co-Founder</p> 
+                                </div>                     
+                            </div>  
+                        </div>
+                    </div>
+                </div>
             </div>
-
-
-
-
-
-
-
         </div>
-            
-    
-        </div>
-    
-            )
-
-
-
+    )
 }
 
-export default About
+export default About;
