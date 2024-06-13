@@ -11,6 +11,7 @@ import About from './components/pages/Aboutpg';
 import Scrollbtn from './components/scrollbutton';
 import EventDetails from './components/pages/EventDetails';
 import Events from './components/pages/Events';
+import Privacy from './components/pages/Privacypg'
 
 function App() {
 
@@ -30,6 +31,7 @@ function App() {
             <Route path='/contactus' element={<ContactForm />} />
             <Route path='/about' element={<About />} />
             <Route path="/event/:id" element={<EventDetails />} />
+            <Route path='/privacy-policy' element={<Privacy/>}/>
           
           </Routes>
         </div>

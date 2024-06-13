@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import newsletterimg from './compassets/mainnewsletter2.jpeg';
+import newsletterimg from './compassets/nwsltr22.jpeg';
 
 const Newsletter = () => {
     const newsletterRef = useRef(null);
