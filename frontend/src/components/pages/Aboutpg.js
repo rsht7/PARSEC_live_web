@@ -2,43 +2,84 @@
 import React, { useEffect, useRef } from 'react';
 import aboutpic2 from './aboutpic2.jpeg'
 import Headname from '../Headname'
-import elipic from './elicrpd2.png'
-import sherinpic from './sherin2.png'
+import elipic from './eli2.JPG'
+import sherinpic from './sherin1.JPG'
 import newstltterpic from '../compassets/nwsltr22.jpeg'
 
 
 
 const About = () => {
     const newsletterRef = useRef(null);
+    const abtTextRef = useRef(null);
+    
 
     useEffect(() => {
-        const handleIntersection = (entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.querySelector('.news-lhs').classList.add('animate');
-                    entry.target.querySelector('.news-rhs').classList.add('animate');
-                } else {
-                    entry.target.querySelector('.news-lhs').classList.remove('animate');
-                    entry.target.querySelector('.news-rhs').classList.remove('animate');
-                }
-            });
-        };
+    //     const handleIntersection = (entries, observer) => {
+    //         entries.forEach(entry => {
+    //             if (entry.isIntersecting) {
+    //                 entry.target.querySelector('.news-lhs').classList.add('animate');
+    //                 entry.target.querySelector('.news-rhs').classList.add('animate');
+    //                 entry.target.querySelector('.abt-text').classList.add('animate');
+                    
+    //             } else {
+    //                 entry.target.querySelector('.news-lhs').classList.remove('animate');
+    //                 entry.target.querySelector('.news-rhs').classList.remove('animate');
+    //                 entry.target.querySelector('.abt-text').classList.remove('animate');
+                    
+    //             }
+    //         });
+    //     };
 
-        const observer = new IntersectionObserver(handleIntersection, {
-            root: null,
-            threshold: 0.1, 
-        });
+    //     const observer = new IntersectionObserver(handleIntersection, {
+    //         root: null,
+    //         threshold: 0.1, 
+    //     });
 
-        if (newsletterRef.current) {
-            observer.observe(newsletterRef.current);
-        }
+    //     if (newsletterRef.current) {
+    //         observer.observe(newsletterRef.current);
+    //     }
 
-        return () => {
-            if (newsletterRef.current) {
-                observer.unobserve(newsletterRef.current);
+    //     return () => {
+    //         if (newsletterRef.current) {
+    //             observer.unobserve(newsletterRef.current);
+    //         }
+    //     };
+    // }, []);
+
+    const handleIntersection = (entries) => {
+        entries.forEach(entry => {
+            const newsLhs = entry.target.querySelector('.news-lhs');
+            const newsRhs = entry.target.querySelector('.news-rhs');
+            const abtText = entry.target.querySelector('.abt-text-in');
+
+            if (entry.isIntersecting) {
+                if (newsLhs) newsLhs.classList.add('animate');
+                if (newsRhs) newsRhs.classList.add('animate');
+                if (abtText) abtText.classList.add('animate');
+            } else {
+                if (newsLhs) newsLhs.classList.remove('animate');
+                if (newsRhs) newsRhs.classList.remove('animate');
+                if (abtText) abtText.classList.remove('animate');
             }
-        };
-    }, []);
+        });
+    };
+
+    const observer = new IntersectionObserver(handleIntersection, {
+        root: null,
+        threshold: 0.1, 
+    });
+
+    if (abtTextRef.current) observer.observe(abtTextRef.current);
+    if (newsletterRef.current) observer.observe(newsletterRef.current);
+
+    return () => {
+        if (abtTextRef.current) observer.unobserve(abtTextRef.current);
+        if (newsletterRef.current) observer.unobserve(newsletterRef.current);
+    };
+}, []);
+
+
+
 
 
     useEffect(()=>{
@@ -63,17 +104,20 @@ const About = () => {
 
         <div className='about'>
            
-            <div className='abt-text'>
+            <div className='abt-text' ref={abtTextRef}>
+                <div className='abt-text-in'>
                 <p className='abt-t1'>
-                    Entertain, Inspire and Engage
+                    Our Story
                 </p>
                     
-                <p className='abt-t2'> Amet minim esse irure reprehenderit est amet elit irure aliquip cillum. Irure do sit nulla sunt eiusmod
-                    . Aute anim eiusmod   pariatur occaecat laboris ipsum. Deserunt nisi amet eiusmod irure. Sint dolor minim 
-                    consequat mollit. Exercitation est minim dolore et. Pariatur ea ut pariatur do irure.Voluptate eiusmod consectetur.
+                <p className='abt-t2'> The wife-husband team of Parsec Live is Eli Staples and Sherin Koshy - combining decades of experience from the artistic and the business world, Parsec Live is bringing magic to Washington DC in a style and range normally seen in world entertainment centers.  
 
                 </p>
-                <p className='abt-t3'>~ Sherin & Eli ~</p>
+                {/* <p className='abt-t3'>~ Sherin & Eli ~</p> */}
+
+
+                </div>
+                
 
             </div>
             <div className='newsletter-wrapper' ref={newsletterRef}>
@@ -82,7 +126,7 @@ const About = () => {
                     <div className='news-lhsrhs'>
                         <div className='news-lhs'>
                             <p className='newshead'>Experience The Magic That Only Live Performances Can Offer.</p>
-                            <p className='newsbelowhead'> Exercitation eiusmod et officia excepteur aute quis.</p>
+                            <p className='newsbelowhead'> Join our newsletter and follow us on social media for access to exclusive discounts and featured promotions.</p>
                         </div>
                         <div className='news-rhs'>
                             <form>
@@ -106,10 +150,11 @@ const About = () => {
 
             <div className='our-story'>
                 <div className='os-lhs'>
-                    <p className='os-head'>Our Story</p>
-                    <p className='os-belowhead'>In fugiat dolor anim amet nostrud consectetur quis m esse est minim cupidatat Lorem.</p>
-                    <p className='os-below2'> Voluptate eiusmod consectetur cillum aliqua. Exercitation est minim dolore et. Pariatur ea ut pariatur do irure. Id sunt incididon ea.</p>
-                    <p className='os-below2'>Cupidatat consequat id Lorem nostrud laborum esse est minim cupidatat Lorem. Ullamco voluptate ut ad labore excepteur sunt. Aliqua et enim est anim consectetur.  dolor elit laborum exercitation ut labore ipsum.</p>
+                    <p className='os-head'>Our Founders</p>
+                    <p className='os-belowhead'>Eli Staples</p>
+                    <p className='os-below2'> With 30+ years of experience in the music performance world at all levels, Eli has performed and produced with artists all across the spectrum of music, ranging from R&B stars like, Ashanti, Mya and  Robin Thicke, pop stars like Journey, DC’s own Chuck Brown and jazz luminaries like Nneena Freelon, Brian Lynch, Karen Briggs, and Cindy Bradley. With an incredible mastery and repertoire of pop, Latin, R&B, Jazz, Afro-Cuban & classical music, his unique skill set in genre bending acts and performances makes for a rare lens into producing a spectacular musical feast.</p>
+                    <p className='os-belowhead'>Sherin Koshy</p>
+                    <p className='os-below2'>A social change maker with over 20+ years of experience in business development and management, Sherin brings her diverse perspective and experience to creating a sustainable business model for live music aligned to consumer experience.</p>
 
                 </div>
 

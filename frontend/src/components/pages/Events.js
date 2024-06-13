@@ -62,11 +62,10 @@ const Events = () => {
     return (
         <div className='total-event'>
 
-            
+            <Headname name='Events' pic={eventspic} />
+                
             <div className="up_events-container" ref={eventContainerRef}>
 
-            <Headname name='Events' pic={eventspic} />
-      
 
                 <h1>Upcoming Events</h1>
                 <div className="up_events-slider">

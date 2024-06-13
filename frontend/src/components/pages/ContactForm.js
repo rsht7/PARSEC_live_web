@@ -51,7 +51,7 @@ const ContactForm = () => {
                 setQuery('')
                 setError(null)
                 // console.log('We have recieved your message!', json)
-                setConfirm('We have recieved your message!')
+                setConfirm('Thanks! We received your message and will follow up soon!')
             }
     
 
@@ -66,26 +66,31 @@ const ContactForm = () => {
         
                 <div className='contact-lhs'>
                     <h1>Get In Touch</h1>
-                    <p>Have any questions or suggestions? We'd love to hear from you! Give us a call or leave your message via the contact 
+                    <p>Have any questions or suggestions? We'd love to hear from you!<br/>Send us an email or leave your message via the contact 
                      form:</p>
                     <div className='contact-icons'>
-                        <div className='contact-icon'>
+                        {/* <div className='contact-icon'>
                             <img src={phonepic} alt='X'></img>
                             <div className='contact-icon-info'>
                                 <h1>Contact</h1>
                                 <p>+1(202)-4914515</p>
                             </div>
 
-                        </div>
+                        </div> */}
 
                         <div className='contact-icon'>
                             <img src={emailpic} alt='X'></img>
                             <div className='contact-icon-info'>
                                 <h1>Email</h1>
-                                <p>contact@parseclive.com</p>
+                                <p>info@parseclive.com</p>
                             </div>
 
                         </div>
+                        
+                    </div>
+                    <div className='confirmation'>
+                            <p>{confirm}</p>
+
                     </div>
 
 
@@ -138,10 +143,7 @@ const ContactForm = () => {
 
 
                     </div>
-                    <div className='confirmation'>
-                        <p>{confirm}</p>
-
-                    </div>
+                    
                     
 
                     
