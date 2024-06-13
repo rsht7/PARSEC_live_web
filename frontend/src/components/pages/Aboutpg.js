@@ -17,9 +17,13 @@ const About = () => {
                 if (entry.isIntersecting) {
                     entry.target.querySelector('.news-lhs').classList.add('animate');
                     entry.target.querySelector('.news-rhs').classList.add('animate');
+                    entry.target.querySelector('.abt-text').classList.add('animate');
+                    
                 } else {
                     entry.target.querySelector('.news-lhs').classList.remove('animate');
                     entry.target.querySelector('.news-rhs').classList.remove('animate');
+                    entry.target.querySelector('.abt-text').classList.remove('animate');
+                    
                 }
             });
         };
@@ -38,7 +42,42 @@ const About = () => {
                 observer.unobserve(newsletterRef.current);
             }
         };
-    }, []);
+    // }, []);
+
+//     const handleIntersection = (entries) => {
+//         entries.forEach(entry => {
+//             const newsLhs = entry.target.querySelector('.news-lhs');
+//             const newsRhs = entry.target.querySelector('.news-rhs');
+//             const abtText = entry.target.querySelector('.abt-text-in');
+
+//             if (entry.isIntersecting) {
+//                 if (newsLhs) newsLhs.classList.add('animate');
+//                 if (newsRhs) newsRhs.classList.add('animate');
+//                 if (abtText) abtText.classList.add('animate');
+//             } else {
+//                 if (newsLhs) newsLhs.classList.remove('animate');
+//                 if (newsRhs) newsRhs.classList.remove('animate');
+//                 if (abtText) abtText.classList.remove('animate');
+//             }
+//         });
+//     };
+
+//     const observer = new IntersectionObserver(handleIntersection, {
+//         root: null,
+//         threshold: 0.1, 
+//     });
+
+//     if (abtTextRef.current) observer.observe(abtTextRef.current);
+//     if (newsletterRef.current) observer.observe(newsletterRef.current);
+
+//     return () => {
+//         if (abtTextRef.current) observer.unobserve(abtTextRef.current);
+//         if (newsletterRef.current) observer.unobserve(newsletterRef.current);
+//     };
+// }, []);
+
+
+
 
     useEffect(() => {
         window.scrollTo(0, 0);

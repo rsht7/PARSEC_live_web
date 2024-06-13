@@ -27,40 +27,44 @@ const Home = () => {
         fetchEvents();
     }, []);
 
-    useEffect(() => {
-        const observer = new IntersectionObserver(
-            (entries) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('animate');
-                    } else {
-                        entry.target.classList.remove('animate');
-                    }
-                });
-            },
-            { threshold: 0.1 }
-        );
+    // useEffect(() => {
+    //     const observer = new IntersectionObserver(
+    //         (entries) => {
+    //             entries.forEach((entry) => {
+    //                 if (entry.isIntersecting) {
+    //                     entry.target.classList.add('animate');
+    //                 } else {
+    //                     entry.target.classList.remove('animate');
+    //                 }
+    //             });
+    //         },
+    //         { threshold: 0.1 }
+    //     );
 
-        const eventItems = eventContainerRef.current.querySelectorAll('.event-item');
-        eventItems.forEach((item) => {
-            observer.observe(item);
-        });
+    //     const eventItems = eventContainerRef.current.querySelectorAll('.event-item');
+    //     eventItems.forEach((item) => {
+    //         observer.observe(item);
+    //     });
 
-        return () => {
-            observer.disconnect();
-        };
-    }, [events]);
+    //     return () => {
+    //         observer.disconnect();
+    //     };
+    // }, [events]);
 
-    const displayedEvents = events.slice(0, 3);
+    // const displayedEvents = events.slice(0, 3);
+
+    const displayedEvents = events.slice(1, 2);
+
 
     return (
         <div className="home">
             <div className="bglogo">
                 <img src={logo} alt="Logo" />
             </div>
-            <div className="main">
+            <div className="main" >
                 <img src={homepic2} alt="Home" className='main-img'/>
-                <h1>Lorem Ipsum Dolor sit Amet</h1>
+                <h1>Welcome To Parsec Live</h1>
+                
                 <div className='icondiv' >
                     <img src={playcircle} className='circle-icon'></img>
                     <div className='triangle-div'><img src={playtriangle}className='triangle-icon'></img>
@@ -70,7 +74,17 @@ const Home = () => {
                     <Link to="/event" className="herovid-see-more-btn">SEE MORE</Link>
                 </div>
             </div>
-            <div className="events-container" ref={eventContainerRef}>
+
+            <div className='event-wrapper'>
+                    <p className='upc-event'>Upcoming Event</p>
+                    <div className='home-event'>
+                        {displayedEvents && displayedEvents.map((event) => (
+                            <Singleevent key={event._id} event = {event} />
+                        ))}
+
+                    </div>
+            </div>
+            {/* <div className="events-container" ref={eventContainerRef}>
                 <h1>Upcoming Events</h1>
                 <div className="events-list">
                     {displayedEvents.map((event, index) => (
@@ -93,7 +107,7 @@ const Home = () => {
                 <div className="see-more-container">
                     <Link to="/event" className="see-more-btn">SEE MORE</Link>
                 </div>
-            </div>
+            </div> */}
             <Newsletter />
         </div>
     );

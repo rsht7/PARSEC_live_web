@@ -44,7 +44,7 @@ function EventDetails() {
 
   return (
     <div className="total">
-      <Headname name={<Link to='/event' style={{ textDecoration: 'none', color: 'white', }}>Events</Link>} eventname={`> ${event.title}`} pic={homepic2} />
+      <Headname name={<Link to='/event' style={{textDecoration:'none',color:'rgba(194, 194, 194, 1)',}}>Events</Link>} eventname={`> ${event.title}`} pic={homepic2} />
       <div className='back-link'> <Link to='/event'>&#10094; ALL EVENTS </Link></div>
       <div className={`eventDet-container ${cartVisible ? 'blur' : ''}`}>
         <div className="page-body">

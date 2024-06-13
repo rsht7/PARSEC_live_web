@@ -56,8 +56,8 @@ const Footer = () =>{
            <div className='foottwo-b'>
             <div className='foot-cont-mail'>
               <ul>
-                <li>P: +1(202)-4914515</li>
-                <li>E: contact@parseclive.com</li>
+                {/* <li>P: +1(202)-4914515</li> */}
+                <li>E: info@parseclive.com</li>
 
               </ul>
 
@@ -72,7 +72,7 @@ const Footer = () =>{
                 <li>|</li>
                 <li>All Rights Reserved</li>
                 <li>|</li>
-                <li>Privacy Policy</li>
+                <li><Link to='/privacy-policy'>Privacy Policy</Link></li>
               </ul> 
               
             </div>
