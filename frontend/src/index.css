@@ -1013,6 +1013,7 @@ h1 {
   font-size: 1.1vw;
   font-weight: 700;
   transition: transform 0.2s ease-in-out;
+  text-decoration: none;
 }
 
 .checkout-button:hover,
