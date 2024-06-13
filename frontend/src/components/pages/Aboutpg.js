@@ -12,18 +12,20 @@ const About = () => {
     const abtT3Ref = useRef(null);
 
     useEffect(() => {
-        const handleIntersection = (entries, observer) => {
+        const handleIntersection = (entries) => {
             entries.forEach(entry => {
+                const newsLhs = entry.target.querySelector('.news-lhs');
+                const newsRhs = entry.target.querySelector('.news-rhs');
+                const abtText = entry.target.querySelector('.abt-text');
+
                 if (entry.isIntersecting) {
-                    entry.target.querySelector('.news-lhs').classList.add('animate');
-                    entry.target.querySelector('.news-rhs').classList.add('animate');
-                    entry.target.querySelector('.abt-text').classList.add('animate');
-                    
+                    if (newsLhs) newsLhs.classList.add('animate');
+                    if (newsRhs) newsRhs.classList.add('animate');
+                    if (abtText) abtText.classList.add('animate');
                 } else {
-                    entry.target.querySelector('.news-lhs').classList.remove('animate');
-                    entry.target.querySelector('.news-rhs').classList.remove('animate');
-                    entry.target.querySelector('.abt-text').classList.remove('animate');
-                    
+                    if (newsLhs) newsLhs.classList.remove('animate');
+                    if (newsRhs) newsRhs.classList.remove('animate');
+                    if (abtText) abtText.classList.remove('animate');
                 }
             });
         };
@@ -42,9 +44,9 @@ const About = () => {
                 observer.unobserve(newsletterRef.current);
             }
         };
-    // }, []);
+    }, []);
 
-//     const handleIntersection = (entries) => {
+    //     const handleIntersection = (entries) => {
 //         entries.forEach(entry => {
 //             const newsLhs = entry.target.querySelector('.news-lhs');
 //             const newsRhs = entry.target.querySelector('.news-rhs');
@@ -76,9 +78,6 @@ const About = () => {
 //     };
 // }, []);
 
-
-
-
     useEffect(() => {
         window.scrollTo(0, 0);
 
@@ -87,14 +86,16 @@ const About = () => {
 
             [abtT1Ref, abtT2Ref, abtT3Ref].forEach(ref => {
                 const element = ref.current;
-                const rect = element.getBoundingClientRect();
+                if (element) {
+                    const rect = element.getBoundingClientRect();
 
-                if (rect.top >= 0 && rect.bottom <= windowHeight) {
-                    element.classList.add('fade-in');
-                    element.classList.remove('fade-out');
-                } else {
-                    element.classList.add('fade-out');
-                    element.classList.remove('fade-in');
+                    if (rect.top >= 0 && rect.bottom <= windowHeight) {
+                        element.classList.add('fade-in');
+                        element.classList.remove('fade-out');
+                    } else {
+                        element.classList.add('fade-out');
+                        element.classList.remove('fade-in');
+                    }
                 }
             });
         };
@@ -129,7 +130,7 @@ const About = () => {
 
                 <div className='newsletter-wrapper' ref={newsletterRef}>
                     <div className='newsletter'>
-                        <img src={newstltterpic}></img>
+                        <img src={newstltterpic} alt='Newsletter'></img>
                         <div className='news-lhsrhs'>
                             <div className='news-lhs'>
                                 <p className='newshead'>Experience The Magic That Only Live Performances Can Offer.</p>
@@ -159,7 +160,7 @@ const About = () => {
                     <div className='os-rhs'>
                         <div className='eli'>
                             <div className='os-info'>
-                                <img src={elipic}></img>
+                                <img src={elipic} alt='Eli Staples'></img>
                                 <div className='os-info-text'>
                                     <p className='os-names'>Eli Staples</p>
                                     <p className='os-position'>Co-Founder</p>
@@ -169,7 +170,7 @@ const About = () => {
 
                         <div className='sherin'>
                             <div className='os-info'> 
-                                <img src={sherinpic}></img>
+                                <img src={sherinpic} alt='Sherin Koshy'></img>
                                 <div className='os-info-text'>
                                     <p className='os-names'>Sherin Koshy</p>
                                     <p className='os-position'>Co-Founder</p> 
