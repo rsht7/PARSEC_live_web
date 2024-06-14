@@ -1,3 +1,5 @@
+import { useState } from 'react'
+
 import {Link} from 'react-router-dom'
 import fulllogo from './compassets/fulllogo.png'
 // import twitter from './twitter.png'
@@ -9,7 +11,40 @@ import instagram from './compassets/instagram.png'
 
 const Footer = () =>{
 
+  const [nlerror , setnlError] = useState('')
 
+  const [nlemail , setnlMail] = useState('')
+  // const [nl_confirm, setnlConfirm] = useState('')
+
+
+  const handlenewSubmit = async (e) => {
+      e.preventDefault()
+
+      const querydata = {email:nlemail};
+      
+          const response = await fetch('/api/newslettersubs', {
+              method: 'POST',
+              body:JSON.stringify(querydata),
+              headers:{
+                  'Content-Type':'application/json'
+              }
+             
+          })
+          const json = await response.json()
+
+          if (!response.ok){
+              setnlError(json.error)
+              console.log(nlerror)
+          }
+          if (response.ok){
+              
+              setnlMail('')
+              setnlError(null)
+              // setnlConfirm('You have successfully joined our Newsletter!')
+          }
+  
+
+  }
 
     return(
         <footer className="footer">
@@ -40,9 +75,10 @@ const Footer = () =>{
                      
                 </ul>
                 
-                <form className='ulb'>
+                <form className='ulb' onSubmit={handlenewSubmit}>
 
-                  <input type='email' placeholder='Join our newsletter'/>
+                  <input type='email' placeholder='Join our newsletter' onChange={(e) => setnlMail(e.target.value)}
+                  value={nlemail}/>
                   <button className='subs'>SUBSCRIBE</button>
                   {/* <li className='ul-b1'><p >JOIN OUR NEWSLETTER</p></li>
                   <li className='subs'><Link >SUBSCRIBE</Link></li> */}
