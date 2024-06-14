@@ -108,7 +108,7 @@ const Home = () => {
                     <Link to="/event" className="see-more-btn">SEE MORE</Link>
                 </div>
             </div> */}
-            <Newsletter />
+            <div className='home-newsletter-div'><Newsletter /></div>
         </div>
     );
 }

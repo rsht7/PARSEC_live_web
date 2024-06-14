@@ -107,7 +107,7 @@ const Events = () => {
                     ))}
                 </div>
             </div>
-            <Newsletter />
+            <div className='home-newsletter-div'><Newsletter /></div>
         </div>
     );
 };
