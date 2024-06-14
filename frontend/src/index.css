@@ -1588,9 +1588,11 @@ h1 {
 
 /* MAIN NEWSLETTER CSS */
 
-
+.home-newsletter-div{
+  margin: 0 6vw;
+}
 .newsletter-wrap {
-  margin: 0vmax 6vw 5vh 6vw;
+  margin: 0vmax 0vw 5vh 0vw;
   height: 19.5vw;
   overflow: hidden;
 }
