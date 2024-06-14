@@ -56,7 +56,7 @@ const Navbar = () => {
             <Link to='/contactus'>CONTACT</Link>
           </li>
         </ul>
-        <button className='cart-btn'>CART</button>
+        <button className='cart-btn'><Link to='/cart'>CART</Link></button>
       </nav>
     </header>
   );

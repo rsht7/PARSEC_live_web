@@ -65,7 +65,7 @@ const ContactForm = () => {
         <div className='contact-lhsrhs'>
         
                 <div className='contact-lhs'>
-                    <h1>Get In Touch</h1>
+                    <h1>Reach Us</h1>
                     <p>Have any questions or suggestions? We'd love to hear from you!<br/>Send us an email or leave your message via the contact 
                      form:</p>
                     <div className='contact-icons'>
