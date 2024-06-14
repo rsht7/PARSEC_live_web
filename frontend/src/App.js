@@ -1,54 +1,8 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+// import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 
-//Pages and components
+// Pages and components
 
-import Home from './components/pages/Home';
-import Navbar from './components/Navbar';
-import ContactForm from './components/pages/ContactForm';
-import Footer from './components/Footter';
-import About from './components/pages/Aboutpg';
-import Scrollbtn from './components/scrollbutton';
-import EventDetails from './components/pages/EventDetails';
-import Events from './components/pages/Events';
-import Privacy from './components/pages/Privacypg'
-
-function App() {
-
- 
-  return (
-    
-    <div className="App">
-      <BrowserRouter>
-      
-        <Navbar />
-        <Scrollbtn />
-        <div className='pages'>
-          <Routes >
-          
-            <Route path='/' element={<Home />} />
-            <Route path='/event' element={<Events />} />
-            <Route path='/contactus' element={<ContactForm />} />
-            <Route path='/about' element={<About />} />
-            <Route path="/event/:id" element={<EventDetails />} />
-            <Route path='/privacy-policy' element={<Privacy/>}/>
-          
-          </Routes>
-        </div>
-        <Footer />
-        
-      </BrowserRouter>
-    </div>
-    
-  );
-}
-
-export default App;
-
-// import { Routes, Route, useLocation } from 'react-router-dom';
-// import { CSSTransition, TransitionGroup } from 'react-transition-group';
-
-//  Pages and components
 // import Home from './components/pages/Home';
 // import Navbar from './components/Navbar';
 // import ContactForm from './components/pages/ContactForm';
@@ -57,35 +11,89 @@ export default App;
 // import Scrollbtn from './components/scrollbutton';
 // import EventDetails from './components/pages/EventDetails';
 // import Events from './components/pages/Events';
-
+// import Privacy from './components/pages/Privacypg'
+// import CartPage from './components/pages/CartPage';
+// import { CartProvider } from './contexts/CartContext';
 
 // function App() {
-//   const location = useLocation();
 
+ 
 //   return (
+    
 //     <div className="App">
-//       <Navbar />
-//       <Scrollbtn />
-//       <div className="pages">
-//         <TransitionGroup>
-//           <CSSTransition
-//             key={location.key}
-//             classNames="slide-up"
-//             timeout={300}
-//           >
-//             <Routes location={location}>
-//               <Route path="/" element={<Home />} />
-//               <Route path="/event" element={<Events />} />
-//               <Route path="/contactus" element={<ContactForm />} />
-//               <Route path="/about" element={<About />} />
-//               <Route path="/event/:id" element={<EventDetails />} />
-//             </Routes>
-//           </CSSTransition>
-//         </TransitionGroup>
-//       </div>
-//       <Footer />
+//       <BrowserRouter>
+//       <CartProvider>
+//         <Navbar />
+//         <Scrollbtn />
+//         <div className='pages'>
+//           <Routes >
+          
+//             <Route path='/' element={<Home />} />
+//             <Route path='/event' element={<Events />} />
+//             <Route path='/contactus' element={<ContactForm />} />
+//             <Route path='/about' element={<About />} />
+//             <Route path="/event/:id" element={<EventDetails />} />
+//             <Route path='/privacy-policy' element={<Privacy/>}/>
+//             <Route path='/cart' element={<CartPage />} />
+
+//           </Routes>
+//         </div>
+//         <Footer />
+//         </CartProvider> 
+//       </BrowserRouter>
 //     </div>
+    
 //   );
 // }
 
 // export default App;
+
+
+// src/App.js
+
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { CartProvider } from './contexts/CartContext';
+
+// Pages and components
+import Home from './components/pages/Home';
+import Navbar from './components/Navbar';
+import ContactForm from './components/pages/ContactForm';
+import Footer from './components/Footter';
+import About from './components/pages/Aboutpg';
+import Scrollbtn from './components/scrollbutton';
+import EventDetails from './components/pages/EventDetails';
+import Events from './components/pages/Events';
+import CartPage from './components/CartPage';
+import Privacy from './components/pages/Privacypg';
+import SuccessPage from './components/pages/Successpg';
+import FailurePage from './components/pages/Failedpg';
+
+function App() {
+  return (
+    <div className="App">
+      <BrowserRouter>
+        <CartProvider>
+          <Navbar />
+          <Scrollbtn />
+          <div className='pages'>
+            <Routes>
+              <Route path='/' element={<Home />} />
+              <Route path='/event' element={<Events />} />
+              <Route path='/contactus' element={<ContactForm />} />
+              <Route path='/about' element={<About />} />
+              <Route path="/event/:id" element={<EventDetails />} />
+              <Route path='/cart' element={<CartPage />} />
+              <Route path='/privacy-policy' element={<Privacy />} />
+              <Route path='/success' element={<SuccessPage />} />
+              <Route path='/failure' element={<FailurePage />} />
+            </Routes>
+          </div>
+          <Footer />
+        </CartProvider>
+      </BrowserRouter>
+    </div>
+  );
+}
+
+export default App;
+

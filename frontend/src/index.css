@@ -170,6 +170,16 @@ header {
   cursor: pointer;
 }
 
+.cart-btn a{
+  color: #000;
+  color: #171515;
+  font-weight: 700;
+  font-family: "Inter", sans-serif;
+  border: none;
+  font-size: 1.1vmax;
+  letter-spacing: 1px;
+}
+
 .cart-btn:hover {
   background-image: linear-gradient(to left, rgb(20, 4, 93), rgb(76, 6, 101));
   color: white;
@@ -956,6 +966,14 @@ h1 {
   filter: blur(5px);
 }
 
+.empty-cart{
+  padding-top: 30vh;
+  height: 70vh;
+  box-sizing: border-box;
+}
+.cart-container{
+  margin-top: 15vh;
+}
 .cart-modal {
   position: fixed;
   top: 50%;
@@ -1920,11 +1938,11 @@ h1 {
 }
 
 .fade-in {
-  animation: fadeInFromCenter 2s forwards;
+  animation: fadeInFromCenter 1s forwards;
 }
 
 .fade-out {
-  animation: fadeOutToCenter 2s forwards;
+  animation: fadeOutToCenter 1s forwards;
 }
 
 
@@ -2685,6 +2703,10 @@ h1 {
   font-style: italic;
 }
 
+
+.failure-pg{
+  margin-top: 30vh;
+}
 
 /* Add additional styles as needed */
 
