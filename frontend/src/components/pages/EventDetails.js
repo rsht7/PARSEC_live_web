@@ -83,14 +83,14 @@
 //                   <p>Ticket price</p>
 //                 </div>
 //                 <form className='ticket-form' onSubmit={(e) => { e.preventDefault(); handleAddToCart(); }}>
-//                   <input
-//                     type='number'
-//                     id='quantity'
-//                     name='quantity'
-//                     min='1'
-//                     value={quantity}
-//                     onChange={(e) => setQuantity(e.target.value)}
-//                   />
+                  // <input
+                  //   type='number'
+                  //   id='quantity'
+                  //   name='quantity'
+                  //   min='1'
+                  //   value={quantity}
+                  //   onChange={(e) => setQuantity(e.target.value)}
+                  // />
 //                   <p>$25.00</p>
 //                   <button type="submit">ADD TO CART</button>
 //                 </form>
@@ -270,7 +270,7 @@
 
 // src/components/pages/EventDetails.js
 import React, { useEffect, useState, useContext } from 'react';
-import { useParams, Link, useNavigate } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import Headname from '../Headname';
 import homepic2 from './homepic2.jpeg';
 import facebook3 from '../compassets/facebook3.png';
@@ -278,6 +278,7 @@ import instagram from '../compassets/instagram.png';
 import shareicon from './shareicon.png';
 import Newsletter from '../Newsletter';
 import { CartContext } from '../../contexts/CartContext';
+import CartModal from '../CartModal'; // Import the CartModal component
 
 function EventDetails() {
   useEffect(() => {
@@ -288,7 +289,7 @@ function EventDetails() {
   const [event, setEvent] = useState(null);
   const [quantity, setQuantity] = useState(1);
   const { addToCart } = useContext(CartContext);
-  const navigate = useNavigate();
+  const [isCartModalOpen, setIsCartModalOpen] = useState(false); // State to control modal visibility
 
   useEffect(() => {
     fetch(`/api/events/${id}`)
@@ -304,11 +305,11 @@ function EventDetails() {
   const handleAddToCart = (e) => {
     e.preventDefault(); // Ensure this is only called within a form submission
     addToCart(event, quantity);
-    navigate('/cart');
+    setIsCartModalOpen(true); // Show the cart modal
   };
 
   return (
-    <div className="total">
+    <div className={`total ${isCartModalOpen ? 'blur' : ''}`}> {/* Add blur class conditionally */}
       <Headname name={<Link to='/event' style={{ textDecoration: 'none', color: 'rgba(194, 194, 194, 1)' }}>Events</Link>} eventname={`> ${event.title}`} pic={homepic2} />
       <div className='back-link'> <Link to='/event'>&#10094; ALL EVENTS </Link></div>
       <div className='eventDet-container'>
@@ -371,6 +372,7 @@ function EventDetails() {
         </div>
       </div>
       <Newsletter />
+      {isCartModalOpen && <CartModal onClose={() => setIsCartModalOpen(false)} />} {/* Render the modal */}
     </div>
   );
 }
