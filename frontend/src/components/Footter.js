@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-import {Link} from 'react-router-dom'
+import {Link,  useLocation} from 'react-router-dom'
 import fulllogo from './compassets/fulllogo.png'
 // import twitter from './twitter.png'
 import facebook3 from './compassets/facebook3.png'
@@ -11,11 +11,16 @@ import instagram from './compassets/instagram.png'
 
 const Footer = () =>{
 
+  const location = useLocation();
   const [nlerror , setnlError] = useState('')
 
   const [nlemail , setnlMail] = useState('')
   // const [nl_confirm, setnlConfirm] = useState('')
 
+
+  const getLinkClass = (path) => {
+    return location.pathname === path ? 'active-link' : '';
+  };
 
   const handlenewSubmit = async (e) => {
       e.preventDefault()
@@ -68,10 +73,10 @@ const Footer = () =>{
            <div className='foottwo-a'>
                 <ul className='ula'>
                   
-                  <li><Link to='/' >HOME </Link></li>
-                  <li><Link to='/event' >EVENTS </Link></li>
-                  <li><Link to='/about' >ABOUT US</Link></li>
-                  <li><Link to='/contactus' >CONTACT  </Link></li>
+                  <li><Link to='/' className={getLinkClass('/')} >HOME </Link></li>
+                  <li><Link to='/event' className={getLinkClass('/event')}>EVENTS </Link></li>
+                  <li><Link to='/about' className={getLinkClass('/about')}>ABOUT US</Link></li>
+                  <li><Link to='/contactus' className={getLinkClass('/contactus')}>CONTACT  </Link></li>
                      
                 </ul>
                 

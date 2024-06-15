@@ -63,7 +63,7 @@ const Events = () => {
         timerRef.current = setInterval(() => {
             const nextSlideIndex = (currentSlide + 1) % slides.length;
             setCurrentSlide(nextSlideIndex);
-        }, 5000);
+        }, 10000);
 
         return () => clearInterval(timerRef.current);
     }, [currentSlide, slides]);

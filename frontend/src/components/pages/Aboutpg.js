@@ -4,6 +4,8 @@ import Headname from '../Headname';
 import elipic from './eli2.JPG'
 import sherinpic from './sherin1.JPG';
 import newstltterpic from '../compassets/nwsltr22.jpeg';
+import Newsletter from '../Newsletter';
+
 
 const About = () => {
     const newsletterRef = useRef(null);
@@ -126,7 +128,7 @@ const About = () => {
                     </p> */}
                 </div>
 
-                <div className='newsletter-wrapper' ref={newsletterRef}>
+                {/* <div className='newsletter-wrapper' ref={newsletterRef}>
                     <div className='newsletter'>
                         <img src={newstltterpic} alt='Newsletter'></img>
                         <div className='news-lhsrhs'>
@@ -145,7 +147,8 @@ const About = () => {
                             </div>                        
                         </div> 
                     </div>
-                </div>
+                </div> */}
+                <Newsletter/>
                 
                 <div className='our-story'>
                     <div className='os-lhs'>
