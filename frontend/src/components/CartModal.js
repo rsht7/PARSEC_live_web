@@ -2,6 +2,8 @@ import React, { useContext } from 'react';
 import { CartContext } from '../contexts/CartContext';
 import { loadStripe } from '@stripe/stripe-js';
 import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 
 const stripePromise = loadStripe('pk_test_51MBkelSFOq4LXdKRBM4NquESXAFAX0FRoW6yNmIJH9Zeibj6NSwKrBNh23rhOjHjHw4VN63Rx9LdYD0GLC1Pt0DK00wgWTfKGR');
 
@@ -32,20 +34,16 @@ const CartModal = ({ onClose }) => {
 
   const handleQuantityChange = (e, itemId) => {
     const newQuantity = parseInt(e.target.value, 10);
-    const updatedCartItems = cartItems.map(item => 
+    const updatedCartItems = cartItems.map(item =>
       item.id === itemId ? { ...item, quantity: newQuantity } : item
     );
     setCartItems(updatedCartItems);
   };
 
-  if (cartItems.length === 0) {
-    return (
-      <div className="empty-cart">
-        <p>NO ITEMS FOUND.</p>
-        <Link to={`/event`} className="browse-events-button">BROWSE EVENTS</Link>
-      </div>
-    );
-  }
+  const handleRemoveItem = (itemId) => {
+    const updatedCartItems = cartItems.filter(item => item.id !== itemId);
+    setCartItems(updatedCartItems);
+  };
 
   return (
     <div className="cart-modal">
@@ -54,25 +52,58 @@ const CartModal = ({ onClose }) => {
           <h2>Your Cart</h2>
           <button className="close-button" onClick={onClose}>×</button>
         </div>
-        <hr style={{ marginTop: '-15px', marginBottom: '20px', paddingLeft: '0px' }} /> 
-        <div className="cart-items">
-          {cartItems.map((item) => (
-            <div key={item.id} className="cart-item">
-              <img src={item.event.img} alt={item.event.title} className="cart-item-image" />
-              <div className="cart-item-details">
-                <h4>{item.event.title}</h4>
-                <p>{`$ ${item.event.price}`}</p>
-                <p>Quantity: {item.quantity}</p>
-              </div>
+        <hr className="cart-divider" />
+        {cartItems.length === 0 ? (
+          <div className="empty-cart" style={{ textAlign: 'center', marginTop: '0.6510416vw' }}>
+            <p>NO ITEMS FOUND.</p>
+            <Link to={`/event`} className="browse-events-button" style={{ 
+              background: 'linear-gradient(to left, rgb(20, 4, 93), rgb(76, 6, 101))',
+              color: 'white',
+              padding: ' 0.6510416vw 1.302083vw',
+              borderRadius: '4px',
+              textDecoration: 'none',
+              display: 'inline-block',
+              marginTop: '-15px'
+            }}>BROWSE EVENTS</Link>
+          </div>
+        ) : (
+          <div className="cart-items" style={{ maxHeight: '19.53125vw', overflowY: 'auto' }}>
+            {cartItems.map((item, index) => (
+              <React.Fragment key={item.id}>
+                <div className="cart-item">
+                  <img src={item.event.img} alt={item.event.title} className="cart-item-image" />
+                  <div className="cart-item-details">
+                    <h4>{item.event.title}</h4>
+                    <p>{`$ ${item.event.price}`}</p>
+                  </div>
+                  <input
+                    type="number"
+                    min="1"
+                    value={item.quantity}
+                    onChange={(e) => handleQuantityChange(e, item.id)}
+                    className="quantity-input"
+                  />
+                  <FontAwesomeIcon
+                    icon={faTrashAlt}
+                    onClick={() => handleRemoveItem(item.id)}
+                    style={{ cursor: 'pointer', marginLeft: '0.32552083vw', marginRight: '0.32552083vw', color: '#ccc', fontSize: '0.9765625vw', marginBottom: '2.27864583vw' }} // Decreased fontSize here
+                  />
+                </div>
+                {index < cartItems.length - 1 && <hr className="cart-divider" />}
+              </React.Fragment>
+            ))}
+          </div>
+        )}
+        {cartItems.length > 0 && (
+          <React.Fragment>
+            <hr className="cart-divider" />
+            <div className="subtotal">
+              <p>SUBTOTAL</p>
+              <p className="total-price">${cartItems.reduce((total, item) => total + item.event.price * item.quantity, 0).toFixed(2)}</p>
             </div>
-          ))}
-        </div>
-        <hr style={{ marginTop: '15px', marginBottom: '5px' }} /> 
-        <div className="subtotal">
-          <p>SUBTOTAL</p>
-          <p className="total-price">${cartItems.reduce((total, item) => total + item.event.price * item.quantity, 0).toFixed(2)}</p>
-        </div>
-        <button className="checkout-button" onClick={handleCheckout}>Checkout</button>
+            <button className="checkout-button" onClick={handleCheckout}>Checkout</button>
+          </React.Fragment>
+        )}
       </div>
     </div>
   );
