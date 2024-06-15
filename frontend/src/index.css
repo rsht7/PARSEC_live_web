@@ -148,7 +148,7 @@ header {
   letter-spacing: 0.5px;
 }
 
-.navbar a:hover {
+.navbar a:hover , .navbar a.active-link{
   text-decoration: underline 2px;
   text-decoration-color: rgb(179, 3, 3);
   text-decoration-style: solid;
@@ -156,6 +156,9 @@ header {
   text-underline-offset: 0.68vh;
 }
 
+.cart-btn-link{
+  font-size: 1.1vmax;
+}
 .cart-btn {
   background-color: white;
   width: 8vw;
@@ -173,6 +176,21 @@ header {
 .cart-btn:hover {
   background-image: linear-gradient(to left, rgb(20, 4, 93), rgb(76, 6, 101));
   color: white;
+  text-decoration: underline 2px;
+  text-decoration-color: rgb(179, 3, 3);
+  text-decoration-style: solid;
+  color: rgba(194, 194, 194, 1);
+  text-underline-offset: 0.68vh;
+  
+}
+
+.cart-btn-link-phone{
+  display: none;
+}
+
+
+.cart-ham{
+  display: none;
 }
 
 .hamburger {
@@ -234,6 +252,43 @@ header {
     font-size: 2vw;
   }
 
+  .cart-btn{
+    display: none;
+  }
+
+  .cart-btn-link{
+    display: none;
+  }
+
+  .cart-ham{
+    display: flex;
+    gap: 5vw;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .cart-btn-link-phone{
+    display: flex;
+  }
+  .cart-btn-phone{
+    display:flex;
+    background-color: transparent;
+    width: 10vw;
+    height: 6vw;
+    color:white;
+    font-weight: 600;
+    font-family: "Inter", sans-serif;
+    border: none;
+    font-size: 2vmax;
+    letter-spacing: 1px;
+    cursor: pointer;
+    /* background-color: black; */
+    /* align-items: center; */
+    
+    
+    
+  }
+
   .hamburger {
     display: flex;
     justify-content: center;
@@ -249,7 +304,7 @@ header {
   }
 }
 
-@media only screen and (max-width: 550px) {
+@media only screen and (max-width: 600px) {
   .nav-links a {
     font-size: 3vh; /* Increased font size */
   }
@@ -266,6 +321,31 @@ header {
     font-size: 4vw; /* Increased font size */
     width: 50%;
     height: auto;
+    display: none;
+  }
+
+  
+
+  .cart-btn-link-phone{
+    display: flex;
+  }
+  .cart-btn-phone{
+    display:flex;
+    background-color: transparent;
+    width: 15vw;
+    height: 10vw;
+    color:white;
+    font-weight: 600;
+    font-family: "Inter", sans-serif;
+    border: none;
+    font-size: 2vmax;
+    letter-spacing: 1px;
+    cursor: pointer;
+    /* background-color: black; */
+    /* align-items: center; */
+    
+    
+    
   }
 }
 
@@ -879,27 +959,32 @@ h1 {
 
 /* Responsive Styles for Mobile */
 @media (max-width: 550px) {
+  .up_events-container{
+    margin-left:4vw ;
+    margin-right: 4vw;
+    max-width:none;
+  }
   .up_events-container h1 {
     font-family: "Caudex", serif;
-    font-size: 7.385416vw;
+    font-size: 4.5vmax;
     font-weight: 700;
     line-height: 4.5572916vw;
     text-align: center;
     margin-top: 0;
     color: rgba(210, 210, 210, 1);
-    margin: 6vmin 0 7vmin 0;
+    margin: 0 0 11vmin 0;
   }
 
   .up_events-slider {
     display: flex;
     flex-direction: column;
     overflow: visible;
-    gap: 10px;
+    gap: 25px;
     align-items: center;
   }
 
   .up_event-item {
-    width: 93%;
+    width: 100%;
     height: 90vw;
   }
 
@@ -933,7 +1018,7 @@ h1 {
   .up_read-more-btn {
     font-size: 3.5vw;
     width: 40%;
-    height: 8vw;
+    height: 10vw;
   }
 
   .up_read-more-btn {
@@ -951,6 +1036,9 @@ h1 {
 }
 
 /* EVENTS CART PAGE CSS */
+
+
+
 
 .eventDet-container.blur {
   filter: blur(5px);
@@ -1160,7 +1248,7 @@ h1 {
 .p2{
   /* font-size: 2.34vmax; */
   font-size: 2vmax;
-  margin: 1vh 0;
+  margin: 1.5vmin 0;
 }
 
 .p3{
@@ -1269,6 +1357,7 @@ h1 {
   margin: 0 6vw;
   /* background: rgba(60, 60, 60, 0.4); */
   background-color: rgba(96, 95, 95, 0.185);
+  margin-bottom: 5vh;
 
   /* background: rgba(27, 27, 27, 0.3); */
 
@@ -1440,13 +1529,14 @@ h1 {
 .form-labels{
   display: flex;
   font-family: 'Caudex', serif;
-  gap: 4vw;
+  gap: 2.5vw;
   margin-top: 4vmin;
 }
 
 .form-labels p{
   margin-top: 0;
   color: rgba(210, 210, 210, 1);
+  font-size: 1.1vw;
 }
 
 
@@ -1493,6 +1583,8 @@ h1 {
   font-weight: 700;
   padding: 0 1vw;
   cursor: pointer;
+  background-color: white;
+  color: #000;
 }
 .ticket-form button:hover{
   background-image: linear-gradient(to left, rgb(20, 4, 93), rgb(76, 6, 101));
@@ -1895,11 +1987,11 @@ h1 {
 }
 
 .fade-in {
-  animation: fadeInFromCenter 2s forwards;
+  animation: fadeInFromCenter 1s forwards;
 }
 
 .fade-out {
-  animation: fadeOutToCenter 2s forwards;
+  animation: fadeOutToCenter 1s forwards;
 }
 
 
@@ -2483,7 +2575,7 @@ h1 {
   align-content: center;
 
 }
-.foottwo-a a:hover {
+.foottwo-a a:hover, .foottwo-a a.active-link {
   /* color: #3d076d; change color on hover*/
   text-decoration: underline 2px;
   text-decoration-color: rgb(179, 3, 3);
@@ -2493,13 +2585,7 @@ h1 {
 
 } 
 
-.active{
-  text-decoration: underline 2px;
-  text-decoration-color: rgb(179, 3, 3);
-  text-decoration-style: solid ;
-  color: rgba(194, 194, 194, 1);
-  text-underline-offset: 0.68vh;
-}
+
 
 /* .pagelink:focus{
   text-decoration: underline 2px;
@@ -2754,7 +2840,7 @@ h1 {
   /* display: flex; */
   /* margin: 11vh 4vh 4vh 4vh; */
   margin: 12vh 4vw 4vh 4vw;
-  height: 65vh;
+  height: 73vh;
   /* justify-content: center; */
   position: relative;
   /* text-align: center; */
@@ -2888,7 +2974,7 @@ h1 {
 }
 
 .upc-event{
-  font-size: 4vmax;
+  font-size: 4.5vmax;
   margin-top: 0;
 }
 
@@ -2916,7 +3002,7 @@ h1 {
   padding: 4vw 3vw;
   background-color: rgba(84, 79, 79, 0.3);
   box-sizing: border-box;
-  height: 30vh;
+  height: 35vh;
   
 }
 
@@ -2935,9 +3021,9 @@ h1 {
   margin: 1vh 0;
 }
 .p3{
-  font-size: 1.5vmax;
+  font-size: 1.9vmax;
   color: rgb(173, 170, 170);
-  line-height: 2.25vh;
+  line-height: 2.5vh;
 }
 
 .se-date{
@@ -2973,6 +3059,10 @@ h1 {
 
 /* INDIVIDUAL EVENT CSS */
 
+
+.back-link{
+  margin: 4vmin 4vw;
+}
 .left-side{
   width: 100%;
 }
@@ -2985,6 +3075,11 @@ h1 {
   width: 100%;
   height: 25vh;
   object-fit: cover;
+}
+
+.page-body{
+  margin: 0 4vw;
+  /* margin-bottom: 5vh; */
 }
 
 .page-container {
@@ -3018,16 +3113,17 @@ h1 {
   font-size: 4vw;
 }
 
-.time-location p{
+/* .time-location p{
   font-size: 4vw;
-}
+} */
 .time-location h4 {
   font-size: 5vw;
   line-height: 1.5625vw;
   margin: 3vh 0;
 }
 .event-terms{
-  margin-top: 5vh;
+  margin-top: 4vh;
+  font-size: 3vw;
 }
 
 
@@ -3036,13 +3132,20 @@ h1 {
   width: 100%;
 }
 
+.form-labels{
+  gap: 4vw;
+}
+.form-labels p{
+  font-size: 4vw;
+}
+
 .ticket-booking h3{
   font-size: 5vw;
-  margin: 0 0 3vh 0;
+  margin: 4vh 0 3vh 0;
 }
 .ticket-booking form{
   height: 5vh;
-  gap: 10vw;
+  gap: 14vw;
 }
 
 .ticket-form input{
@@ -3050,14 +3153,16 @@ h1 {
   width: 8vw;
   padding-left: 1vw;
 }
+
 .ticket-form p{
-  font-size: 4vw;
+  font-size: 5vw;
   margin: auto;
   text-align: center;
 
 }
 .ticket-form button{
   font-size: 3.5vw;
+  width: 30vw;
 }
 .share{
   display: none;
@@ -3069,34 +3174,36 @@ h1 {
 
 }
 .icons-phone{
-  gap: 2vh;
+  gap: 3vh;
   display: flex;
 }
 .icons-phone img {
-  width: 4vw;
+  width: 6vw;
   display: inline-block;
   
-
 }
 
 .share-phone p{
   font-family: 'Caudex', serif;
 }
 
-
+  
 
 
 
 /* main newsletter */
 
+
+.home-newsletter-div{
+  margin-left: 4vw;
+  margin-right: 4vw;
+}
 .newsletter-wrap{
   /* display: flex;
   justify-content: center; */
-  margin: 5vmax 4vw 5vmax 4vw;
+  margin: 5vmax 0 5vmax 0;
   height: 35vh;
-  
  
-  
 }
 
 .main-newsletter{
@@ -3209,7 +3316,7 @@ h1 {
     margin-bottom: 5%;
     /* width: 100%; */
     flex-direction: column;
-    padding: 5% 3%;
+    padding: 3% 3%;
     box-sizing: border-box;
     margin-left: 4vw;
     margin-right: 4vw;
@@ -3220,8 +3327,8 @@ h1 {
   .contact-lhs{
     width: 100%;
     margin: 0;
-    /* margin-bottom: 2vh; */
-    /* padding: 5%; */ 
+    padding-top: 2vh;
+    padding-bottom: 0vh;
   }
   .contact-lhs h1{
     font-size:3.38vmax;
@@ -3229,7 +3336,7 @@ h1 {
     
   }
   .contact-lhs p{
-    font-size: 1.75vh;
+    font-size: 2vh;
   }
 
   .contact-rhs{
@@ -3263,10 +3370,10 @@ h1 {
     flex-direction: column;
   }
   .contact-icon-info p{
-    font-size: 1.75vh;
+    font-size: 2vh;
   }
   .contact-icon-info h1{
-    font-size: 2vh;
+    font-size: 2.2vh;
     margin-bottom: 0;
   }
   
@@ -3356,7 +3463,7 @@ h1 {
   
   .abt-t2{
     font-size: 2vmax;
-    color: rgba(122, 122, 122, 1);
+    color: rgb(188, 186, 186);
     font-weight: 400;
     
     
@@ -3487,10 +3594,10 @@ h1 {
 
   
   .os-names{
-    font-size:2.5vmax;
+    font-size:3vmax;
   }
   .os-position{
-    font-size: 1.5vmax;
+    font-size: 2vmax;
   }
   .sherin{
     padding:0;
@@ -3611,7 +3718,7 @@ h1 {
     padding: 0 6vw 5vh 6vw;
     font-weight: 600;
     
-    height: 42vh;
+    height: 50vh;
     /* width: 100vw; */
    
     
@@ -3651,7 +3758,7 @@ h1 {
   }
   
   .foottwo {
-    height: 35vh;
+    height: 38vh;
     /* padding: 2vh 3vw; */
   }
   
@@ -3661,13 +3768,13 @@ h1 {
     display: flex;
     flex-direction: column;
     align-items:self-start;
-    height:70%;
+    height:75%;
     font-size: 3.8vw;
     color: rgb(120, 127, 134);
     border-bottom: #bbbbbb2c 1px solid;
     justify-content: initial;
     gap: 1vh;
-    margin-bottom: 0;
+    margin-bottom:0;
   }
   
   /* .foottwo-a ul{
@@ -3864,20 +3971,23 @@ h1 {
   }
 
   .single-event{
-    height: 35vw;
+    height: 30vw;
   }
 
 
   .p2{
     font-size: 1.75vmax;
+    margin: 0.5vw 0;
+    margin-bottom: 0;
   }
   .p3{
     line-height: 2vw ;
+    
   }
 
   
   .se-buttons button{
-    width: 46.875%;
+    width: 47%;
     font-size: 1.25vw;
     font-family: "Inter", sans-serif;
     font-weight: 600;
@@ -3941,6 +4051,7 @@ h1 {
 
     .ticket-form button{
       font-size: 1.5vw;
+      
     }
     .form-labels{
       font-size: 1.5vw;
@@ -3990,7 +4101,7 @@ h1 {
   }
   .main-nsl-stuff-text{
     justify-content: space-between;
-    padding: 4vw 3vw;
+    padding: 5vw 3vw;
   }
 
 
@@ -4365,7 +4476,7 @@ h1 {
   
   .navbar img {
     margin: 0;
-    width: 15vw;
+    width: 17vw;
   }
   
   .nav-links {
@@ -4392,6 +4503,10 @@ h1 {
     color: rgba(194, 194, 194, 1);
     text-underline-offset: 0.68vh;
   }
+
+  .cart-btn-link{
+    font-size: 1.17vmax;
+  }
   
   .cart-btn {
     background-color: white;
@@ -4416,6 +4531,8 @@ h1 {
   
   .p2{
     font-size: 1.75vmax;
+    margin-top: 0.5vw;
+    margin-bottom: 0.5vw;
   }
 
   .p3{
@@ -4737,7 +4854,7 @@ h1 {
 
   .navbar img{
     top: 0;
-    width: 11vw;
+    width: 15vw;
   }
 
   .single-event{
@@ -6143,18 +6260,83 @@ h1 {
 
 
 
-  /* .empty-cart{
-    padding-top: 30vh;
-    height: 70vh;
+  .empty-cart{
+  
+    text-align: center;
+    height: 55vh;
     box-sizing: border-box;
+    justify-content: center;
+    margin: 10vh 0;
+    display: flex;
+    flex-direction: column;
+    font-size: 2vmax;
+    font-family: "Inter", sans-serif;
   }
+
+  .empty-cart a{
+    color: white;
+    text-decoration: none;
+    font-size: 1.5vmax;
+    font-family: "Inter", sans-serif;
+    text-decoration: underline 2px;
+    text-decoration-color: rgb(179, 3, 3);
+    text-decoration-style: solid;
+    color: rgba(194, 194, 194, 1);
+    text-underline-offset: 0.68vh;
+  }
+ .empty-cart a:hover{
+  text-decoration: underline 2px;
+  text-decoration-color: rgb(179, 3, 3);
+  text-decoration-style: solid;
+  color: rgba(194, 194, 194, 1);
+  text-underline-offset: 1vh;
+ }
+  
   .cart-container{
+    margin: auto;
     margin-top: 15vh;
-  } */
+    color: white;
+
+  }
 
   .failure-pg{
-    margin-top: 30vh;
+    height: 55vh;
+    text-align: center;
+    margin: 10vh 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family: "Inter", sans-serif;
+    font-size: 2vmax;
   }
+
+  .failure-pg h2{
+    font-weight: 500;
+    font-size: 2.5vmax;
+    font-family: "Inter", sans-serif;
+    margin-bottom: 0;
+  }
+
+  .failure-pg a{
+    color: white;
+    font-family: "Inter", sans-serif;
+    font-size: 1.5vmax;
+    text-decoration: underline 2px;
+    text-decoration-color: rgb(179, 3, 3);
+    text-decoration-style: solid;
+    color: rgba(194, 194, 194, 1);
+    text-underline-offset: 1vh;
+    
+  }
+
+  .failure-pg a:hover{
+    text-decoration: underline 2px;
+    text-decoration-color: rgb(179, 3, 3);
+    text-decoration-style: solid;
+    color: rgba(194, 194, 194, 1);
+    text-underline-offset: 0.68vh;
+   }
+
 
   .cart-btn a{
     color: #000;
