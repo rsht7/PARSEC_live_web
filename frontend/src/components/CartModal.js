@@ -86,7 +86,7 @@ const CartModal = ({ onClose }) => {
                   <FontAwesomeIcon
                     icon={faTrashAlt}
                     onClick={() => handleRemoveItem(item.id)}
-                    style={{ cursor: 'pointer', marginLeft: '0.32552083vw', marginRight: '0.32552083vw', color: '#ccc', fontSize: '0.9765625vw', marginBottom: '2.27864583vw' }} // Decreased fontSize here
+                    style={{ cursor: 'pointer', marginLeft: '0.32552083vw', marginRight: '0.32552083vw', color: '#ccc', fontSize: '0.9765625vw', marginBottom: '2.27864583vw' }}
                   />
                 </div>
                 {index < cartItems.length - 1 && <hr className="cart-divider" />}
