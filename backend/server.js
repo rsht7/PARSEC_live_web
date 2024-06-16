@@ -74,6 +74,8 @@ const express = require('express');
 
 const workoutRoutes = require('./routes/workouts');
 const contactusRoute = require('./routes/contactus');
+const newslettersubsRoutes = require('./routes/newslettersubscription');
+
 const eventRoutes = require('./routes/events');
 const paymentRoutes = require('./routes/payment'); // Import the payment routes
 
@@ -87,6 +89,7 @@ app.use((req, res, next) => {
 });
 
 app.use('/api/contactus', contactusRoute);
+app.use('/api/newslettersubs', newslettersubsRoutes);
 app.use('/api/workouts', workoutRoutes);
 app.use('/api/events', eventRoutes);
 app.use('/api/payment', paymentRoutes); // Add the payment routes

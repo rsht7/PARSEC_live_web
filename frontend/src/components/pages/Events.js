@@ -44,6 +44,7 @@ const Events = () => {
             return; // Do not start slider if screen size is below 550px
         }
         timerRef.current = setInterval(() => {
+
             setCurrentSlide(prevSlide => (prevSlide + 1) % slides.length);
         }, 5000);
     }, [slides.length]);
@@ -67,6 +68,11 @@ const Events = () => {
 
         // Initial setup
         handleResize();
+      
+            //const nextSlideIndex = (currentSlide + 1) % slides.length;
+          //  setCurrentSlide(nextSlideIndex);
+       // }, 10000);
+
 
         return () => {
             stopSlider();
@@ -159,7 +165,7 @@ const Events = () => {
                     ))}
                 </div>
             </div>
-            <Newsletter />
+            <div className='home-newsletter-div'><Newsletter /></div>
         </div>
     );
 };

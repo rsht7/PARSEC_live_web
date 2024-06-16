@@ -76,7 +76,7 @@ const Home = () => {
             </div>
 
             <div className='event-wrapper'>
-                    <p className='upc-event'>Upcoming Event</p>
+                    <p className='upc-event'>Upcoming Events</p>
                     <div className='home-event'>
                         {displayedEvents && displayedEvents.map((event) => (
                             <Singleevent key={event._id} event = {event} />
@@ -108,7 +108,7 @@ const Home = () => {
                     <Link to="/event" className="see-more-btn">SEE MORE</Link>
                 </div>
             </div> */}
-            <Newsletter />
+            <div className='home-newsletter-div'><Newsletter /></div>
         </div>
     );
 }
