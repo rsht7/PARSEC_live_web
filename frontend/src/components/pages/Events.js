@@ -16,11 +16,16 @@ const Events = () => {
 
     useEffect(() => {
         const fetchEvents = async () => {
-            const response = await fetch('/api/events');
-            const json = await response.json();
-
-            if (response.ok) {
+            try {
+                const response = await fetch('/api/events');
+                if (!response.ok) {
+                    throw new Error('Failed to fetch events');
+                }
+                const json = await response.json();
                 setEvents(json);
+                console.log("Events fetched:", json);
+            } catch (error) {
+                console.error('Error fetching events:', error);
             }
         };
         fetchEvents();
@@ -35,64 +40,90 @@ const Events = () => {
     }, [events]);
 
     const startSlider = useCallback(() => {
+        if (window.innerWidth <= 550) {
+            return; // Do not start slider if screen size is below 550px
+        }
         timerRef.current = setInterval(() => {
             setCurrentSlide(prevSlide => (prevSlide + 1) % slides.length);
         }, 5000);
     }, [slides.length]);
 
+    const stopSlider = useCallback(() => {
+        if (timerRef.current) {
+            clearInterval(timerRef.current);
+        }
+    }, []);
+
     useEffect(() => {
-        startSlider();
-        return () => clearInterval(timerRef.current);
-    }, [startSlider]);
+        const handleResize = () => {
+            if (window.innerWidth > 550) {
+                startSlider();
+            } else {
+                stopSlider();
+            }
+        };
+
+        window.addEventListener('resize', handleResize);
+
+        // Initial setup
+        handleResize();
+
+        return () => {
+            stopSlider();
+            window.removeEventListener('resize', handleResize);
+        };
+    }, [startSlider, stopSlider]);
 
     const handleDotClick = (index) => {
-        clearInterval(timerRef.current);
+        stopSlider();
         setCurrentSlide(index);
-        startSlider();
+        if (window.innerWidth > 550) {
+            startSlider();
+        }
     };
 
     const handleMouseOver = () => {
-        clearInterval(timerRef.current);
+        stopSlider();
     };
 
     const handleMouseOut = () => {
-        startSlider();
+        if (window.innerWidth > 550) {
+            startSlider();
+        }
     };
 
     useEffect(() => {
         const observerOptions = {
             threshold: 0.1,
         };
-    
-        const observerCallback = (entries, observer) => {
+
+        const observerCallback = (entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('visible');
                 } else {
-                    entry.target.classList.remove('visible'); // Ensure it can animate again when out of view and in view again
+                    entry.target.classList.remove('visible');
                 }
             });
         };
-    
+
         const observer = new IntersectionObserver(observerCallback, observerOptions);
         const items = document.querySelectorAll('.up_event-item');
-    
+
         items.forEach(item => observer.observe(item));
-    
+
         return () => {
             items.forEach(item => observer.unobserve(item));
         };
-    }, []); // No dependencies, runs once on mount
-    
-    
+    }, [events]);
 
     return (
         <div className='total-event'>
             <Headname name='Events' pic={eventspic} />
-                
+
             <div className="up_events-container">
                 <h1>Upcoming Events</h1>
-                <div 
+                <div
                     className="up_events-slider-wrapper"
                     ref={sliderRef}
                     onMouseOver={handleMouseOver}
