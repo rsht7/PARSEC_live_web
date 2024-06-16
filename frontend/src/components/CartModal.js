@@ -67,7 +67,7 @@ const CartModal = ({ onClose }) => {
             }}>BROWSE EVENTS</Link>
           </div>
         ) : (
-          <div className="cart-items" style={{ maxHeight: '19.53125vw', overflowY: 'auto' }}>
+          <div className="cart-items" style={{ maxHeight: '25vw', overflowY: 'auto' }}>
             {cartItems.map((item, index) => (
               <React.Fragment key={item.id}>
                 <div className="cart-item">
