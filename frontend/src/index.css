@@ -872,20 +872,37 @@ h1 {
 }
 
 @media (max-width: 550px) {
+  .up_events-container{
+    margin-left:4vw ;
+    margin-right: 4vw;
+    max-width:none;
+  }
   .up_events-container h1 {
-    font-size: 7.385416vw;
-    margin: 6vmin 0 7vmin 0;
+    font-family: "Caudex", serif;
+    font-size: 4.5vmax;
+    font-weight: 700;
+    line-height: 4.5572916vw;
+    text-align: center;
+    margin-top: 0;
+    color: rgba(210, 210, 210, 1);
+    margin: 0 0 11vmin 0;
   }
 
   .up_events-slider {
+    display: flex;
     flex-direction: column;
     overflow: visible;
-    gap: 10px;
+    gap: 25px;
     align-items: center;
   }
 
+  .up_events-slide {
+    display: flex;
+    flex-direction: column;
+  }
+
   .up_event-item {
-    width: 93%;
+    width: 100%;
     height: 90vw;
   }
 
@@ -919,7 +936,7 @@ h1 {
   .up_read-more-btn {
     font-size: 3.5vw;
     width: 40%;
-    height: 8vw;
+    height: 10vw;
   }
 
   .up_read-more-btn {
@@ -930,7 +947,7 @@ h1 {
 
 
 
-/* UPCOMING EVENTS (EVENTS PAGE) */
+/*OLD UPCOMING EVENTS (EVENTS PAGE) */
 /* .up_events-container {
   max-width: 88.5416vw;
   margin: 5vh 6vw;
