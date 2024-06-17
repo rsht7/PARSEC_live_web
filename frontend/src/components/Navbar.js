@@ -1,6 +1,8 @@
 import { useLocation,Link } from 'react-router-dom';
 import fulllogo from './compassets/fulllogo.png';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
+import { CartContext } from '../contexts/CartContext';
+import CartModal from './CartModal'; // Import the CartModal component
 
 const Navbar = () => {
 
@@ -9,6 +11,9 @@ const Navbar = () => {
   const [lastScrollY, setLastScrollY] = useState(0);
   const [showNav, setShowNav] = useState(false);
   const [headerBackground, setHeaderBackground] = useState('');
+  // const { addToCart } = useContext(CartContext);
+
+  const [isCartModalOpen, setIsCartModalOpen] = useState(false); // State to control modal visibility
 
   const handleScroll = () => {
     if (window.scrollY < lastScrollY) {
@@ -35,19 +40,27 @@ const Navbar = () => {
     return location.pathname === path ? 'active-link' : '';
   };
 
+
+  const handleAddToCart = (e) => {
+    e.preventDefault(); // Ensure this is only called within a form submission
+    // addToCart(event, quantity);
+    setIsCartModalOpen(true); // Show the cart modal
+  };
+
+
   return (
     <header className={`header ${isScrollingUp ? 'show' : 'hide'} ${showNav ? 'show-nav' : ''}`} style={{ backgroundColor: headerBackground }}>
       <nav className='navbar'>
         <h1>
           <Link to='/'>
-            <img src={fulllogo} alt='Logo' />
+            <img src={fulllogo} alt='Logo' className='logo-img' />
           </Link>
         </h1>
 
         
         <div className='cart-ham'>
-        <Link to='/cart'        className='cart-btn-link-phone'><button className='cart-btn-phone'>CART</button>
-        </Link>
+        <button className='cart-btn-phone' onClick={handleAddToCart}>CART</button>
+        
 
         <div className={`hamburger ${showNav ? 'open' : ''}`} onClick={toggleNav}>
           <div></div>
@@ -72,7 +85,8 @@ const Navbar = () => {
             <Link to='/contactus' className={getLinkClass('/contactus')}>CONTACT</Link>
           </li>
         </ul>
-        <Link to='/cart' className='cart-btn-link'><button className='cart-btn'>CART</button></Link>
+        <button className='cart-btn' onClick={handleAddToCart}>CART</button>
+        {isCartModalOpen && <CartModal onClose={() => setIsCartModalOpen(false)} />} {/* Render the modal */}
       </nav>
     </header>
   );
