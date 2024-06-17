@@ -1,22 +1,23 @@
 {
   "files": {
-    "main.css": "/PARSEC_live_web/static/css/main.cc6b84ef.css",
-    "main.js": "/PARSEC_live_web/static/js/main.13e1e1be.js",
-    "static/media/contactcover.jpg": "/PARSEC_live_web/static/media/contactcover.b187e2eb054aef5def75.jpg",
-    "static/media/aboutpic2.jpeg": "/PARSEC_live_web/static/media/aboutpic2.0cae59dcec2cf5784b13.jpeg",
-    "static/media/nwsltr22.jpeg": "/PARSEC_live_web/static/media/nwsltr22.a1d7fd122832d404a821.jpeg",
-    "static/media/sherin1.JPG": "/PARSEC_live_web/static/media/sherin1.380352e3fce4afa71740.JPG",
-    "static/media/eli2.JPG": "/PARSEC_live_web/static/media/eli2.1b661e7e7de07385ba52.JPG",
-    "static/media/logo.png": "/PARSEC_live_web/static/media/logo.cef6e91cf4c967b213d0.png",
-    "static/media/fulllogo.png": "/PARSEC_live_web/static/media/fulllogo.402ad3922fafd545a32a.png",
-    "static/media/homepic2.jpeg": "/PARSEC_live_web/static/media/homepic2.4120a6169861e26741af.jpeg",
-    "static/media/events-page-pic.jpeg": "/PARSEC_live_web/static/media/events-page-pic.5c0a2752774a86ea98bd.jpeg",
-    "index.html": "/PARSEC_live_web/index.html",
-    "main.cc6b84ef.css.map": "/PARSEC_live_web/static/css/main.cc6b84ef.css.map",
-    "main.13e1e1be.js.map": "/PARSEC_live_web/static/js/main.13e1e1be.js.map"
+    "main.css": "/static/css/main.cc6b84ef.css",
+    "main.js": "/static/js/main.36c49c4c.js",
+    "static/media/parsecvid.mp4": "/static/media/parsecvid.56105db17d60816b815d.mp4",
+    "static/media/contactcover.jpg": "/static/media/contactcover.b187e2eb054aef5def75.jpg",
+    "static/media/aboutpic2.jpeg": "/static/media/aboutpic2.0cae59dcec2cf5784b13.jpeg",
+    "static/media/nwsltr22.jpeg": "/static/media/nwsltr22.a1d7fd122832d404a821.jpeg",
+    "static/media/sherin1.JPG": "/static/media/sherin1.380352e3fce4afa71740.JPG",
+    "static/media/eli2.JPG": "/static/media/eli2.1b661e7e7de07385ba52.JPG",
+    "static/media/logo.png": "/static/media/logo.cef6e91cf4c967b213d0.png",
+    "static/media/fulllogo.png": "/static/media/fulllogo.402ad3922fafd545a32a.png",
+    "static/media/homepic2.jpeg": "/static/media/homepic2.4120a6169861e26741af.jpeg",
+    "static/media/events-page-pic.jpeg": "/static/media/events-page-pic.5c0a2752774a86ea98bd.jpeg",
+    "index.html": "/index.html",
+    "main.cc6b84ef.css.map": "/static/css/main.cc6b84ef.css.map",
+    "main.36c49c4c.js.map": "/static/js/main.36c49c4c.js.map"
   },
   "entrypoints": [
     "static/css/main.cc6b84ef.css",
-    "static/js/main.13e1e1be.js"
+    "static/js/main.36c49c4c.js"
   ]
 }
