@@ -6,6 +6,7 @@ import playcircle from './playbtn-circle.png'
 import playtriangle from './playbtn.png' 
 import homepic2 from './homepic2.jpeg';
 import Newsletter from '../Newsletter';
+import parsecvid from './parsecvid.mp4'
 
 const Home = () => {
     const [events, setEvents] = useState([]);
@@ -55,6 +56,40 @@ const Home = () => {
 
     const displayedEvents = events.slice(1, 2);
 
+    const videoRef = useRef(null);
+  const [isPlaying, setIsPlaying] = useState(false);
+
+  const toggleVideo = () => {
+    if (videoRef.current) {
+      if (videoRef.current.paused) {
+        videoRef.current.play();
+      } else {
+        videoRef.current.pause();
+      }
+    }
+  };
+
+  useEffect(() => {
+    const videoElement = videoRef.current;
+
+    const handlePlay = () => setIsPlaying(true);
+    const handlePause = () => setIsPlaying(false);
+    const handleEnded = () => setIsPlaying(false);
+
+    if (videoElement) {
+      videoElement.addEventListener('play', handlePlay);
+      videoElement.addEventListener('pause', handlePause);
+      videoElement.addEventListener('ended', handleEnded);
+
+      // Cleanup event listeners on component unmount
+      return () => {
+        videoElement.removeEventListener('play', handlePlay);
+        videoElement.removeEventListener('pause', handlePause);
+        videoElement.removeEventListener('ended', handleEnded);
+      };
+    };
+  }, []);
+
 
     return (
         <div className="home">
@@ -62,17 +97,27 @@ const Home = () => {
                 <img src={logo} alt="Logo" />
             </div>
             <div className="main" >
-                <img src={homepic2} alt="Home" className='main-img'/>
-                <h1>Welcome To Parsec Live</h1>
-                
-                <div className='icondiv' >
-                    <img src={playcircle} className='circle-icon'></img>
-                    <div className='triangle-div'><img src={playtriangle}className='triangle-icon'></img>
+                <video  ref={videoRef} id='homevideo' src={parsecvid} alt="Home" className='main-img'/>
+                {!isPlaying && ( 
+                <>
+                    <h1>Welcome To Parsec Live</h1>
+                </>)}
+                {!isPlaying && ( 
+                <> 
+                    <div className='icondiv' onClick={toggleVideo} >
+                        <img src={playcircle} className='circle-icon'></img>
+                        <div className='triangle-div'><img src={playtriangle}className='triangle-icon'></img>
+                        </div>
                     </div>
-                </div>
-                <div className="herovid-see-more-container">
+                </>)}    
+                {!isPlaying && ( 
+                <>    <div        className="herovid-see-more-container">
                     <Link to="/event" className="herovid-see-more-btn">SEE MORE</Link>
-                </div>
+                    </div>
+                    
+                    
+                </>)}
+                
             </div>
 
             <div className='event-wrapper'>
