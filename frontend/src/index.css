@@ -876,7 +876,7 @@ h1 {
   padding: 0.6510416vw;
   padding-left: 1.5vw;
   text-align: left;
-  transition: all 0.8s cubic-bezier(0.25, 0.1, 0.25, 1);
+  transition: all 0.6s cubic-bezier(0.25, 0.1, 0.25, 1);
 }
 
 .up_event-item:hover .up_event-details {
@@ -3103,9 +3103,11 @@ h1 {
 
 
 .priv-content{
+  margin-top: 5vh;
   padding: 8vw;
   text-align:justify ;
   font-family: "Inter", sans-serif;
+  font-size: 1vw;
 }
 .priv-content h4{
   text-align: center;
@@ -4367,7 +4369,13 @@ h1 {
     color: #000;
   }
   
-  
+  .priv-content{
+    font-size: 2.5vw;
+    margin-top: 10vh;
+  }
+  .priv-content h4{
+    font-size: 3vw;
+  }
 
 
 
