@@ -6,7 +6,7 @@ import playcircle from './playbtn-circle.png'
 import playtriangle from './playbtn.png' 
 // import homepic2 from './homepic2.jpeg';
 import Newsletter from '../Newsletter';
-import parsecvid from './parsecvid.mp4'
+// import parsecvid from './parsecvid.mp4'
 
 
 const Home = () => {
@@ -98,7 +98,7 @@ const Home = () => {
                 <img src={logo} alt="Logo" />
             </div>
             <div className="main" >
-                <video  ref={videoRef} id='homevideo' src={parsecvid} alt="Home" className='main-img'/>
+                {/* <video  ref={videoRef} id='homevideo' src={parsecvid} alt="Home" className='main-img'/> */}
                 {!isPlaying && ( 
                 <>
                     <h1>Welcome To Parsec Live</h1>
