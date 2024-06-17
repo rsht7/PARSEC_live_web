@@ -44,8 +44,9 @@ const Events = () => {
             return; // Do not start slider if screen size is below 550px
         }
         timerRef.current = setInterval(() => {
+
             setCurrentSlide(prevSlide => (prevSlide + 1) % slides.length);
-        }, 5000);
+        }, 10000);
     }, [slides.length]);
 
     const stopSlider = useCallback(() => {

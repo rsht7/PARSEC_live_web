@@ -1270,7 +1270,20 @@ h1 {
   }
 } */
 
+<<<<<<<<< Temporary merge branch 1
+.up_event-item:hover .up_event-image {
+  transform: scale(1.2);
+  transition: transform 0.5s ease; 
+}
+
+/* EVENTS CART PAGE CSS */
+
+
+
+
+=========
 /* CART PAGE CSS */
+>>>>>>>>> Temporary merge branch 2
 .eventDet-container.blur {
   filter: blur(5px);
 }
