@@ -154,12 +154,20 @@ app.use((req, res, next) => {
   next();
 });
 
+// Serve static files from the React frontend app
+app.use(express.static(path.join(__dirname, '..', 'frontend', 'build')));
+
 // Define routes
 app.use('/api/contactus', contactusRoute);
 app.use('/api/newslettersubs', newslettersubsRoutes);
 app.use('/api/workouts', workoutRoutes);
 app.use('/api/events', eventRoutes);
 app.use('/api/payment', paymentRoutes);
+
+// Serve the index.html for any other routes
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '..', 'frontend', 'build', 'index.html'));
+});
 
 mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => {
@@ -170,6 +178,3 @@ mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopol
   .catch((error) => {
     console.error('MongoDB connection error:', error);
   });
-
-
-
