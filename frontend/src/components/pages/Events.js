@@ -46,7 +46,7 @@ const Events = () => {
         timerRef.current = setInterval(() => {
 
             setCurrentSlide(prevSlide => (prevSlide + 1) % slides.length);
-        }, 5000);
+        }, 10000);
     }, [slides.length]);
 
     const stopSlider = useCallback(() => {
@@ -114,7 +114,7 @@ const Events = () => {
         };
 
         const observer = new IntersectionObserver(observerCallback, observerOptions);
-        const items = document.querySelectorAll('.up_event-item');
+        const items = document.querySelectorAll('.up_events-container');
 
         items.forEach(item => observer.observe(item));
 

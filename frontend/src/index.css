@@ -803,6 +803,22 @@ h1 {
   margin: 5vh 6vw;
   padding: 1.302083vw 0 0 0;
   text-align: left;
+  transform: translateY(150px); 
+  transition: opacity 1s ease, transform 1.5s ease-in-out; 
+}
+
+.up_events-container {
+  max-width: 88.5416vw;
+  margin: 5vh 6vw;
+  padding: 1.302083vw 0 0 0;
+  text-align: left;
+  transform: translateY(150px);
+  transition: transform 1.5s ease; /* Transition property for sliding animation */
+}
+
+
+.up_events-container.visible {
+  transform: translateY(0); /* Slide up to the original position */
 }
 
 .up_events-container h1 {
@@ -820,7 +836,7 @@ h1 {
 
 .up_events-slider {
   display: flex;
-  transition: transform 0.8s ease-in-out;
+  transition: transform 1s ease-in-out;
 }
 
 .up_events-slide {
@@ -835,15 +851,15 @@ h1 {
   height: 29.296875vw;
   position: relative;
   overflow: hidden;
-  opacity: 0;
-  transform: translateY(150px); /* Initial position outside viewport */
-  transition: opacity 1s ease, transform 1.5s ease-in-out; /* Transition properties */
+  opacity: 1;
+  /* transform: translateY(150px); 
+  transition: opacity 1s ease, transform 1.5s ease-in-out;  */
 }
 
-.up_event-item.visible {
+/* .up_event-item.visible {
   opacity: 1;
-  transform: translateY(0); /* Translate to original position when visible */
-}
+  transform: translateY(0); 
+} */
 
 
 .up_event-image {
@@ -1254,9 +1270,6 @@ h1 {
   }
 } */
 
-
-/* CART PAGE CSS */
-
 .up_event-item:hover .up_event-image {
   transform: scale(1.2);
   transition: transform 0.5s ease; 
@@ -1265,9 +1278,7 @@ h1 {
 /* EVENTS CART PAGE CSS */
 
 
-
-
-
+/* CART PAGE CSS */
 .eventDet-container.blur {
   filter: blur(5px);
 }
