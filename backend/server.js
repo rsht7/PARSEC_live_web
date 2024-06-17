@@ -133,7 +133,7 @@ const paymentRoutes = require('./routes/payment'); // Import the payment routes
 const app = express();
 const Port = process.env.PORT || 4000;
 
-// Alternatively, configure CORS for specific origins
+// CORS configuration
 const allowedOrigins = ['https://parsec-live-web.vercel.app', 'http://localhost:3000'];
 
 const corsOptions = {
@@ -147,7 +147,6 @@ const corsOptions = {
 };
 
 app.use(cors(corsOptions));
-
 app.use(express.json());
 
 app.use((req, res, next) => {
@@ -155,27 +154,22 @@ app.use((req, res, next) => {
   next();
 });
 
+// Define routes
 app.use('/api/contactus', contactusRoute);
 app.use('/api/newslettersubs', newslettersubsRoutes);
 app.use('/api/workouts', workoutRoutes);
 app.use('/api/events', eventRoutes);
-app.use('/api/payment', paymentRoutes); // Add the payment routes
+app.use('/api/payment', paymentRoutes);
 
-// Serve static files from the React frontend app
-app.use(express.static(path.join(__dirname, 'frontend/build')));
-
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'frontend/build', 'index.html'));
-});
-
-mongoose.connect(process.env.MONGO_URI)
+mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => {
     app.listen(Port, () => {
-      console.log(`listening on port ${Port}`);
+      console.log(`Listening on port ${Port}`);
     });
   })
   .catch((error) => {
-    console.log(error);
+    console.error('MongoDB connection error:', error);
   });
+
 
 
