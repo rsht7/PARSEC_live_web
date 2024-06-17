@@ -29,7 +29,7 @@ const express = require('express');
 const router = express.Router();
 const Stripe = require('stripe');
 const stripe = Stripe(process.env.STRIPE_SECRET_KEY);
-const Client=process.env.CLIENT_URL || 'http://localhost:3000';
+const Client = process.env.CLIENT_URL || 'http://localhost:3000';
 
 router.post('/create-checkout-session', async (req, res) => {
   const { items } = req.body;

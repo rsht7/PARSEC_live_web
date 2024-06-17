@@ -82,6 +82,18 @@ const paymentRoutes = require('./routes/payment'); // Import the payment routes
 const app = express();
 const Port=process.env.PORT || 4000;
 
+const cors = require('cors');
+
+
+// Alternatively, configure CORS for specific origins
+const allowedOrigins = ['https://parsec-live-web.vercel.app/', 'http://localhost:3000'];
+
+const corsOptions = {
+  origin: allowedOrigins,
+};
+
+app.use(cors(corsOptions));
+
 
 app.use(express.json());
 
