@@ -813,7 +813,7 @@ h1 {
   padding: 1.302083vw 0 0 0;
   text-align: left;
   transform: translateY(150px);
-  transition: transform 1.5s ease; /* Transition property for sliding animation */
+  transition: transform 0.7s ease; /* Transition property for sliding animation */
 }
 
 
@@ -876,7 +876,7 @@ h1 {
   padding: 0.6510416vw;
   padding-left: 1.5vw;
   text-align: left;
-  transition: all 0.6s cubic-bezier(0.25, 0.1, 0.25, 1);
+  transition: all 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
 }
 
 .up_event-item:hover .up_event-details {
