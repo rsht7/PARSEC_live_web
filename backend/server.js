@@ -68,20 +68,85 @@
 //   });
 
 
+// require('dotenv').config();
+// const mongoose = require('mongoose');
+// const express = require('express');
+
+// const workoutRoutes = require('./routes/workouts');
+// const contactusRoute = require('./routes/contactus');
+// const newslettersubsRoutes = require('./routes/newslettersubscription');
+
+// const eventRoutes = require('./routes/events');
+// const paymentRoutes = require('./routes/payment'); // Import the payment routes
+
+// const app = express();
+// const Port=process.env.PORT || 4000;
+
+// const cors = require('cors');
+
+
+// // Alternatively, configure CORS for specific origins
+// const allowedOrigins = ['https://parsec-live-web.vercel.app/', 'http://localhost:3000'];
+
+// const corsOptions = {
+//   origin: allowedOrigins,
+// };
+
+// app.use(cors(corsOptions));
+
+
+// app.use(express.json());
+
+// app.use((req, res, next) => {
+//   console.log(req.path, req.method);
+//   next();
+// });
+
+// app.use('/api/contactus', contactusRoute);
+// app.use('/api/newslettersubs', newslettersubsRoutes);
+// app.use('/api/workouts', workoutRoutes);
+// app.use('/api/events', eventRoutes);
+// app.use('/api/payment', paymentRoutes); // Add the payment routes
+
+// mongoose.connect(process.env.MONGO_URI)
+//   .then(() => {
+//     app.listen(Port, () => {
+//       console.log(`listening on port ${Port}`);
+//     });
+//   })
+//   .catch((error) => {
+//     console.log(error);
+//   });
+
 require('dotenv').config();
 const mongoose = require('mongoose');
 const express = require('express');
+const cors = require('cors');
+const path = require('path');
 
 const workoutRoutes = require('./routes/workouts');
 const contactusRoute = require('./routes/contactus');
 const newslettersubsRoutes = require('./routes/newslettersubscription');
-
 const eventRoutes = require('./routes/events');
 const paymentRoutes = require('./routes/payment'); // Import the payment routes
 
 const app = express();
-const Port=process.env.PORT || 4000;
+const Port = process.env.PORT || 4000;
 
+// Alternatively, configure CORS for specific origins
+const allowedOrigins = ['https://parsec-live-web.vercel.app', 'http://localhost:3000'];
+
+const corsOptions = {
+  origin: function (origin, callback) {
+    if (allowedOrigins.indexOf(origin) !== -1 || !origin) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  }
+};
+
+app.use(cors(corsOptions));
 
 app.use(express.json());
 
@@ -96,6 +161,13 @@ app.use('/api/workouts', workoutRoutes);
 app.use('/api/events', eventRoutes);
 app.use('/api/payment', paymentRoutes); // Add the payment routes
 
+// Serve static files from the React frontend app
+app.use(express.static(path.join(__dirname, 'frontend/build')));
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'frontend/build', 'index.html'));
+});
+
 mongoose.connect(process.env.MONGO_URI)
   .then(() => {
     app.listen(Port, () => {
@@ -105,3 +177,4 @@ mongoose.connect(process.env.MONGO_URI)
   .catch((error) => {
     console.log(error);
   });
+
