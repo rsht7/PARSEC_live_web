@@ -46,7 +46,7 @@ const Events = () => {
         timerRef.current = setInterval(() => {
 
             setCurrentSlide(prevSlide => (prevSlide + 1) % slides.length);
-        }, 10000);
+        }, 7000);
     }, [slides.length]);
 
     const stopSlider = useCallback(() => {

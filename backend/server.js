@@ -80,6 +80,8 @@ const eventRoutes = require('./routes/events');
 const paymentRoutes = require('./routes/payment'); // Import the payment routes
 
 const app = express();
+const Port=process.env.PORT || 4000;
+
 
 app.use(express.json());
 
@@ -96,8 +98,8 @@ app.use('/api/payment', paymentRoutes); // Add the payment routes
 
 mongoose.connect(process.env.MONGO_URI)
   .then(() => {
-    app.listen(process.env.PORT, () => {
-      console.log(`listening on port ${process.env.PORT}`);
+    app.listen(Port, () => {
+      console.log(`listening on port ${Port}`);
     });
   })
   .catch((error) => {

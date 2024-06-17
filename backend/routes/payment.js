@@ -29,6 +29,7 @@ const express = require('express');
 const router = express.Router();
 const Stripe = require('stripe');
 const stripe = Stripe(process.env.STRIPE_SECRET_KEY);
+const Client=process.env.CLIENT_URL || 'http://localhost:3000';
 
 router.post('/create-checkout-session', async (req, res) => {
   const { items } = req.body;
@@ -50,8 +51,8 @@ router.post('/create-checkout-session', async (req, res) => {
       payment_method_types: ['card'],
       line_items: lineItems,
       mode: 'payment',
-      success_url: `${process.env.CLIENT_URL}/success`,
-      cancel_url: `${process.env.CLIENT_URL}/cart`,
+      success_url: `${Client}/success`,
+      cancel_url: `${Client}/cart`,
     });
 
     res.json({ id: session.id });
