@@ -1,4 +1,0 @@
-{
-    "rewrites": [{ "source": "/assets/(.*)", "destination": "/frontend/public/assets/$1" }]
-  }
-  
