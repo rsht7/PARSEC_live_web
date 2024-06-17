@@ -67,6 +67,11 @@ const Events = () => {
 
         // Initial setup
         handleResize();
+      
+            //const nextSlideIndex = (currentSlide + 1) % slides.length;
+          //  setCurrentSlide(nextSlideIndex);
+       // }, 10000);
+
 
         return () => {
             stopSlider();
@@ -108,7 +113,7 @@ const Events = () => {
         };
 
         const observer = new IntersectionObserver(observerCallback, observerOptions);
-        const items = document.querySelectorAll('.up_event-item');
+        const items = document.querySelectorAll('.up_events-container');
 
         items.forEach(item => observer.observe(item));
 

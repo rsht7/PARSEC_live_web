@@ -82,7 +82,7 @@ function App() {
               <Route path='/contactus' element={<ContactForm />} />
               <Route path='/about' element={<About />} />
               <Route path="/event/:id" element={<EventDetails />} />
-              <Route path='/cart' element={<CartPage />} />
+              {/* <Route path='/cart' element={<CartPage />} /> */}
               <Route path='/privacy-policy' element={<Privacy />} />
               <Route path='/success' element={<SuccessPage />} />
               <Route path='/failure' element={<FailurePage />} />
