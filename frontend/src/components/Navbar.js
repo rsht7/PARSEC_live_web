@@ -1,6 +1,6 @@
 import { useLocation, Link } from 'react-router-dom';
 import fulllogo from './compassets/fulllogo.png';
-import { useState, useEffect, useContext } from 'react';
+import { useState, useEffect, useContext, useRef } from 'react';
 import { CartContext } from '../contexts/CartContext';
 import CartModal from './CartModal'; // Import the CartModal component
 
@@ -13,6 +13,7 @@ const Navbar = () => {
   // const { addToCart } = useContext(CartContext);
 
   const [isCartModalOpen, setIsCartModalOpen] = useState(false); // State to control modal visibility
+  const navRef = useRef(null);
 
   const handleScroll = () => {
     if (window.scrollY < lastScrollY) {
@@ -50,9 +51,23 @@ const Navbar = () => {
     setHeaderBackground(''); // Reset the header background
   };
 
+  const handleClickOutside = (event) => {
+    if (navRef.current && !navRef.current.contains(event.target)) {
+      setShowNav(false);
+      setHeaderBackground('');
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
+
   return (
     <header className={`header ${isScrollingUp ? 'show' : 'hide'} ${showNav ? 'show-nav' : ''}`} style={{ backgroundColor: headerBackground }}>
-      <nav className='navbar'>
+      <nav className='navbar' ref={navRef}>
         <h1>
           <Link to='/'>
             <img src={fulllogo} alt='Logo' className='logo-img' />
