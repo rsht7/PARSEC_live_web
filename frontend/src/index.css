@@ -3150,7 +3150,7 @@ h1 {
 
 
   .nav-links a {
-    font-size: 3vh; 
+    font-size: 2vmax; 
   }
 
 
@@ -3161,12 +3161,15 @@ h1 {
     padding-bottom: 8vw;
   }
 
+  
   .cart-ham{
     display: flex;
     gap: 3vw;
     justify-content: center;
     align-items: center;
   }
+
+
   .cart-btn {
     font-size: 4vw; 
     width: 50%;
@@ -4383,6 +4386,10 @@ h1 {
     display: none;
   }
 
+  .nav-links a{
+    font-size: 2vmax;
+  }
+
 
   .cart-ham{
     display: flex;
@@ -4883,6 +4890,10 @@ h1 {
     
   }
   
+  .trash-btn{
+    width: 3vw;
+    margin-left: 3vw;
+  }
   
 
 
@@ -5413,7 +5424,10 @@ h1 {
     
   }
 
-  
+  .trash-btn{
+    width: 2vw;
+    margin-left: 3vw;
+  }
   
 
 
@@ -5667,6 +5681,10 @@ h1 {
     list-style-type: none;
     padding: 0;
     
+  }
+  .trash-btn{
+    width: 1.5vw;
+    margin-left: 2vw;
   }
 }
   
