@@ -988,13 +988,14 @@ h1 {
     display: flex;
     flex-direction: column;
     overflow: visible;
-    gap: 25px;
     align-items: center;
+    gap: 5vw;
   }
 
   .up_events-slide {
     display: flex;
     flex-direction: column;
+    gap: 5vw;
   }
 
   .up_event-item {
@@ -1006,7 +1007,7 @@ h1 {
 
   .up_event-item.visible {
     opacity: 1;
-    transform: translateY(0); 
+    transform: translateY(0px); 
   }
 
   .dots-container {
