@@ -1415,13 +1415,16 @@ h1 {
     border: 1px solid #ccc; 
     border-radius: 4px;
     height: 2.8vw;
-    margin-bottom: 2.5vw;
+    
   }
 
+
+  
   .subtotal,
   .empty-cart {
     font-size: 1.5vw;
   }
+
 
   .checkout-button {
     padding: 0.8vw 1vw;
@@ -1474,7 +1477,7 @@ h1 {
     border: 1px solid #ccc; 
     border-radius: 4px;
     height: 4vw;
-    margin-bottom: 2.5vw;
+    
   }
 
   .subtotal,
@@ -4317,7 +4320,7 @@ h1 {
     border: 1px solid #ccc; 
     border-radius: 4px; 
     height: 8vw;
-    margin-bottom: 1.9765625vw;
+    
   }
 
   .trash-btn{
@@ -4387,7 +4390,7 @@ h1 {
   }
 
   .nav-links a{
-    font-size: 2vmax;
+    font-size: 1.5vmax;
   }
 
 
@@ -4411,7 +4414,7 @@ h1 {
     font-weight: 600;
     font-family: "Inter", sans-serif;
     border: none;
-    font-size: 2vmax;
+    font-size: 1.5vmax;
     letter-spacing: 1px;
     cursor: pointer;
     padding: 0;
@@ -4444,7 +4447,18 @@ h1 {
   }
 
 
+  .checkout-button{
+    font-size: 2vw;
+  }
 
+  .browse-link{
+    margin-top: 1vh;
+    color: #000;
+  }
+  .browse-link a{
+    font-size: 2vw;
+    color: #000;
+  }
 
   /* HOMEPAGE */
 
