@@ -6,7 +6,7 @@ const SuccessPage = () => {
     <div className='failure-pg'>
       <h2>Payment Successful!</h2>
       <p>Thank you for your purchase.</p>
-      <Link to="/event">Continue Shopping</Link>
+      <Link to="/event">Browse More Events</Link>
     </div>
   );
 };

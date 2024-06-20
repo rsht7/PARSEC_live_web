@@ -16,11 +16,18 @@ const CartModal = ({ onClose }) => {
   const handleCheckout = async () => {
     const stripe = await stripePromise;
 
-    const response = await fetch('https://parsec-live-web.onrender.com/api/payment/create-checkout-session', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ items: cartItems }),
-    });
+    // const response = await fetch('https://parsec-live-web.onrender.com/api/payment/create-checkout-session', {
+    //   method: 'POST',
+    //   headers: { 'Content-Type': 'application/json' },
+    //   body: JSON.stringify({ items: cartItems }),
+    // });
+
+    const response = await fetch('/api/payment/create-checkout-session', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ items: cartItems }),
+      });
+
 
     const session = await response.json();
 
