@@ -12,9 +12,13 @@ const About = () => {
     const abtT1Ref = useRef(null);
     const abtT2Ref = useRef(null);
     const abtT3Ref = useRef(null);
-    const outFoundRef1 = useRef(null);
+    // const outFoundRef1 = useRef(null);
     const outFoundRef2 = useRef(null);
     const outFoundRef3 = useRef(null);
+    const outFoundRef4 = useRef(null);
+    const outFoundRef5 = useRef(null);
+
+
 
     useEffect(() => {
         const handleIntersection = (entries) => {
@@ -92,7 +96,7 @@ const About = () => {
         const handleScroll = () => {
             const windowHeight = window.innerHeight;
 
-            [abtT1Ref, abtT2Ref, abtT3Ref, outFoundRef1, outFoundRef2, outFoundRef3].forEach(ref => {
+            [abtT1Ref, abtT2Ref, abtT3Ref, outFoundRef2, outFoundRef3, outFoundRef4, outFoundRef5].forEach(ref => {
                 const element = ref.current;
                 if (element) {
                     const rect = element.getBoundingClientRect();
@@ -158,11 +162,11 @@ const About = () => {
                 
                 <div className='our-story'>
                     <div className='os-lhs'>
-                        <p className='os-head fade-in' ref={outFoundRef1}>Our Founders</p>
+                        <p className='os-head fade-in' >Our Founders</p>
                         <p className='os-belowhead fade-in' ref={outFoundRef2}>Eli Staples</p>
-                        <p className='os-below2 fade-in' ref={outFoundRef2}> With 30+ years of experience in the music performance world at all levels, Eli has performed and produced with artists all across the spectrum of music, ranging from R&B stars like, Ashanti, Mya and  Robin Thicke, pop stars like Journey, DC’s own Chuck Brown and jazz luminaries like Nneena Freelon, Brian Lynch, Karen Briggs, and Cindy Bradley. With an incredible mastery and repertoire of pop, Latin, R&B, Jazz, Afro-Cuban & classical music, his unique skill set in genre bending acts and performances makes for a rare lens into producing a spectacular musical feast.</p>
-                        <p className='os-belowhead fade-in' ref={outFoundRef3}>Sherin Koshy</p>
-                        <p className='os-below2 fade-in' ref={outFoundRef3}>A social change maker with over 20+ years of experience in business development and management, Sherin brings her diverse perspective and experience to creating a sustainable business model for live music aligned to consumer experience.</p>
+                        <p className='os-below2 fade-in' ref={outFoundRef3}> With 30+ years of experience in the music performance world at all levels, Eli has performed and produced with artists all across the spectrum of music, ranging from R&B stars like, Ashanti, Mya and  Robin Thicke, pop stars like Journey, DC’s own Chuck Brown and jazz luminaries like Nneena Freelon, Brian Lynch, Karen Briggs, and Cindy Bradley. With an incredible mastery and repertoire of pop, Latin, R&B, Jazz, Afro-Cuban & classical music, his unique skill set in genre bending acts and performances makes for a rare lens into producing a spectacular musical feast.</p>
+                        <p className='os-belowhead fade-in' ref={outFoundRef4}>Sherin Koshy</p>
+                        <p className='os-below2 fade-in' ref={outFoundRef5}>A social change maker with over 20+ years of experience in business development and management, Sherin brings her diverse perspective and experience to creating a sustainable business model for live music aligned to consumer experience.</p>
                     </div>
 
                     <div className='os-rhs'>
