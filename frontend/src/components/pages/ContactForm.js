@@ -51,7 +51,7 @@ const ContactForm = () => {
                 setQuery('')
                 setError(null)
                 // console.log('We have recieved your message!', json)
-                setConfirm('Thanks! We received your message and will follow up soon!')
+                setConfirm('Thankyou for reaching out to us! We shall get back to you soon!')
             }
     
 
@@ -65,7 +65,7 @@ const ContactForm = () => {
         <div className='contact-lhsrhs'>
         
                 <div className='contact-lhs'>
-                    <h1>Reach Us</h1>
+                    <h1>Get in touch</h1>
                     <p>Have any questions or suggestions? We'd love to hear from you!
                     </p>
                     <div className='contact-icons'>
