@@ -724,22 +724,12 @@ h1 {
   margin: 5vh 6vw;
   padding: 1.302083vw 0 0 0;
   text-align: left;
-  transform: translateY(150px); 
-  transition: opacity 1s ease, transform 1.5s ease-in-out; 
+  transform: translateY(100px);
+  transition: opacity 0.5s, transform 0.5s;
 }
-
-.up_events-container {
-  max-width: 88.5416vw;
-  margin: 5vh 6vw;
-  padding: 1.302083vw 0 0 0;
-  text-align: left;
-  transform: translateY(150px);
-  transition: transform 0.7s ease; /* Transition property for sliding animation */
-}
-
 
 .up_events-container.visible {
-  transform: translateY(0); /* Slide up to the original position */
+  transform: translateY(0);
 }
 
 .up_events-container h1 {
@@ -753,12 +743,15 @@ h1 {
 
 .up_events-slider-wrapper {
   overflow: hidden;
+  position: relative;
 }
 
 .up_events-slider {
   display: flex;
-  transition: transform 1s ease-in-out;
+  transition: transform 0.7s ease-in-out;
+  will-change: transform; 
 }
+
 
 .up_events-slide {
   display: flex;
@@ -772,16 +765,7 @@ h1 {
   height: 29.296875vw;
   position: relative;
   overflow: hidden;
-  opacity: 1;
-  /* transform: translateY(150px); 
-  transition: opacity 1s ease, transform 1.5s ease-in-out;  */
 }
-
-/* .up_event-item.visible {
-  opacity: 1;
-  transform: translateY(0); 
-} */
-
 
 .up_event-image {
   width: 100%;
@@ -887,6 +871,7 @@ h1 {
 .dot.active {
   background: #fff;
 }
+
 
 @media (max-width: 550px) {
   .up_events-container{
@@ -1517,6 +1502,14 @@ h1 {
  .event-wrapper{
   margin: 5vh 6vw 5vh 6vw;
   text-align: center;
+  opacity: 0;
+  transform: translateY(100px);
+  transition: opacity 0.5s, transform 0.5s;
+}
+
+.event-wrapper.animate {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .upc-event{
@@ -3497,7 +3490,7 @@ h1 {
 }
 
 .event-date-time{
-  margin-bottom: 1vh;
+  margin-bottom: 0.5vh;
   font-size: 4vw;
 }
 .event-location{
@@ -3511,18 +3504,19 @@ h1 {
   margin: 3vh 0;
 }
 .event-terms{
-  margin-top: 4vh;
-  font-size: 3vw;
+  margin-top: 2vh;
+  font-size: 2.5vw;
 }
 
 
 .right-side {
   padding: 3.5vw; 
   width: 100%;
+  margin-top: -5vw;
 }
 
 .form-labels{
-  gap: 4vw;
+  gap: 8vw;
 }
 .form-labels p{
   font-size: 4vw;
@@ -3538,9 +3532,10 @@ h1 {
 }
 
 .ticket-form input{
-  font-size: 3.5vw;
-  width: 8vw;
+  font-size: 4vw;
+  width: 13.5vw;
   padding-left: 1vw;
+  font-weight: 600;
 }
 
 .ticket-form p{
