@@ -879,6 +879,7 @@ h1 {
     margin-left:4vw ;
     margin-right: 4vw;
     max-width:none;
+    transform: none;
   }
   .up_events-container h1 {
     font-family: "Caudex", serif;
@@ -2468,7 +2469,6 @@ h1 {
 .os-belowhead{
   font-size: 1.43vmax;
   color: rgb(234, 234, 234);
-  text-align: justify;
   margin-bottom: 0;
   font-weight: 600;
 }
@@ -3469,6 +3469,11 @@ h1 {
 .back-link{
   margin: 4vmin 4vw;
 }
+
+.back-link a{
+  font-size: 3.7vw;
+}
+
 .left-side{
   width: 100%;
 }
@@ -3501,7 +3506,7 @@ h1 {
 }
 
 .event-text, .event-date-ie {
-  font-size: 4vw;
+  font-size: 3.5vw;
 }
 .event-text{
   margin-top: 0;
@@ -3517,7 +3522,7 @@ h1 {
 
 
 .time-location h4 {
-  font-size: 5vw;
+  font-size: 5.8vw;
   line-height: 1.5625vw;
   margin: 3vh 0;
 }
@@ -3541,7 +3546,7 @@ h1 {
 }
 
 .ticket-booking h3{
-  font-size: 5vw;
+  font-size: 5.8vw;
   margin: 4vh 0 3vh 0;
 }
 .ticket-booking form{
@@ -3554,7 +3559,6 @@ h1 {
   width: 13.5vw;
   padding-left: 1vw;
   font-weight: 600;
-
 }
 
 .ticket-form p{
@@ -3566,6 +3570,7 @@ h1 {
 .ticket-form button{
   font-size: 3.5vw;
   width: 30vw;
+  letter-spacing: 0.6px;
 }
 .share{
   display: none;
@@ -3588,6 +3593,8 @@ h1 {
 
 .share-phone p{
   font-family: 'Caudex', serif;
+  font-size: 4.3vw;
+  font-weight: 550;
 }
 
   
