@@ -3181,10 +3181,10 @@ h1 {
     width: 15vw;
     height: 10vw;
     color:white;
-    font-weight: 600;
+    font-weight: 500;
     font-family: "Inter", sans-serif;
     border: none;
-    font-size: 2vmax;
+    font-size: 1.9vmax;
     letter-spacing: 1px;
     cursor: pointer;   
     
@@ -4269,8 +4269,8 @@ h1 {
   }
   
   .cart-modal {
-    width: 100%;
-    max-width: 80vw;
+    width: 90%;
+    max-width: 90vw;
     border-radius: 10px;
     max-height: 80vw;
   }
@@ -4292,23 +4292,23 @@ h1 {
   }
 
   .cart-item-image {
-    width: 10vw;
-    height: 10vw;
+    width: 15vw;
+    height: 15vw;
     margin-right: 3vw;
   }
 
   .cart-item-details {
-    font-size: 4vw;
+    font-size: 3.7vw;
   }
 
   .cart-item-details h4 {
     margin: 0;
     font-weight: 700;
-    font-size: 4vw;
+    font-size: 3.8vw;
   }
 
   .quantity-input {
-    width: 9vw; 
+    width: 11vw; 
     text-align: center;
     font-size: 4vw; 
     background-color: #f0f0f0; 
@@ -4336,7 +4336,7 @@ h1 {
   }
 
   .checkout-button {
-    padding: 1.3vw 1.5vw;
+    padding: 1.7vw 1.5vw;
     font-size: 4vw;
   }
 
