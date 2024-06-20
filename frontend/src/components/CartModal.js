@@ -1,8 +1,8 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useRef } from 'react';
 import { CartContext } from '../contexts/CartContext';
 import { loadStripe } from '@stripe/stripe-js';
 import { Link } from 'react-router-dom';
-import deleteicon from './compassets/delete-icon.png'
+import deleteicon from './compassets/delete-icon.png';
 
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 // import { faTrashAlt } from '@fortawesome/free-solid-svg-icons';
@@ -11,6 +11,7 @@ const stripePromise = loadStripe('pk_test_51MBkelSFOq4LXdKRBM4NquESXAFAX0FRoW6yN
 
 const CartModal = ({ onClose }) => {
   const { cartItems, setCartItems, clearCart } = useContext(CartContext);
+  const modalRef = useRef();
 
   const handleCheckout = async () => {
     const stripe = await stripePromise;
@@ -54,9 +55,22 @@ const CartModal = ({ onClose }) => {
     setCartItems(updatedCartItems);
   };
 
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (modalRef.current && !modalRef.current.contains(event.target)) {
+        onClose();
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [onClose]);
+
   return (
     <div className="cart-modal">
-      <div className="cart-content">
+      <div className="cart-content" ref={modalRef}>
         <div className="cart-header">
           <h2>Your Cart</h2>
           <button className="close-button" onClick={onClose}>×</button>
@@ -65,15 +79,6 @@ const CartModal = ({ onClose }) => {
         {cartItems.length === 0 ? (
           <div className="empty-cart" style={{ textAlign: 'center', marginTop: '0.6510416vw' }}>
             <p>NO ITEMS FOUND.</p>
-            {/* <Link to={`/event`} className="browse-events-button" style={{ 
-              background: 'linear-gradient(to left, rgb(20, 4, 93), rgb(76, 6, 101))',
-              color: 'white',
-              padding: ' 0.6510416vw 1.302083vw',
-              borderRadius: '4px',
-              textDecoration: 'none',
-              display: 'inline-block',
-              marginTop: '-15px'
-            }}>BROWSE EVENTS</Link> */}
           </div>
         ) : (
           <div className="cart-items" style={{ maxHeight: '25vw', overflowY: 'auto' }}>
@@ -92,12 +97,7 @@ const CartModal = ({ onClose }) => {
                     onChange={(e) => handleQuantityChange(e, item.id)}
                     className="quantity-input"
                   />
-                  {/* <FontAwesomeIcon
-                    icon={faTrashAlt}
-                    onClick={() => handleRemoveItem(item.id)}
-                    style={{ cursor: 'pointer', marginLeft: '0.32552083vw', marginRight: '0.32552083vw', color: '#ccc', fontSize: '0.9765625vw', marginBottom: '2.27864583vw' }}
-                  /> */}
-                  <img src={deleteicon} alt='X' onClick={()=>handleRemoveItem(item.id)} className='trash-btn' ></img>
+                  <img src={deleteicon} alt='X' onClick={() => handleRemoveItem(item.id)} className='trash-btn'></img>
                 </div>
                 {index < cartItems.length - 1 && <hr className="cart-divider" />}
               </React.Fragment>
@@ -114,7 +114,9 @@ const CartModal = ({ onClose }) => {
             <button className="checkout-button" onClick={handleCheckout}>Checkout</button>
           </React.Fragment>
         )}
-        <div className='browse-link'><Link to='/event'>Browse Events</Link></div>
+        <div className='browse-link'>
+          <Link to='/event' onClick={onClose}>Browse Events</Link>
+        </div>
       </div>
     </div>
   );
