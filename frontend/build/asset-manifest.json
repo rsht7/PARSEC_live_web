@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.40cf5b34.css",
-    "main.js": "/static/js/main.ab07fd8e.js",
+    "main.css": "/static/css/main.8ee3512d.css",
+    "main.js": "/static/js/main.db74585f.js",
     "static/media/contactcover.jpg": "/static/media/contactcover.b187e2eb054aef5def75.jpg",
     "static/media/aboutpic2.jpeg": "/static/media/aboutpic2.0cae59dcec2cf5784b13.jpeg",
     "static/media/nwsltr22.jpeg": "/static/media/nwsltr22.a1d7fd122832d404a821.jpeg",
@@ -12,11 +12,11 @@
     "static/media/homepic2.jpeg": "/static/media/homepic2.4120a6169861e26741af.jpeg",
     "static/media/events-page-pic.jpeg": "/static/media/events-page-pic.5c0a2752774a86ea98bd.jpeg",
     "index.html": "/index.html",
-    "main.40cf5b34.css.map": "/static/css/main.40cf5b34.css.map",
-    "main.ab07fd8e.js.map": "/static/js/main.ab07fd8e.js.map"
+    "main.8ee3512d.css.map": "/static/css/main.8ee3512d.css.map",
+    "main.db74585f.js.map": "/static/js/main.db74585f.js.map"
   },
   "entrypoints": [
-    "static/css/main.40cf5b34.css",
-    "static/js/main.ab07fd8e.js"
+    "static/css/main.8ee3512d.css",
+    "static/js/main.db74585f.js"
   ]
 }
