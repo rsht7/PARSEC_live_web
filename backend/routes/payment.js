@@ -157,10 +157,9 @@ router.post('/create-checkout-session', async (req, res) => {
       payment_method_types: ['card'],
       line_items: lineItems,
       mode: 'payment',
-      success_url:'https://parsec-live-web.onrender.com/success',
-      cancel_url:'https://parsec-live-web.onrender.com/cart',
-      // success_url: `${Client}/success`,
-      // cancel_url: `${Client}/cart`,
+      
+      success_url: `${Client}/success`,
+      cancel_url: `${Client}/cart`,
     });
 
     res.json({ id: session.id });
