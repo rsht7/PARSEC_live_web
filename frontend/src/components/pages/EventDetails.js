@@ -158,117 +158,8 @@
 
 
 
-// src/components/pages/EventDetails.js
-// import React, { useEffect, useState, useContext } from 'react';
-// import { useParams, Link , useNavigate} from 'react-router-dom';
-// import Headname from '../Headname';
-// import homepic2 from './homepic2.jpeg';
-// import facebook3 from '../compassets/facebook3.png';
-// import instagram from '../compassets/instagram.png';
-// import shareicon from './shareicon.png';
-// import Newsletter from '../Newsletter';
-// import { CartContext } from '../../contexts/CartContext';
-
-// function EventDetails() {
-//   useEffect(() => {
-//     window.scrollTo(0, 0);
-//   }, []);
-
-//   const { id } = useParams();
-//   const [event, setEvent] = useState(null);
-//   const [quantity, setQuantity] = useState(1);
-//   const { addToCart } = useContext(CartContext);
-//   const navigate = useNavigate();
-
-//   useEffect(() => {
-//     fetch(`/api/events/${id}`)
-//       .then((response) => response.json())
-//       .then((data) => setEvent(data))
-//       .catch((error) => console.error('Error fetching event details:', error));
-//   }, [id]);
-
-//   if (!event) {
-//     return <div>Loading...</div>;
-//   }
-
-//   const handleAddToCart = (e) => {
-//     e.preventDefault();
-//     addToCart(event, quantity);
-//     navigate('/cart');
-//   };
-
-//   return (
-//     <div className="total">
-//       <Headname name={<Link to='/event' style={{ textDecoration: 'none', color: 'rgba(194, 194, 194, 1)' }}>Events</Link>} eventname={`> ${event.title}`} pic={homepic2} />
-//       <div className='back-link'> <Link to='/event'>&#10094; ALL EVENTS </Link></div>
-//       <div className='eventDet-container'>
-//         <div className="page-body">
-//           <div className="page-container">
-//             <div className="left-side">
-//               <div className="event-info">
-//                 <h4 className="event-date-ie">{event.date}</h4>
-//                 <h3 className="event-title">{event.title}</h3>
-//                 <p className="event-text">{event.text}</p>
-//                 <p className="event-text">{event.text}</p>
-//               </div>
-//               <img src={event.img} alt="Event-Image" className="event-image-phone" />
-//               <div className="time-location">
-//                 <h4>Time & Location</h4>
-//                 <p className="event-date-time">{event.date}, {event.time}</p>
-//                 <p className="event-location">{event.location}</p>
-//                 <p className="event-terms">Terms and Conditions</p>
-//               </div>
-//               <div className="share">
-//                 <p>Share this event</p>
-//                 <div className="icons">
-//                   <span><img src={facebook3} alt="Facebook Icon" /></span>
-//                   <span><img src={instagram} alt="Instagram Icon" /></span>
-//                   <span><img src={shareicon} alt="share Icon" /></span>
-//                 </div>
-//               </div>
-//             </div>
-//             <div className="right-side">
-//               <img src={event.img} alt="Event-Image" className="event-image-landscape" />
-//               <div className='ticket-booking'>
-//                 <h3>Book Tickets</h3>
-//                 <div className='form-labels'>
-//                   <p className='f-l1'>Quantity</p>
-//                   <p>Ticket price</p>
-//                 </div>
-//                 <form className='ticket-form' onSubmit={(e) => { e.preventDefault(); handleAddToCart(); }}>
-//                   <input
-//                     type='number'
-//                     id='quantity'
-//                     name='quantity'
-//                     min='1'
-//                     value={quantity}
-//                     onChange={(e) => setQuantity(parseInt(e.target.value))}
-//                   />
-//                   <p>$25.00</p>
-//                   <button type="submit">ADD TO CART</button>
-//                 </form>
-//               </div>
-//               <div className="share-phone">
-//                 <p>Share this event</p>
-//                 <div className="icons-phone">
-//                   <span><img src={facebook3} alt="Facebook Icon" /></span>
-//                   <span><img src={instagram} alt="Instagram Icon" /></span>
-//                   <span><img src={shareicon} alt="share Icon" /></span>
-//                 </div>
-//               </div>
-//             </div>
-//           </div>
-//         </div>
-//       </div>
-//       <Newsletter />
-//     </div>
-//   );
-// }
-
-// export default EventDetails;
 
 
-// src/components/pages/EventDetails.js
 import React, { useEffect, useState, useContext } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import Headname from '../Headname';
@@ -284,6 +175,13 @@ function EventDetails() {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  // const [isMobile, setIsMobile] = useState(false);
+
+  // useEffect(() => {
+  //   // Detect if the user is on a mobile device
+  //   setIsMobile(/iPhone|iPad|iPod|Android/i.test(navigator.userAgent));
+  // }, []);
 
   const { id } = useParams();
   const [event, setEvent] = useState(null);
@@ -308,9 +206,52 @@ function EventDetails() {
     setIsCartModalOpen(true); // Show the cart modal
   };
 
+  const eventUrl = `${window.location.origin}/event/${id}`;
+
+  const facebookShareLink = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(eventUrl)}`;
+  const instagramProfileLink = `https://www.instagram.com/parseclive`;
+
+
+
+  // const handleShareClick = async () => {
+  //   try {
+  //     await navigator.clipboard.writeText(eventUrl);
+  //     alert('Event URL copied to clipboard!');
+  //   } catch (err) {
+  //     console.error('Failed to copy: ', err);
+  //     alert('Failed to copy the URL. Please try again.');
+  //   }
+  // };
+
+  // const handleCopyUrl = () => {
+  //   const input = document.createElement('input');
+  //   input.style.position = 'fixed';
+  //   input.style.opacity = 0;
+  //   input.value = eventUrl;
+  //   document.body.appendChild(input);
+  //   input.select();
+  //   document.execCommand('copy');
+  //   document.body.removeChild(input);
+  //   alert('Event URL copied to clipboard!');
+  // };
+
+  const handleCopyUrl = () => {
+    const copyText = document.createElement('textarea');
+    copyText.value = eventUrl;
+    copyText.setAttribute('readonly', '');
+    copyText.style.position = 'absolute';
+    copyText.style.left = '-9999px';
+    document.body.appendChild(copyText);
+    copyText.select();
+    document.execCommand('copy');
+    document.body.removeChild(copyText);
+    alert('Event URL copied to clipboard!');
+  };
+
+
   return (
     <div className={`total ${isCartModalOpen ? 'blur' : ''}`}> {/* Add blur class conditionally */}
-      <Headname name={<Link to='/event' style={{ textDecoration: 'none', color: 'rgba(194, 194, 194, 1)' }}>Events</Link>} eventname={`> ${event.title}`} pic={homepic2} />
+      <Headname name={<Link to='/event' style={{ textDecoration: 'none' }}>Events</Link>} eventname={`> ${event.title}`} pic={homepic2} />
       <div className='back-link'> <Link to='/event'>&#10094; ALL EVENTS </Link></div>
       <div className='eventDet-container'>
         <div className="page-body">
@@ -332,9 +273,9 @@ function EventDetails() {
               <div className="share">
                 <p>Share this event</p>
                 <div className="icons">
-                  <span><img src={facebook3} alt="Facebook Icon" /></span>
-                  <span><img src={instagram} alt="Instagram Icon" /></span>
-                  <span><img src={shareicon} alt="share Icon" /></span>
+                  <span><a href={facebookShareLink} target="_blank" rel="noopener noreferrer"><img src={facebook3} alt="Facebook Icon" /></a></span>
+                  {/* <span><a href={instagramProfileLink} target="_blank" rel="noopener noreferrer"><img src={instagram} alt="Instagram Icon" /></a></span> */}
+                  <span onClick={handleCopyUrl}><img src={shareicon} alt="share Icon" /></span>
                 </div>
               </div>
             </div>
@@ -362,9 +303,9 @@ function EventDetails() {
               <div className="share-phone">
                 <p>Share this event</p>
                 <div className="icons-phone">
-                  <span><img src={facebook3} alt="Facebook Icon" /></span>
-                  <span><img src={instagram} alt="Instagram Icon" /></span>
-                  <span><img src={shareicon} alt="share Icon" /></span>
+                  <span><a href={facebookShareLink} target="_blank" rel="noopener noreferrer"><img src={facebook3} alt="Facebook Icon" /></a></span>
+                  {/* <span><a href={instagramProfileLink} target="_blank" rel="noopener noreferrer"><img src={instagram} alt="Instagram Icon" /></a></span> */}
+                  <span onClick={handleCopyUrl}><img src={shareicon} alt="share Icon"  /></span>
                 </div>
               </div>
             </div>
@@ -378,3 +319,5 @@ function EventDetails() {
 }
 
 export default EventDetails;
+
+

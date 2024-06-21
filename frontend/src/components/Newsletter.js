@@ -173,12 +173,12 @@ const Newsletter = () => {
         <img src={newsletterimg} alt="Newsletter" />
         <div className="main-newsletter-stuff">
         {isSubmitted ? (
-              <h1 className='before-h1'>Thank you for subscribing to our Newsletter!</h1>
+              <h1 className='after-h1'>Thank you for subscribing to our Newsletter!</h1>
             ) : (
               <>
                 <div className="main-nsl-stuff-text">
             
-                <h1>Let Us Keep You Posted!</h1>
+                <h1 className='before-h1'>Let Us Keep You Posted!</h1>
                 <h2>Join our newsletter and follow us on social media for access to exclusive discounts and featured promotions.</h2>
              
                 </div>

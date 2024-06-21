@@ -66,7 +66,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <header className={`header ${isScrollingUp ? 'show' : 'hide'} ${showNav ? 'show-nav' : ''}`} style={{ backgroundColor: headerBackground }}>
+    <header className={`header ${isScrollingUp ? 'show' : 'hide'} ${showNav ? 'show-nav' : ''} ${isCartModalOpen ? 'modal-open' : ''}` } style={{ backgroundColor: headerBackground }}>
       <nav className='navbar' ref={navRef}>
         <h1>
           <Link to='/'>
@@ -106,3 +106,5 @@ const Navbar = () => {
 }
 
 export default Navbar;
+
+

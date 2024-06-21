@@ -180,8 +180,8 @@ const Footer = () => {
       <div className="footone">
         <Link to="/"><img src={fulllogo} alt="PARSEC" /></Link>
         <ul>
-          <li><img src={facebook3} alt="Facebook" /></li>
-          <li><img src={instagram} alt="Instagram" /></li>
+          <li><Link to="https://www.facebook.com/share/PvtbfYJw7HrmrYyn/?mibextid=WC7FNe"><img src={facebook3} alt="Facebook" /></Link></li>
+          <li><Link to="https://www.instagram.com/parseclive"><img src={instagram} alt="Instagram" /></Link></li>
         </ul>
       </div>
       <div className="foottwo">
@@ -193,7 +193,7 @@ const Footer = () => {
             <li><Link to="/contactus" className={getLinkClass('/contactus')}>CONTACT</Link></li>
           </ul>
           {isSubmitted ? (
-            <p className='return-msg'>Thankyou for subscribing to our Newsletter!</p>
+            <p className='return-msg'>Thank you for subscribing to our Newsletter!</p>
           ) : (
             <form className="ulb" onSubmit={handleNewSubmit}>
               <input
@@ -214,7 +214,7 @@ const Footer = () => {
           </div>
           <div className="foot-cpr">
             <ul>
-              <li>&copy; 2024 Parsec LIVE</li>
+              <li><Link to='/'>&copy; 2024 Parsec LIVE</Link></li>
               <li>|</li>
               <li>All Rights Reserved</li>
               <li>|</li>
