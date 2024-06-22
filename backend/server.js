@@ -413,7 +413,7 @@ const eventRoutes = require('./routes/events');
 const paymentRoutes = require('./routes/payment'); // Import the payment routes
 
 const app = express();
-const Port = process.env.PORT ;
+const Port = process.env.PORT || 4000;
 
 // CORS configuration
 const allowedOrigins = ['https://parsec-live-web.vercel.app', 'https://parsec-live-web-b4u1.onrender.com', 'http://localhost:3000', 'http://localhost:4000/'];

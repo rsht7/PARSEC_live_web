@@ -276,7 +276,7 @@ const CartModal = ({ onClose }) => {
         )}
         <div className='browse-link'>
           {/* <Link to='/event' onClick={() => { setIsModalOpen(false); onClose(); }}>Browse Events</Link> */}
-          <Link to='/event' onClick={onClose}>Browse Events</Link>
+          <Link to='/event' onClick={onClose}>Browse More Events</Link>
         </div>
       </div>
     </div>
