@@ -65,7 +65,7 @@ const ContactForm = () => {
         <div className='contact-lhsrhs'>
         
                 <div className='contact-lhs'>
-                    <h1>Get in touch</h1>
+                    <h1>Reach Us</h1>
                     <p>Have any questions or suggestions? We'd love to hear from you!
                     </p>
                     <div className='contact-icons'>
@@ -143,7 +143,10 @@ const ContactForm = () => {
 
 
                     </div>
-                    
+                    <div className='confirmation-phone'>
+                            <p>{confirm}</p>
+
+                    </div>
                     
 
                     
