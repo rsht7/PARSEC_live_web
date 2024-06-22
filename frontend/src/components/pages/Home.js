@@ -117,7 +117,7 @@ const Home = () => {
     };
   }, []);
 
-//   const videoUrl = "https://res.cloudinary.com/dytwtr49x/video/upload/v1718987668/landscape_Groove_Edit_Parsec_Teaser_hgtqtn.mp4";
+  const videoUrl = "https://res.cloudinary.com/dytwtr49x/video/upload/v1718987668/landscape_Groove_Edit_Parsec_Teaser_hgtqtn.mp4";
 
   
 
@@ -127,8 +127,8 @@ const Home = () => {
                 <img src={logo} alt="Logo" />
             </div>
             <div className="main" >
-                {/* <video  ref={videoRef}  id='homevideo' src={videoUrl}  alt="Home" className='main-img' /> */}
-                <img className='main-img' alt='Home' src={homepic2}></img> 
+                <video  ref={videoRef}  id='homevideo' src={videoUrl}  alt="Home" className='main-img' />
+                {/* <img className='main-img' alt='Home' src={homepic2}></img>  */}
                 {!isPlaying && ( 
                 <>
                     <h1>Welcome To Parsec Live</h1>
