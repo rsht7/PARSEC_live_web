@@ -527,6 +527,7 @@ button {
   width: 100%;
   box-sizing: border-box;
   margin-top: 3vw;
+  margin-bottom: 4vmin;
 }
 
 .events-container h1 {
@@ -625,7 +626,7 @@ button {
 
 .event-details .event-date {
   font-family: "Caudex", serif;
-  font-size: 0.9114583vw;
+  font-size: 1vw;
   font-weight: 400;
   line-height: 0.9114583vw;
   text-align: left;
@@ -710,7 +711,7 @@ h1 {
 
 .see-more-container {
   text-align: center;
-  margin-top: 0;
+  margin-top: 0vh;
 }
 
 .see-more-btn {
@@ -747,6 +748,10 @@ h1 {
 }
 
 @media (max-width: 550px) {
+  /* .events-container{
+    margin-left: 4vw;
+    margin-right: 4vw;
+  } */
   .events-list {
     flex-direction: column;
     align-items: center;
@@ -754,7 +759,7 @@ h1 {
   }
 
   .event-item {
-    width: 88%;
+    width: 92vw;
     height: 90vw;
   }
 
@@ -776,19 +781,22 @@ h1 {
   }
 
   .event-details .event-date {
-    font-size: 3vw;
+    font-size: 3.5vw;
     color: rgba(194, 194, 194, 1);
   }
 
   .buy-now-btn,
   .read-more-btn {
-    font-size: 3vw;
+    font-size: 3.5vw;
     width: 40%;
-    height: 8vw;
+    height: 10vw;
   }
 
+  .see-more-container{
+    margin-top: 3vh;
+  }
   .see-more-btn {
-    font-size: 2.9765625vw;
+    font-size: 4vw;
   }
 }
 
@@ -1804,7 +1812,7 @@ h1 {
   letter-spacing: 0.01em;
   text-align: left;
   /* color: rgba(122, 122, 122, 1); */
-  color: rgb(173, 170, 170);
+  color: rgba(210, 210, 210, 1);
 
 
 }
@@ -1845,12 +1853,12 @@ h1 {
 .event-location {
   font-family: 'Caudex', serif;
   font-size: 1.1vw;
-  font-weight: 400;
+  font-weight: 600;
   /* line-height: 1.302083vw; */
   letter-spacing: 0.01em;
   text-align: left;
   /* color: rgba(122, 122, 122, 1); */
-  color: rgb(173, 170, 170);
+  color: rgba(210, 210, 210, 1);
 
   margin-top:0;
 }
@@ -1858,12 +1866,12 @@ h1 {
 .event-date-time{
   font-family: 'Caudex', serif;
   font-size: 1.1vw;
-  font-weight: 400;
+  font-weight: 600;
   /* line-height: 1.302083vw; */
   letter-spacing: 0.01em;
   text-align: left;
   /* color: rgba(122, 122, 122, 1); */
-  color: rgb(173, 170, 170);
+  color: rgba(210, 210, 210, 1);
 
   margin-bottom:1vmin;
   margin-top:3vmin;
@@ -1876,7 +1884,7 @@ h1 {
   letter-spacing: 0.01em;
   text-align: left;
   /* color: rgba(122, 122, 122, 1); */
-  color: rgb(173, 170, 170);
+  color: rgba(210, 210, 210, 1);
   margin-bottom: 0;
   margin-top:4vmin;
 }
@@ -1903,6 +1911,7 @@ h1 {
   margin-top: 0;
   color: rgba(210, 210, 210, 1);
   font-size: 1.1vw;
+  font-weight: 600;
 }
 
 
@@ -1929,6 +1938,7 @@ h1 {
   font-family: 'Caudex', serif;
 
   font-weight: 600;
+  border-radius: 0;
 }
 
 .ticket-form p{
@@ -2329,7 +2339,7 @@ h1 {
 
 .abt-t2{
   font-size: 1.3vmax;
-  color: rgb(173, 170, 170);
+  color: rgba(194, 194, 194, 1);
   font-weight: 400;
   padding: 0;
   margin: 2vw 0;
@@ -2595,9 +2605,10 @@ h1 {
 
 .os-names{
   font-size:1.56vmax;
+  font-weight: 600;
 }
 .os-position{
-  font-size: 0.911vmax;
+  font-size: 1vmax;
 }
 
 .os-info-text{
@@ -5447,6 +5458,14 @@ h1 {
     font-size: 1.5vw;
   }
 
+  .event-date-time{
+    font-weight: 600;
+  }
+
+  .event-location{
+    font-weight: 600;
+
+  }
   .event-terms{
     font-size: 1.25vw;
     margin-top: 2.5vmin;
@@ -5476,7 +5495,7 @@ h1 {
   }
 
   .form-labels{
-    gap: 4vw;
+    gap: 5vw;
   }
   
   .form-labels p{
@@ -5763,6 +5782,23 @@ h1 {
     margin-left: 3vw;
   }
 
+  .event-details h3 {
+    font-family: "Caudex", serif;
+    font-size: 1.7vw;
+    font-weight: 700;
+    line-height: 2.74375vw;
+    text-align: left;
+    margin: 0%;
+  }
+  
+  .event-details .event-date {
+    font-family: "Caudex", serif;
+    font-size: 1.2vw;
+    font-weight: 400;
+    line-height: 0.9114583vw;
+    text-align: left;
+    margin-top: 0%;
+  }
   
   
 
@@ -6121,6 +6157,7 @@ h1 {
   .os-rhs{
     width: 55%;
     align-self: center;
+    padding: 1vh 2vh;
   }
 
   .os-head{
@@ -6129,14 +6166,15 @@ h1 {
   }
   
   .os-belowhead{
-    font-size: 1.5vw;
+    
     color: rgb(201, 197, 197);
+    font-size: 1.5vw;
     
     
   }
   
   .os-below2{
-    font-size: 1vw;
+    font-size: 1.1vw;
   }
 
   
