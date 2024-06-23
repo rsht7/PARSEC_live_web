@@ -160,30 +160,30 @@
 
 //                     </div>
 //             </div>
-//             {/* <div className="events-container" ref={eventContainerRef}>
-//                 <h1>Upcoming Events</h1>
-//                 <div className="events-list">
-//                     {displayedEvents.map((event, index) => (
-//                         <div 
-//                             key={event._id} 
-//                             className={`event-item ${index === 1 ? 'middle-event' : 'corner-event'}`}
-//                         >
-//                             <img src={event.img} alt={event.title} className="event-image" />
-//                             <div className="event-details">
-//                                 <h3>{event.title}</h3>
-//                                 <p className="event-date">{event.date}</p>
-//                                 <div className="event-buttons">
-//                                     <button className="buy-now-btn">GET TICKETS</button>
-//                                     <Link to={`/event/${event._id}`} className="read-more-btn">READ MORE</Link>
-//                                 </div>
-//                             </div>
-//                         </div>
-//                     ))}
-//                 </div>
-//                 <div className="see-more-container">
-//                     <Link to="/event" className="see-more-btn">SEE MORE</Link>
-//                 </div>
-//             </div> */}
+            // {/* <div className="events-container" ref={eventContainerRef}>
+            //     <h1>Upcoming Events</h1>
+            //     <div className="events-list">
+            //         {displayedEvents.map((event, index) => (
+            //             <div 
+            //                 key={event._id} 
+            //                 className={`event-item ${index === 1 ? 'middle-event' : 'corner-event'}`}
+            //             >
+            //                 <img src={event.img} alt={event.title} className="event-image" />
+            //                 <div className="event-details">
+            //                     <h3>{event.title}</h3>
+            //                     <p className="event-date">{event.date}</p>
+            //                     <div className="event-buttons">
+            //                         <button className="buy-now-btn">GET TICKETS</button>
+            //                         <Link to={`/event/${event._id}`} className="read-more-btn">READ MORE</Link>
+            //                     </div>
+            //                 </div>
+            //             </div>
+            //         ))}
+            //     </div>
+            //     <div className="see-more-container">
+            //         <Link to="/event" className="see-more-btn">SEE MORE</Link>
+            //     </div>
+            // </div> */}
 //             <div className='home-newsletter-div'><Newsletter /></div>
 //         </div>
 //     );
@@ -298,6 +298,7 @@ import Newsletter from '../Newsletter';
 
 const Home = () => {
     const [events, setEvents] = useState([]);
+    const eventContainerRef = useRef(null);
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -315,7 +316,55 @@ const Home = () => {
         fetchEvents();
     }, []);
 
-    const displayedEvents = events.slice(1, 2);
+    useEffect(() => {
+                const observer = new IntersectionObserver(
+                    (entries) => {
+                        entries.forEach((entry) => {
+                            if (entry.isIntersecting) {
+                                entry.target.classList.add('animate');
+                            } else {
+                                entry.target.classList.remove('animate');
+                            }
+                        });
+                    },
+                    { threshold: 0.1 }
+                );
+        
+                const eventItems = eventContainerRef.current.querySelectorAll('.event-item');
+                eventItems.forEach((item) => {
+                    observer.observe(item);
+                });
+        
+                return () => {
+                    observer.disconnect();
+                };
+            }, [events]);
+
+    const displayedEvents = events.slice(0, 3);
+
+    useEffect(() => {
+        let lastScrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        
+        const handleScroll = () => {
+          const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+          if (scrollTop > lastScrollTop) {
+            // Scrolling down
+            document.body.classList.remove('scroll-up');
+          } else {
+            // Scrolling up
+            document.body.classList.add('scroll-up');
+          }
+          lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // For Mobile or negative scrolling
+        };
+      
+        window.addEventListener('scroll', handleScroll);
+      
+        return () => {
+          window.removeEventListener('scroll', handleScroll);
+        };
+      }, []);
+
+    // const displayedEvents = events.slice(1, 2);
 
     const videoRef = useRef(null);
     const [isPlaying, setIsPlaying] = useState(false);
@@ -422,12 +471,37 @@ const Home = () => {
                 )}
             </div>
 
-            <div className='event-wrapper'>
+            {/* <div className='event-wrapper'>
                 <p className='upc-event'>Upcoming Events</p>
                 <div className='home-event'>
                     {displayedEvents && displayedEvents.map((event) => (
                         <Singleevent key={event._id} event={event} />
                     ))}
+                </div>
+            </div> */}
+
+            <div className="events-container" ref={eventContainerRef}>
+                <h1>Upcoming Events</h1>
+                <div className="events-list">
+                    {displayedEvents.map((event, index) => (
+                        <div 
+                            key={event._id} 
+                            className={`event-item ${index === 1 ? 'middle-event' : 'corner-event'}`}
+                        >
+                            <img src={event.img} alt={event.title} className="event-image" />
+                            <div className="event-details">
+                                <h3>{event.title}</h3>
+                                <p className="event-date">{event.date}</p>
+                                <div className="event-buttons">
+                                    <button className="buy-now-btn">GET TICKETS</button>
+                                    <Link to={`/event/${event._id}`} className="read-more-btn">READ MORE</Link>
+                                </div>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+                <div className="see-more-container">
+                    <Link to="/event" className="see-more-btn">SEE MORE</Link>
                 </div>
             </div>
 

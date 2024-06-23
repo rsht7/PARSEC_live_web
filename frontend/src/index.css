@@ -526,7 +526,7 @@ button {
   align-items: center;
   width: 100%;
   box-sizing: border-box;
-  margin-top: -3vw;
+  margin-top: 3vw;
 }
 
 .events-container h1 {
@@ -756,6 +756,18 @@ h1 {
   .event-item {
     width: 88%;
     height: 90vw;
+  }
+
+  .scroll-up .middle-event {
+    transition: none; /* Remove transition on scroll up */
+  }
+
+  .scroll-up .corner-event {
+    transition: none; /* Remove transition on scroll up */
+  }
+
+  .scroll-up .event-item {
+    transition: none; /* Remove transition on scroll up */
   }
 
   .event-details h3 {
@@ -990,11 +1002,16 @@ h1 {
     transform: translateY(100px); 
     transition: opacity 0.8s ease, transform 0.6s ease-in-out; 
   }
-
+  
   .up_event-item.visible {
     opacity: 1;
     transform: translateY(0px); 
   }
+  
+  .scroll-up .up_event-item {
+    transition: none; /* Remove transition on scroll up */
+  }
+  
 
   .dots-container {
     display: none;

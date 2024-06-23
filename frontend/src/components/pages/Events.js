@@ -314,6 +314,28 @@ const Events = () => {
         setIsCartModalOpen(true);
     };
 
+    useEffect(() => {
+        let lastScrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        
+        const handleScroll = () => {
+          const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+          if (scrollTop > lastScrollTop) {
+            // Scrolling down
+            document.body.classList.remove('scroll-up');
+          } else {
+            // Scrolling up
+            document.body.classList.add('scroll-up');
+          }
+          lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // For Mobile or negative scrolling
+        };
+      
+        window.addEventListener('scroll', handleScroll);
+      
+        return () => {
+          window.removeEventListener('scroll', handleScroll);
+        };
+      }, []);
+
     return (
         <div className='total-event'>
             <Headname name='Events' pic={eventspic} />
