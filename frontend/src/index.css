@@ -1557,6 +1557,17 @@ h1 {
 
 
 
+/* .home-event {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+} */
+
+/* .home-event.slide-up {
+  opacity: 1;
+  transform: translateY(0);
+} */
+
+
  .event-wrapper{
   margin: 5vh 6vw 5vh 6vw;
   text-align: center;
@@ -3445,6 +3456,16 @@ h1 {
   
 }
 
+/* .home-event{
+  transform: translateY(100px);
+} */
+
+
+
+
+
+
+
 .upc-event{
   font-size: 4.5vmax;
   margin-top: 0;
@@ -3457,6 +3478,7 @@ h1 {
   width: 100%;
   display: flex;
   flex-direction: column;
+  /* transition: none; */
 }
 
 .se-lhs{
