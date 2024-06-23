@@ -303,7 +303,7 @@ const Newsletter = () => {
                 />
                 <button type="submit">SUBSCRIBE</button>
               </form>
-              {nlerror && <p style={{ color: 'red' }}>{nlerror}</p>}
+              {/* {nlerror && <p style={{ color: 'red' }}>{nlerror}</p>} */}
             </div>
           )}
         </div>
