@@ -285,15 +285,18 @@ const Events = () => {
 
     useEffect(() => {
         const observerOptions = {
-            threshold: 0.1,
+            threshold: [0, 1],
         };
 
         const observerCallback = (entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('visible');
+                    setTimeout(() => {
+                        entry.target.classList.add('reset-top');
+                    }, 30); // Duration of the first animation
                 } else {
-                    entry.target.classList.remove('visible');
+                    entry.target.classList.remove('visible', 'reset-top');
                 }
             });
         };
@@ -386,4 +389,5 @@ const Events = () => {
 };
 
 export default Events;
+
 
