@@ -1,4 +1,5 @@
 import { useEffect } from 'react'
+import { Link } from 'react-router-dom';
 
 const Privacypolicy = ()=> {
     
@@ -16,12 +17,12 @@ const Privacypolicy = ()=> {
                 <br/>
                 <br/>
                 <p>At Parsec LIVE, LLC. (referred to as “Company,” “us” or “we”), we recognize that your privacy is important. This <span className="pp-b-i">Privacy Policy</span> discloses the privacy practices for the Company’s Websites (collectively, the “Site”), as well as related products and services we may offer to you (collectively referred to as the “Services”). This <span className="pp-b-i">Privacy Policy</span>  also covers how personal and other information that we receive or collect about you is treated. Please read the information below to learn the following regarding your use of this Site<br/>
-                You acknowledge that this <span className="pp-b-i">Privacy Policy</span> is designed to be read in connection with the Site Terms and Conditions of Use, which is available at <span className="pp-b-i-lb">http://_______________</span>,and that by accessing or using our Site, you agree to be bound by the Site’s terms and conditions, as well as this <span className="pp-b-i">Privacy Policy.</span> 
+                You acknowledge that this <span className="pp-b-i">Privacy Policy</span> is designed to be read in connection with the Site Terms and Conditions of Use, which is available  <Link><span className="pp-b-i-lb">here</span></Link>, and that by accessing or using our Site, you agree to be bound by the Site’s terms and conditions, as well as this <span className="pp-b-i">Privacy Policy.</span> 
                 <br/>
                 We reserve the right to change this <span className="pp-b-i">Privacy Policy</span> from time to time. We will notify you about significant changes in the way we treat personal information by sending a notice to the primary email address specified in your account, by placing a prominent notice on our site, and by updating any privacy information on this page. Your continued use of the Site and or Services available through this Site after such modifications will constitute your: (a) acknowledgment of the modified<span className="pp-b-i">Privacy Policy</span> ; and (b) your agreement to abide and be bound by that <span className="pp-b-i">Privacy Policy</span>.
                 <br/>
                 <br/>
-                If you have any questions about this<span className="pp-b-i"> Privacy Policy</span>, please feel free to contact us at: <span className="pp-b-i-b">privacy@___________.</span>
+                If you have any questions about this<span className="pp-b-i"> Privacy Policy</span>, please feel free to contact us at: <span className="pp-b-i-b">info@parseclive.com.</span>
                 <br/>
                 <br/>
                 Optional:
@@ -102,7 +103,7 @@ const Privacypolicy = ()=> {
                 <span className="pp-b">Attn:</span> <span className="pp-b-i">Privacy</span> Compliance Officer
                 <br/>
 
-                <span className="pp-b">Email: </span><span className="pp-b-i-b">privacy@_____________</span>
+                <span className="pp-b">Email: </span><span className="pp-b-i-b">info@parseclive.com</span>
                 <br/>
                 Please include your name, address, and/or email address when you contact us.
                 <br/>
@@ -155,10 +156,10 @@ const Privacypolicy = ()=> {
                 You must be at least 18 years old to have our permission to use this Site. Our policy is that we do not knowingly collect, use or disclose PII about minor visitors.
                 <br/>
                 <br/>
-                You should also be aware that when Personally Identifiable Information is voluntarily disclosed (i.e. your name, email address, etc.) in the discussion forums or other public areas on this Site, that information, along with any information disclosed in your communication, can be collected and used by third parties and may result in unsolicited messages (including unwanted spam messages) from third parties. Such activities are beyond our control and this <span className="pp-b-i">Privacy Policy</span> does not apply to such information. Please consult our Site Terms and Conditions of Use Agreement for our Site Conduct policies. <span className="pp-b-i-lb">http://_________________</span>
+                You should also be aware that when Personally Identifiable Information is voluntarily disclosed (i.e. your name, email address, etc.) in the discussion forums or other public areas on this Site, that information, along with any information disclosed in your communication, can be collected and used by third parties and may result in unsolicited messages (including unwanted spam messages) from third parties. Such activities are beyond our control and this <span className="pp-b-i">Privacy Policy</span> does not apply to such information. Please consult our Site Terms and Conditions of Use Agreement for our Site Conduct policies. <Link><span className="pp-b-i-lb">Click here</span></Link>
                 <br/>
                 <br/>
-                If you have any questions, concerns or inquiries about our <span className="pp-b-i">Privacy Policy</span> , or our use of your PII, or our privacy practices, please contact us at: <span className="pp-b-i-b">privacy</span>@____________. You can also reach our <span className="pp-b-i">Privacy</span> Compliance Officer by sending written correspondence to:
+                If you have any questions, concerns or inquiries about our <span className="pp-b-i">Privacy Policy</span> , or our use of your PII, or our privacy practices, please contact us at: <span className="pp-b-i-b">info@parseclive.com</span>. You can also reach our <span className="pp-b-i">Privacy</span> Compliance Officer by sending written correspondence to:
                 <br/>
                 <br/>
                 Parsec LIVE, LLC.

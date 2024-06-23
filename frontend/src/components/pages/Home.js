@@ -287,18 +287,26 @@
 // export default Home;
 
 
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState, useRef, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import Singleevent from '../Singleevent';
 import logo from './logo.png';
 import playcircle from './playbtn-circle.png'
 import playtriangle from './playbtn.png' 
-import homepic2 from './homepic2.jpeg';
+// import homepic2 from './homepic2.jpeg';
 import Newsletter from '../Newsletter';
+// import { CartContext } from '../../contexts/CartContext';
+// import CartModal from '../CartModal';
 
 const Home = () => {
     const [events, setEvents] = useState([]);
     const eventContainerRef = useRef(null);
+
+    // const { addToCart } = useContext(CartContext);
+
+    // const [isCartModalOpen, setIsCartModalOpen] = useState(false);
+    // const [selectedEvent, setSelectedEvent] = useState(null);
+
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -316,55 +324,61 @@ const Home = () => {
         fetchEvents();
     }, []);
 
-    useEffect(() => {
-                const observer = new IntersectionObserver(
-                    (entries) => {
-                        entries.forEach((entry) => {
-                            if (entry.isIntersecting) {
-                                entry.target.classList.add('animate');
-                            } else {
-                                entry.target.classList.remove('animate');
-                            }
-                        });
-                    },
-                    { threshold: 0.1 }
-                );
+    // useEffect(() => {
+    //             const observer = new IntersectionObserver(
+    //                 (entries) => {
+    //                     entries.forEach((entry) => {
+    //                         if (entry.isIntersecting) {
+    //                             entry.target.classList.add('animate');
+    //                         } else {
+    //                             entry.target.classList.remove('animate');
+    //                         }
+    //                     });
+    //                 },
+    //                 { threshold: 0.1 }
+    //             );
         
-                const eventItems = eventContainerRef.current.querySelectorAll('.event-item');
-                eventItems.forEach((item) => {
-                    observer.observe(item);
-                });
+    //             const eventItems = eventContainerRef.current.querySelectorAll('.event-item');
+    //             eventItems.forEach((item) => {
+    //                 observer.observe(item);
+    //             });
         
-                return () => {
-                    observer.disconnect();
-                };
-            }, [events]);
+    //             return () => {
+    //                 observer.disconnect();
+    //             };
+    //         }, [events]);
 
-    const displayedEvents = events.slice(0, 3);
+    // const displayedEvents = events.slice(0, 3);
 
-    useEffect(() => {
-        let lastScrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    // useEffect(() => {
+    //     let lastScrollTop = window.pageYOffset || document.documentElement.scrollTop;
         
-        const handleScroll = () => {
-          const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-          if (scrollTop > lastScrollTop) {
-            // Scrolling down
-            document.body.classList.remove('scroll-up');
-          } else {
-            // Scrolling up
-            document.body.classList.add('scroll-up');
-          }
-          lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // For Mobile or negative scrolling
-        };
+    //     const handleScroll = () => {
+    //       const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    //       if (scrollTop > lastScrollTop) {
+    //         // Scrolling down
+    //         document.body.classList.remove('scroll-up');
+    //       } else {
+    //         // Scrolling up
+    //         document.body.classList.add('scroll-up');
+    //       }
+    //       lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // For Mobile or negative scrolling
+    //     };
       
-        window.addEventListener('scroll', handleScroll);
+    //     window.addEventListener('scroll', handleScroll);
       
-        return () => {
-          window.removeEventListener('scroll', handleScroll);
-        };
-      }, []);
+    //     return () => {
+    //       window.removeEventListener('scroll', handleScroll);
+    //     };
+    //   }, []);
 
-    // const displayedEvents = events.slice(1, 2);
+    // const handleBookNow = (event) => {
+    //     setSelectedEvent(event);
+    //     addToCart(event, 1);
+    //     setIsCartModalOpen(true);
+    // };
+
+    const displayedEvents = events.slice(1, 2);
 
     const videoRef = useRef(null);
     const [isPlaying, setIsPlaying] = useState(false);
@@ -471,16 +485,16 @@ const Home = () => {
                 )}
             </div>
 
-            {/* <div className='event-wrapper'>
+             <div className='event-wrapper'>
                 <p className='upc-event'>Upcoming Events</p>
                 <div className='home-event'>
                     {displayedEvents && displayedEvents.map((event) => (
                         <Singleevent key={event._id} event={event} />
                     ))}
                 </div>
-            </div> */}
+            </div> 
 
-            <div className="events-container" ref={eventContainerRef}>
+            {/* <div className="events-container" ref={eventContainerRef}>
                 <h1>Upcoming Events</h1>
                 <div className="events-list">
                     {displayedEvents.map((event, index) => (
@@ -493,7 +507,8 @@ const Home = () => {
                                 <h3>{event.title}</h3>
                                 <p className="event-date">{event.date}</p>
                                 <div className="event-buttons">
-                                    <button className="buy-now-btn">GET TICKETS</button>
+                                <button className="buy-now-btn" onClick={() => handleBookNow(event)}>BOOK NOW</button>
+                                    
                                     <Link to={`/event/${event._id}`} className="read-more-btn">READ MORE</Link>
                                 </div>
                             </div>
@@ -503,7 +518,8 @@ const Home = () => {
                 <div className="see-more-container">
                     <Link to="/event" className="see-more-btn">SEE MORE</Link>
                 </div>
-            </div>
+                {isCartModalOpen && <CartModal onClose={() => setIsCartModalOpen(false)} />} 
+            </div> */}
 
             <div className='home-newsletter-div'><Newsletter /></div>
         </div>
