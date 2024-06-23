@@ -239,7 +239,13 @@ const CartModal = ({ onClose }) => {
         {cartItems.length === 0 ? (
           <div className="empty-cart" style={{ textAlign: 'center', marginTop: '0.6510416vw' }}>
             <p>NO ITEMS FOUND.</p>
+            <div className='browse-link'>
+    
+            <Link to='/event' onClick={onClose}>Browse  Events</Link>
           </div>
+          </div>
+         
+          
         ) : (
           <div className="cart-items" style={{ overflowY: 'auto' }}>
             {cartItems.map((item, index) => (
@@ -272,12 +278,13 @@ const CartModal = ({ onClose }) => {
               <p className="total-price">${cartItems.reduce((total, item) => total + item.event.price * item.quantity, 0).toFixed(2)}</p>
             </div>
             <button className="checkout-button" onClick={handleCheckout}>Checkout</button>
+            <div className='browse-link'>
+          
+              <Link to='/event' onClick={onClose}>Browse More Events</Link>
+            </div>
           </React.Fragment>
         )}
-        <div className='browse-link'>
-          {/* <Link to='/event' onClick={() => { setIsModalOpen(false); onClose(); }}>Browse Events</Link> */}
-          <Link to='/event' onClick={onClose}>Browse More Events</Link>
-        </div>
+        
       </div>
     </div>
     </div>

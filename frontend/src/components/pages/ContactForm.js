@@ -51,7 +51,7 @@ const ContactForm = () => {
                 setQuery('')
                 setError(null)
                 // console.log('We have recieved your message!', json)
-                setConfirm('Thankyou for reaching out to us! We shall get back to you soon!')
+                setConfirm('Thank you for reaching out to us! We shall get back to you soon!')
             }
     
 
