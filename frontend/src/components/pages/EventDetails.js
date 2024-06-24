@@ -268,7 +268,7 @@ function EventDetails() {
                 <h4>Time & Location</h4>
                 <p className="event-date-time">{event.date}, {event.time}</p>
                 <p className="event-location">{event.location}</p>
-                <p className="event-terms">Terms and Conditions</p>
+                {/* <p className="event-terms">Terms and Conditions</p> */}
               </div>
               <div className="share">
                 <p>Share this event</p>
@@ -299,6 +299,7 @@ function EventDetails() {
                   <p>{`$ ${event.price}`}</p>
                   <button type="submit">ADD TO CART</button>
                 </form>
+                <p className='reminder'><span className='rem-astrik'>*</span>Tax calculated during checkout</p>
               </div>
               <div className="share-phone">
                 <p>Share this event</p>
