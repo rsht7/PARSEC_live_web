@@ -1794,7 +1794,7 @@ h1 {
 .event-info {
   width: 100%;
   /* gap: 0px; */
-  height:30vh;
+  height:25vw;
 }
 
 .event-date-ie {
@@ -1909,7 +1909,7 @@ h1 {
 .event-image-landscape {
   width: 100%;
   /* max-width: 32.03125vw; */
-  height: 30vh;
+  height: 25vw;
   margin-bottom: 3vw;
   object-fit: cover;
 }
@@ -2672,6 +2672,8 @@ h1 {
   margin-right: 6vw;
   justify-content: space-between;
   background-color: rgba(96, 95, 95, 0.185);
+  backdrop-filter: blur(3px);
+
 
   /* padding: 5vh 2vh; */
 }
@@ -2698,7 +2700,7 @@ h1 {
 }
 .contact-lhs p{
   color: rgba(194, 194, 194, 1);
-  font-size: 2.5vmin;
+  font-size: 1.5vmax;
   padding: 0;
   margin: 0;
 }
@@ -6043,12 +6045,12 @@ h1 {
 
   .bglogo img{
     width: 80vw;
-    height: 140vh;
+    height: 100vw;
     position: fixed;
     top: 0;
     z-index: -999;
     opacity: 20%;
-    top: -20vh;
+    top: -14vw;
     left: -39vw;
   }
 
@@ -6173,11 +6175,11 @@ h1 {
   }
 
   .contact-lhs p{
-    font-size: 2vmin;
+    font-size: 1.5vmax;
   }
 
   .contact-icon-info h1{
-    font-size:2vmin ;
+    font-size:1.5vmax ;
 
   }
 
@@ -6260,7 +6262,7 @@ h1 {
 
 
   .contact-lhs p{
-    font-size: 1.8vmin;
+    font-size: 1.4vmax;
   }
   .contact-icons{
     display: flex;
@@ -6270,7 +6272,7 @@ h1 {
   }
   .contact-icon img{
     width: auto;
-    height: 4vh;
+    height: 3vw;
   }
 
   .contact-icon-info{
@@ -6279,7 +6281,7 @@ h1 {
   }
 
   .contact-rhs label{
-    font-size: 1.8vmin;
+    font-size: 1.2vmax;
   }
   
   .contact-rhs input{
@@ -6307,6 +6309,14 @@ h1 {
 
   /* INDI EVENTS */
 
+
+  .event-info{
+    height: 25vw;
+  }
+
+  .event-image-landscape{
+    height: 25vw;
+  }
 
   .event-text{
     font-size: 1.2vw;
