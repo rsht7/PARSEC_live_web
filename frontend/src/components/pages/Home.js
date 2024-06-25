@@ -579,229 +579,7 @@
 // export default Home;
 
 
-import { useEffect, useState, useRef } from 'react';
-import { Link } from 'react-router-dom';
-import Singleevent from '../Singleevent';
-import logo from './logo.png';
-import playcircle from './playbtn-circle.png';
-import playtriangle from './playbtn.png';
-import Newsletter from '../Newsletter';
-
-const Home = () => {
-    const [events, setEvents] = useState([]);
-    const eventContainerRef = useRef(null);
-
-
-    const [isVisible, setIsVisible] = useState(false);
-  const eventWrapperRef = useRef(null);
-  const debounceTimeoutRef = useRef(null);
-
-
-
-    useEffect(() => {
-        window.scrollTo(0, 0);
-    }, []);
-
-    useEffect(() => {
-        const fetchEvents = async () => {
-            const response = await fetch('/api/events');
-            const json = await response.json();
-
-            if (response.ok) {
-                setEvents(json);
-            }
-        };
-        fetchEvents();
-    }, []);
-
-    const displayedEvents = events.slice(1, 2);
-
-    const videoRef = useRef(null);
-    const [isPlaying, setIsPlaying] = useState(false);
-
-    const toggleVideo = () => {
-        if (videoRef.current) {
-            if (videoRef.current.paused) {
-                videoRef.current.play();
-            } else {
-                videoRef.current.pause();
-            }
-        }
-    };
-
-    useEffect(() => {
-        const handleScroll = () => {
-            if (videoRef.current && !videoRef.current.paused) {
-                videoRef.current.pause();
-            }
-        };
-
-        window.addEventListener('scroll', handleScroll);
-
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-        };
-    }, []);
-
-    
-
-    
-
-    // useEffect(() => {
-    //     const handleScroll = () => {
-    //         const eventWrapper = document.querySelector('.event-wrapper');
-    //         if (eventWrapper) {
-    //             const rect = eventWrapper.getBoundingClientRect();
-    //             const isPartiallyVisible = rect.top < window.innerHeight && rect.bottom >= 0;
-    //             const isResetCondition = rect.bottom <= -2;
-
-    //             if (isPartiallyVisible) {
-    //                 eventWrapper.classList.add('animate');
-    //             } else if (isResetCondition) {
-    //                 eventWrapper.classList.remove('animate');
-    //             }
-    //         }
-    //     };
-
-    //     window.addEventListener('scroll', handleScroll);
-
-    //     handleScroll(); // Run on mount to check initial position
-
-    //     return () => {
-    //         window.removeEventListener('scroll', handleScroll);
-    //     };
-    // }, []);
-
-    useEffect(() => {
-
-
-
-        const observer = new IntersectionObserver(
-            (entries) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('animate');
-                    } 
-                    else {
-                        entry.target.classList.remove('animate');
-                    }
-                });
-            },
-            {
-                threshold: [0,1] // Adjusted to handle complete visibility and out of visibility
-            }
-        );
-
-        const eventWrapper = document.querySelector('.event-wrapper');
-        if (eventWrapper) {
-            observer.observe(eventWrapper);
-        }
-
-        return () => {
-            observer.disconnect();
-        };
-    }, []);
-
-    // useEffect(() => {
-    //     const handleScroll = () => {
-    //         const eventWrapper = document.querySelector('.event-wrapper');
-    //         if (eventWrapper) {
-    //             const rect = eventWrapper.getBoundingClientRect();
-    //             // const isPartiallyVisible = rect.top < window.innerHeight && rect.bottom >= 0;
-    //             const isResetCondition = rect.bottom <= -2;
-
-                
-    //              if (isResetCondition) {
-    //                 eventWrapper.classList.remove('animate');
-    //             }
-    //         }
-    //     };
-
-    //     window.addEventListener('scroll', handleScroll);
-
-    //     handleScroll(); // Run on mount to check initial position
-
-    //     return () => {
-    //         window.removeEventListener('scroll', handleScroll);
-    //     };
-    // }, []);
-
-    
-    useEffect(() => {
-        const videoElement = videoRef.current;
-
-        const handlePlay = () => setIsPlaying(true);
-        const handlePause = () => setIsPlaying(false);
-        const handleEnded = () => setIsPlaying(false);
-
-        if (videoElement) {
-            videoElement.addEventListener('play', handlePlay);
-            videoElement.addEventListener('pause', handlePause);
-            videoElement.addEventListener('ended', handleEnded);
-
-            return () => {
-                videoElement.removeEventListener('play', handlePlay);
-                videoElement.removeEventListener('pause', handlePause);
-                videoElement.removeEventListener('ended', handleEnded);
-            };
-        }
-    }, []);
-
-    const videoUrl = "https://res.cloudinary.com/dytwtr49x/video/upload/v1718987668/landscape_Groove_Edit_Parsec_Teaser_hgtqtn.mp4";
-
-    return (
-        <div className="home">
-            <div className="bglogo">
-                <img src={logo} alt="Logo" />
-            </div>
-            <div className="main">
-                <video ref={videoRef} id='homevideo' src={videoUrl} alt="Home" className='main-img' />
-                {!isPlaying && (
-                    <>
-                        <h1>Welcome To Parsec Live</h1>
-                    </>
-                )}
-                {!isPlaying && (
-                    <>
-                        <div className='icondiv'>
-                            <img src={playcircle} className='circle-icon' onClick={toggleVideo} />
-                            <div className='triangle-div' onClick={toggleVideo}>
-                                <img src={playtriangle} className='triangle-icon' />
-                            </div>
-                        </div>
-                    </>
-                )}
-                {!isPlaying && (
-                    <>
-                        <div className="herovid-see-more-container">
-                            <Link to="/event" className="herovid-see-more-btn">SEE MORE</Link>
-                        </div>
-                    </>
-                )}
-            </div>
-
-            <div className='event-wrapper' ref={eventWrapperRef}>
-                <p className='upc-event'>Upcoming Events</p>
-                {/* <div className='home-event'> */}
-                <div className={`home-event ${isVisible ? 'slide-up' : ''}`}>
-                    {displayedEvents && displayedEvents.map((event) => (
-                        <Singleevent key={event._id} event={event} />
-                    ))}
-                </div>
-            </div>
-
-            <div className='home-newsletter-div'><Newsletter /></div>
-        </div>
-    );
-}
-
-export default Home;
-
-
-
-
-
-// import React, { useEffect, useState, useRef } from 'react';
+// import { useEffect, useState, useRef } from 'react';
 // import { Link } from 'react-router-dom';
 // import Singleevent from '../Singleevent';
 // import logo from './logo.png';
@@ -811,8 +589,15 @@ export default Home;
 
 // const Home = () => {
 //     const [events, setEvents] = useState([]);
-//     const eventContainerRef = useRef(null);
-//     const scrollTimeoutRef = useRef(null); // Ref to hold the timeout ID
+//     // const eventContainerRef = useRef(null);
+
+//     const [video, setVideo] = useState([]);
+
+//     const [isVisible, setIsVisible] = useState(false);
+//   const eventWrapperRef = useRef(null);
+// //   const debounceTimeoutRef = useRef(null);
+
+
 
 //     useEffect(() => {
 //         window.scrollTo(0, 0);
@@ -830,7 +615,21 @@ export default Home;
 //         fetchEvents();
 //     }, []);
 
+//     useEffect(() => {
+//         const fetchVideo = async () => {
+//             const response = await fetch('/api/videourl');
+//             const json = await response.json();
+
+//             if (response.ok) {
+//                 setVideo(json);
+//             }
+//         };
+//         fetchVideo();
+//     }, []);
+
 //     const displayedEvents = events.slice(1, 2);
+
+//     const displayedVideo = video.slice(0,1);
 
 //     const videoRef = useRef(null);
 //     const [isPlaying, setIsPlaying] = useState(false);
@@ -845,32 +644,13 @@ export default Home;
 //         }
 //     };
 
-//     const handleScroll = () => {
-//         if (scrollTimeoutRef.current) {
-//             clearTimeout(scrollTimeoutRef.current);
-//         }
-
-//         scrollTimeoutRef.current = setTimeout(() => {
-//             const eventWrapper = document.querySelector('.event-wrapper');
-//             if (eventWrapper) {
-//                 const rect = eventWrapper.getBoundingClientRect();
-//                 const isPartiallyVisible = rect.top < window.innerHeight && rect.bottom >= 0;
-//                 const isFullyVisible = rect.top >= 0 && rect.bottom <= window.innerHeight;
-//                 const isResetCondition = rect.bottom <= -2 || rect.top >= window.innerHeight;
-
-//                 if (isPartiallyVisible || isFullyVisible) {
-//                     eventWrapper.classList.add('animate');
-//                 } else if (isResetCondition) {
-//                     eventWrapper.classList.remove('animate');
-//                 }
-//             }
-//         }, 1); // Adjust debounce delay as needed (e.g., 100ms)
-
-//         // Clear timeout on unmount or dependencies change
-//         return () => clearTimeout(scrollTimeoutRef.current);
-//     };
-
 //     useEffect(() => {
+//         const handleScroll = () => {
+//             if (videoRef.current && !videoRef.current.paused) {
+//                 videoRef.current.pause();
+//             }
+//         };
+
 //         window.addEventListener('scroll', handleScroll);
 
 //         return () => {
@@ -878,6 +658,90 @@ export default Home;
 //         };
 //     }, []);
 
+    
+
+    
+
+//     // useEffect(() => {
+//     //     const handleScroll = () => {
+//     //         const eventWrapper = document.querySelector('.event-wrapper');
+//     //         if (eventWrapper) {
+//     //             const rect = eventWrapper.getBoundingClientRect();
+//     //             const isPartiallyVisible = rect.top < window.innerHeight && rect.bottom >= 0;
+//     //             const isResetCondition = rect.bottom <= -2;
+
+//     //             if (isPartiallyVisible) {
+//     //                 eventWrapper.classList.add('animate');
+//     //             } else if (isResetCondition) {
+//     //                 eventWrapper.classList.remove('animate');
+//     //             }
+//     //         }
+//     //     };
+
+//     //     window.addEventListener('scroll', handleScroll);
+
+//     //     handleScroll(); // Run on mount to check initial position
+
+//     //     return () => {
+//     //         window.removeEventListener('scroll', handleScroll);
+//     //     };
+//     // }, []);
+
+//     useEffect(() => {
+
+
+
+//         const observer = new IntersectionObserver(
+//             (entries) => {
+//                 entries.forEach((entry) => {
+//                     if (entry.isIntersecting) {
+//                         entry.target.classList.add('animate');
+//                     } 
+//                     else {
+//                         entry.target.classList.remove('animate');
+//                     }
+//                 });
+//             },
+//             {
+//                 threshold: [0,1] // Adjusted to handle complete visibility and out of visibility
+//             }
+//         );
+
+//         const eventWrapper = document.querySelector('.event-wrapper');
+//         if (eventWrapper) {
+//             observer.observe(eventWrapper);
+//         }
+
+//         return () => {
+//             observer.disconnect();
+//         };
+//     }, []);
+
+//     // useEffect(() => {
+//     //     const handleScroll = () => {
+//     //         const eventWrapper = document.querySelector('.event-wrapper');
+//     //         if (eventWrapper) {
+//     //             const rect = eventWrapper.getBoundingClientRect();
+//     //             // const isPartiallyVisible = rect.top < window.innerHeight && rect.bottom >= 0;
+//     //             const isResetCondition = rect.bottom <= -2;
+
+                
+//     //              if (isResetCondition) {
+//     //                 eventWrapper.classList.remove('animate');
+//     //             }
+//     //         }
+//     //     };
+
+//     //     window.addEventListener('scroll', handleScroll);
+
+//     //     handleScroll(); // Run on mount to check initial position
+
+//     //     return () => {
+//     //         window.removeEventListener('scroll', handleScroll);
+//     //     };
+//     // }, []);
+
+    
 //     useEffect(() => {
 //         const videoElement = videoRef.current;
 
@@ -898,8 +762,9 @@ export default Home;
 //         }
 //     }, []);
 
-//     const videoUrl = "https://res.cloudinary.com/dytwtr49x/video/upload/v1718987668/landscape_Groove_Edit_Parsec_Teaser_hgtqtn.mp4";
+//     // const videoUrl = "https://res.cloudinary.com/dytwtr49x/video/upload/v1718987668/landscape_Groove_Edit_Parsec_Teaser_hgtqtn.mp4";
 
+//     const videoUrl = `${displayedVideo.url}`
 //     return (
 //         <div className="home">
 //             <div className="bglogo">
@@ -931,9 +796,10 @@ export default Home;
 //                 )}
 //             </div>
 
-//             <div className='event-wrapper'>
+//             <div className='event-wrapper' ref={eventWrapperRef}>
 //                 <p className='upc-event'>Upcoming Events</p>
-//                 <div className='home-event'>
+//                 {/* <div className='home-event'> */}
+//                 <div className={`home-event ${isVisible ? 'slide-up' : ''}`}>
 //                     {displayedEvents && displayedEvents.map((event) => (
 //                         <Singleevent key={event._id} event={event} />
 //                     ))}
@@ -946,3 +812,283 @@ export default Home;
 // }
 
 // export default Home;
+
+
+
+
+
+import { useEffect, useState, useRef } from 'react';
+import { Link } from 'react-router-dom';
+import Singleevent from '../Singleevent';
+import logo from './logo.png';
+import playcircle from './playbtn-circle.png';
+import playtriangle from './playbtn.png';
+import Newsletter from '../Newsletter';
+
+const Home = () => {
+    const [events, setEvents] = useState([]);
+    const [video, setVideo] = useState(null);
+    const [isVisible, setIsVisible] = useState(false);
+    const eventWrapperRef = useRef(null);
+
+
+
+       
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+
+    useEffect(() => {
+        const fetchEvents = async () => {
+            const response = await fetch('/api/events');
+            const json = await response.json();
+
+            if (response.ok) {
+                setEvents(json);
+            }
+        };
+        fetchEvents();
+    }, []);
+
+
+
+
+
+
+
+    // const { addToCart } = useContext(CartContext);
+    // const [isCartModalOpen, setIsCartModalOpen] = useState(false);
+    // const [selectedEvent, setSelectedEvent] = useState(null);
+
+
+
+
+    // useEffect(() => {
+    //             const observer = new IntersectionObserver(
+    //                 (entries) => {
+    //                     entries.forEach((entry) => {
+    //                         if (entry.isIntersecting) {
+    //                             entry.target.classList.add('animate');
+    //                         } else {
+    //                             entry.target.classList.remove('animate');
+    //                         }
+    //                     });
+    //                 },
+    //                 { threshold: 0.1 }
+    //             );
+        
+    //             const eventItems = eventContainerRef.current.querySelectorAll('.event-item');
+    //             eventItems.forEach((item) => {
+    //                 observer.observe(item);
+    //             });
+        
+    //             return () => {
+    //                 observer.disconnect();
+    //             };
+    //         }, [events]);
+
+    // const displayedEvents = events.slice(0, 3);
+
+
+
+    // const handleBookNow = (event) => {
+    //     setSelectedEvent(event);
+    //     addToCart(event, 1);
+    //     setIsCartModalOpen(true);
+    // };
+
+
+
+
+
+
+
+    useEffect(() => {
+        const fetchVideo = async () => {
+            const response = await fetch('/api/videourl');
+            const json = await response.json();
+
+            if (response.ok) {
+                setVideo(json);
+            }
+        };
+        fetchVideo();
+    }, []);
+
+    const displayedEvents = events.slice(1, 2);
+    const displayedVideo = video ? video[1] : null;
+
+    const videoRef = useRef(null);
+    const [isPlaying, setIsPlaying] = useState(false);
+    const [hone, setHone] = useState(true);
+
+    const toggleVideo = () => {
+        if (videoRef.current) {
+            if (videoRef.current.paused) {
+                videoRef.current.play();
+            } else {
+                videoRef.current.pause();
+            }
+        }
+    };
+
+    useEffect(() => {
+        const handleScroll = () => {
+            if (videoRef.current && !videoRef.current.paused) {
+                videoRef.current.pause();
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate');
+                    } 
+                    else {
+                        entry.target.classList.remove('animate');
+                    }
+                });
+            },
+            {
+                threshold: [0,1] // Adjusted to handle complete visibility and out of visibility
+            }
+        );
+
+        const eventWrapper = document.querySelector('.event-wrapper');
+        if (eventWrapper) {
+            observer.observe(eventWrapper);
+        }
+
+        return () => {
+            observer.disconnect();
+        };
+    }, []);
+
+
+    
+
+    useEffect(() => {
+        const videoElement = videoRef.current;
+
+        const handlePlay = () => {
+            setIsPlaying(true);
+            setHone(false);
+        };
+
+        const handlePause = () => {
+            setIsPlaying(false);
+            setHone(true);
+        };
+        
+        const handleEnded = () => {
+            setIsPlaying(false);
+            setHone(false);
+        };
+
+
+        if (videoElement) {
+            videoElement.addEventListener('play', handlePlay);
+            videoElement.addEventListener('pause', handlePause);
+            videoElement.addEventListener('ended', handleEnded);
+
+            return () => {
+                videoElement.removeEventListener('play', handlePlay);
+                videoElement.removeEventListener('pause', handlePause);
+                videoElement.removeEventListener('ended', handleEnded);
+            };
+        }
+    }, []);
+
+    const videoUrl = displayedVideo ? displayedVideo.url : '';
+
+    return (
+        <div className="home">
+            <div className="bglogo">
+                <img src={logo} alt="Logo" />
+            </div>
+            <div className="main">
+                <video ref={videoRef} id='homevideo' src={videoUrl} alt="Home" className='main-img' />
+                {/* {hone ? (
+                    <>
+                        <h1>Welcome To Parsec Live</h1>
+                    </>
+
+                ) : (
+                    <>
+                        <h1></h1>
+                    </>
+                
+                )} */}
+
+                <h1 style={{ visibility: hone ? 'visible' : 'hidden' }}>Welcome To Parsec Live</h1>
+                {!isPlaying && (
+                    <>
+                        <div className='icondiv'>
+                            <img src={playcircle} className='circle-icon' onClick={toggleVideo} />
+                            <div className='triangle-div' onClick={toggleVideo}>
+                                <img src={playtriangle} className='triangle-icon' />
+                            </div>
+                        </div>
+                    </>
+                )}
+                {!isPlaying && (
+                    <>
+                        <div className="herovid-see-more-container">
+                            <Link to="/event" className="herovid-see-more-btn">SEE MORE</Link>
+                        </div>
+                    </>
+                )}
+            </div>
+
+            <div className='event-wrapper' ref={eventWrapperRef}>
+                <p className='upc-event'>Upcoming Events</p>
+                <div className={`home-event ${isVisible ? 'slide-up' : ''}`}>
+                    {displayedEvents && displayedEvents.map((event) => (
+                        <Singleevent key={event._id} event={event} />
+                    ))}
+                </div>
+            </div>
+
+             {/* <div className="events-container" ref={eventContainerRef}>
+//                 <h1>Upcoming Events</h1>
+//                 <div className="events-list">
+//                     {displayedEvents.map((event, index) => (
+//                         <div 
+//                             key={event._id} 
+//                             className={`event-item ${index === 1 ? 'middle-event' : 'corner-event'}`}
+//                         >
+//                             <img src={event.img} alt={event.title} className="event-image" />
+//                             <div className="event-details">
+//                                 <h3>{event.title}</h3>
+//                                 <p className="event-date">{event.date}</p>
+//                                 <div className="event-buttons">
+//                                 <button className="buy-now-btn" onClick={() => handleBookNow(event)}>BOOK NOW</button>
+                                    
+//                                     <Link to={`/event/${event._id}`} className="read-more-btn">READ MORE</Link>
+//                                 </div>
+//                             </div>
+//                         </div>
+//                     ))}
+//                 </div>
+//                 <div className="see-more-container">
+//                     <Link to="/event" className="see-more-btn">SEE MORE</Link>
+//                 </div>
+//                 {isCartModalOpen && <CartModal onClose={() => setIsCartModalOpen(false)} />} 
+//             </div> */}
+
+
+            <div className='home-newsletter-div'><Newsletter /></div>
+        </div>
+    );
+}
+
+export default Home;

@@ -411,6 +411,7 @@ const contactusRoute = require('./routes/contactus');
 const newslettersubsRoutes = require('./routes/newslettersubscription');
 const eventRoutes = require('./routes/events');
 const paymentRoutes = require('./routes/payment'); // Import the payment routes
+const videourlRoute = require('./routes/videourl');
 
 const app = express();
 const Port = process.env.PORT || 4000;
@@ -459,6 +460,7 @@ app.use('/api/newslettersubs', newslettersubsRoutes);
 app.use('/api/workouts', workoutRoutes);
 app.use('/api/events', eventRoutes);
 app.use('/api/payment', paymentRoutes);
+app.use('/api/videourl' , videourlRoute);
 
 // Serve the index.html for any other routes
 app.get('*', (req, res) => {
