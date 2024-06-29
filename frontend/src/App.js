@@ -50,7 +50,7 @@
 
 
 // src/App.js
-
+import { useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { CartProvider } from './contexts/CartContext';
 
@@ -69,6 +69,23 @@ import SuccessPage from './components/pages/Successpg';
 import FailurePage from './components/pages/Failedpg';
 
 function App() {
+
+
+  useEffect(() => {
+    const handleContextMenu = (e) => {
+      if (e.target.tagName === 'IMG' || e.target.classList.contains('no-copy')) {
+        e.preventDefault();
+      }
+    };
+
+    document.addEventListener('contextmenu', handleContextMenu);
+
+    return () => {
+      document.removeEventListener('contextmenu', handleContextMenu);
+    };
+  }, []);
+
+
   return (
     <div className="App">
       <BrowserRouter>

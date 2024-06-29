@@ -29,6 +29,18 @@ body {
  /*background-color:#171515 ;*/
 }
 
+/* Disable image dragging */
+img {
+  -webkit-user-drag: none;
+   /* user-drag: none; */
+
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none;    /* Firefox */
+  -ms-user-select: none;     /* Internet Explorer/Edge */
+  user-select: none;         /* Non-prefixed version, currently supported by Chrome, Opera, and Edge */
+}
+
+
 
 /* App.css */
 /* .slide-up-enter {
@@ -436,7 +448,7 @@ button {
   font-weight: 700;
   letter-spacing: 1px;
   line-height: 4.5vw;
-  position: relative;
+  position: absolute;
   padding: 15vw 24vw 0 24vw;
   text-align: center;
   z-index: 2;
@@ -444,21 +456,77 @@ button {
   height: 60%;
   box-sizing: border-box;
   top: 0;
+  color: white;
+  /* opacity: 1; */
+  /* transition: opacity 1s ease-in-out; */
+  display: block;
   
 }
+
+
+
+/* .fade-in {
+  opacity: 1;
+} */
+
+/* .fade-out {
+  opacity: 0;
+  transition: opacity 2s ease-in-out;
+} */
+
+/* FadeText.css */
+
+/* FadeText.css */
+
+@keyframes dissolve {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.dissolve {
+  display: inline-block;
+  animation: dissolve 2s forwards;
+  animation-delay: var(--delay);
+}
+
+
+
+
+
+.mute-icon-div{
+  height: auto;
+  margin-top: 48%;
+  margin-left: 93%;
+  z-index: 2;
+  position: relative;
+}
+
+#muteButton {
+ width: 1.5vw;
+ opacity: 0.6;
+ cursor: pointer;
+}
+
 .icondiv{
   z-index: 2;
   position: relative;
-  margin: 3% auto;
-  height: 15%;
+  /* height: 15%; */
   display: flex;
   justify-content: center;
+  margin-top: 45%;
+  margin-left: 87%;
+  
+  
 }
 
 .circle-icon {
   object-fit: cover;
   opacity: 0.5;
-  width: 6vw;
+  width: 4vw;
 }
 .triangle-div{
   position: absolute;
@@ -472,8 +540,8 @@ button {
 
 .herovid-see-more-container{
   z-index: 4;
-  margin: 0 auto 2.5% auto;
-  height: 10%;
+  margin-bottom: 5vh;
+  text-align: center;
 }
 .herovid-see-more-container a{
   text-decoration: none;
@@ -3302,7 +3370,7 @@ h1 {
   .cart-btn-phone{
     /* display:flex; */
     background-color: transparent;
-    width: 15vw;
+    width: auto;
     height: 10vw;
     color:white;
     font-weight: 500;
@@ -3376,16 +3444,17 @@ h1 {
 
 }
 .main h1{
-  font-size: 5vh;
+  font-size: 5.5vh;
   font-weight: 550;
   letter-spacing: 1px;
   line-height: 10vw;
   position: relative;
   padding: 0 10vw;
+  /* padding-left: 14vw; */
   text-align: center;
   margin: 0;
   box-sizing: border-box;
-  height: 60%;
+  height: 53%;
   display: flex;
   align-items: flex-end;
   
@@ -3393,7 +3462,20 @@ h1 {
 }
 
 
-.icondiv{
+.mute-icon-div{
+  /* height: auto; */
+  margin-top: 62%;
+  margin-left: 83%;
+  z-index: 2;
+  position: relative;
+}
+
+#muteButton {
+ width: 7vw;
+}
+
+
+/* .icondiv{
   z-index: 4;
   position: relative;
   margin: 10% 5% 4% 5%;
@@ -3403,7 +3485,7 @@ h1 {
   box-sizing: border-box;
   width: 100%;
   
-}
+} */
 
 .circle-icon {
   object-fit: cover;
@@ -3421,10 +3503,10 @@ h1 {
   width: 100%;
 }
 
+
 .herovid-see-more-container{
-  height: 5%;
-  display: flex;
-  align-items: flex-end;
+  margin-top: 3vh;
+  margin-bottom: 3vh
 }
 .herovid-see-more-container a{
   font-size: 2vmax;
@@ -4647,6 +4729,20 @@ h1 {
   }
 
 
+  .mute-icon-div{
+    height: auto;
+    margin-top: 47%;
+    margin-left: 87%;
+    z-index: 2;
+    position: relative;
+  }
+  
+  #muteButton {
+   width: 2vw;
+   opacity: 0.8;
+  }
+
+
   .checkout-button{
     font-size: 2.75vw;
   }
@@ -4658,6 +4754,11 @@ h1 {
   .browse-link a{
     font-size: 2.5vw;
     color: #000;
+  }
+
+
+  .herovid-see-more-container{
+    margin-bottom: 2vh;
   }
 
   /* HOMEPAGE */
@@ -5255,6 +5356,16 @@ h1 {
 }
 
   
+@media (max-width: 770px) and (min-width:700px){
+
+  .single-event{
+    height: 30vw;
+  }
+
+  .main-newsletter{
+    height: 22vw;
+  }
+}
 
 
 
@@ -5330,7 +5441,7 @@ h1 {
   
   .cart-btn {
     background-color: white;
-    width: 8vw;
+    width: 9vw;
     height: 3.515vw;
     text-align: center;
     color: #171515;
@@ -5370,6 +5481,19 @@ h1 {
     align-items: flex-end;
     font-size: 5vw;
     line-height: 5.5vw;
+  }
+
+
+  .mute-icon-div{
+    height: auto;
+    margin-top: 55%;
+    margin-left: 90%;
+    z-index: 2;
+    position: relative;
+  }
+  
+  #muteButton {
+   width: 2vw;
   }
 
   .icondiv{
@@ -6036,6 +6160,14 @@ h1 {
     
   }
 
+  .mute-icon-div{
+    margin-top: 48%;
+    margin-left: 90%;
+  }
+
+  #muteButton{
+    width: 2vw;
+  }
   
 
   .logo-img{
@@ -6543,6 +6675,8 @@ h1 {
     
     }
 
+    
+
     .main-img{
       object-fit: cover;
       width: 100%;
@@ -6550,6 +6684,18 @@ h1 {
       position: absolute;
       border-radius: 15px;
       
+    }
+
+    .mute-icon-div{
+      height: auto;
+      margin-top: 10%;
+      margin-left: 90%;
+      z-index: 2;
+      position: relative;
+    }
+    
+    #muteButton {
+     width: 2vw;
     }
 
     .main-newsletter-stuff h2{
@@ -6697,7 +6843,7 @@ h1 {
 }
 .newsletter-wrap{
   
-  margin: 5vmax 0 5vmax 0;
+  margin: 0vmax 0 5vmax 0;
   height: 19.5vw;
   
   
@@ -7588,6 +7734,20 @@ h1 {
       
     }
 
+
+    .mute-icon-div{
+      height: auto;
+      margin-top: 10%;
+      margin-left: 90%;
+      z-index: 2;
+      position: relative;
+    }
+    
+    #muteButton {
+     width: 2vw;
+    }
+
+
     .main-newsletter-stuff h2{
       font-size: 1.4vw;
       margin-top: 1vw;
@@ -7626,7 +7786,7 @@ h1 {
     
     .herovid-see-more-container{
       z-index: 4;
-      margin:  2% 0 0 0 ;
+      margin:  2% 0 2% 0 ;
       box-sizing: border-box;
       
     }
