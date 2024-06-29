@@ -817,20 +817,33 @@
 
 
 
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState, useRef, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import Singleevent from '../Singleevent';
 import logo from './logo.png';
-import playcircle from './playbtn-circle.png';
-import playtriangle from './playbtn.png';
+// import playcircle from './playbtn-circle.png';
+// import playtriangle from './playbtn.png';
+
+import sound from './sound4.png';
+import mute from'./mute2.png';
 import Newsletter from '../Newsletter';
+import { CartContext } from '../../contexts/CartContext';
+import CartModal from '../CartModal';
+// import useDissolve from './Dissolve'
 
 const Home = () => {
     const [events, setEvents] = useState([]);
     const [video, setVideo] = useState(null);
     const [isVisible, setIsVisible] = useState(false);
     const eventWrapperRef = useRef(null);
+    // const eventContainerRef = useRef(null)
 
+    const [dissolveState, setDissolveState] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setDissolveState(true), 5000); // 3 seconds delay
+    return () => clearTimeout(timer);
+  }, []);
 
 
        
@@ -854,6 +867,9 @@ const Home = () => {
 
 
 
+
+
+    // 3 EVENTS CODE
 
 
     // const { addToCart } = useContext(CartContext);
@@ -898,7 +914,7 @@ const Home = () => {
     // };
 
 
-
+// END OF 3 EVENTS CODE REQUIREMENTS
 
 
 
@@ -919,8 +935,8 @@ const Home = () => {
     const displayedVideo = video ? video[1] : null;
 
     const videoRef = useRef(null);
+    const textRef = useRef(null)
     const [isPlaying, setIsPlaying] = useState(false);
-    const [hone, setHone] = useState(true);
 
     const toggleVideo = () => {
         if (videoRef.current) {
@@ -932,19 +948,19 @@ const Home = () => {
         }
     };
 
-    useEffect(() => {
-        const handleScroll = () => {
-            if (videoRef.current && !videoRef.current.paused) {
-                videoRef.current.pause();
-            }
-        };
+    // useEffect(() => {
+    //     const handleScroll = () => {
+    //         if (videoRef.current && !videoRef.current.paused) {
+    //             videoRef.current.pause();
+    //         }
+    //     };
 
-        window.addEventListener('scroll', handleScroll);
+    //     window.addEventListener('scroll', handleScroll);
 
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-        };
-    }, []);
+    //     return () => {
+    //         window.removeEventListener('scroll', handleScroll);
+    //     };
+    // }, []);
 
     useEffect(() => {
         const observer = new IntersectionObserver(
@@ -974,39 +990,48 @@ const Home = () => {
     }, []);
 
 
+
+   
     
 
-    useEffect(() => {
-        const videoElement = videoRef.current;
+    
 
-        const handlePlay = () => {
-            setIsPlaying(true);
-            setHone(false);
-        };
+    // useEffect(()=>{
 
-        const handlePause = () => {
-            setIsPlaying(false);
-            setHone(true);
-        };
-        
-        const handleEnded = () => {
-            setIsPlaying(false);
-            setHone(false);
-        };
+    //     const textOverlay = textRef.current;
+
+    //     // Text fade in and fade out effect
+    //     // setTimeout(() => {
+    //     //     textOverlay.classList.add('fade-in');
+    //     // }, 3000);
+
+    //     setTimeout(() => {
+    //         // textOverlay.classList.remove('fade-in');
+    //         textOverlay.classList.add('fade-out');
+    //     }, 3000); // 5 seconds display + 1 second fade in
+
+    //     setTimeout(() => {
+    //         textOverlay.style.display = 'none';
+    //     }, 5000); // Total 8 seconds (5 seconds display + 1 second fade in + 2 seconds fade out)
+    // }, []);
 
 
-        if (videoElement) {
-            videoElement.addEventListener('play', handlePlay);
-            videoElement.addEventListener('pause', handlePause);
-            videoElement.addEventListener('ended', handleEnded);
-
-            return () => {
-                videoElement.removeEventListener('play', handlePlay);
-                videoElement.removeEventListener('pause', handlePause);
-                videoElement.removeEventListener('ended', handleEnded);
-            };
+    const toggleMute = () => {
+        const video = videoRef.current;
+        video.muted = !video.muted;
+        const muteButton = document.getElementById('muteButton');
+        if (video.muted) {
+            muteButton.src = mute; // Change to your mute icon
+        } else {
+            muteButton.src = sound; // Change to your unmute icon
         }
-    }, []);
+    };
+
+    // const text = "Parsec Live";
+
+    const words = ["Parsec", "Live"];
+
+
 
     const videoUrl = displayedVideo ? displayedVideo.url : '';
 
@@ -1016,37 +1041,51 @@ const Home = () => {
                 <img src={logo} alt="Logo" />
             </div>
             <div className="main">
-                <video ref={videoRef} id='homevideo' src={videoUrl} alt="Home" className='main-img' />
-                {/* {hone ? (
-                    <>
-                        <h1>Welcome To Parsec Live</h1>
-                    </>
-
-                ) : (
-                    <>
-                        <h1></h1>
-                    </>
+                <video autoPlay loop muted ref={videoRef} id='homevideo' src={videoUrl} alt="Home" className='main-img' />
                 
-                )} */}
+                {/* <h1 id='textOverlay' ref={textRef}>Parsec Live</h1> */}
+                {/* <h1 id="textOverlay">
+                    {text.split('').map((char, index) => (
+                    <span
+                     key={index}
+                     className={dissolveState ? 'dissolve' : ''}
+                     style={{ '--delay': `${index * 0.2}s` }}
+                     >
+                     {char}
+                    </span>
+                    ))}
+                </h1> */}
 
-                <h1 style={{ visibility: hone ? 'visible' : 'hidden' }}>Welcome To Parsec Live</h1>
-                {!isPlaying && (
-                    <>
-                        <div className='icondiv'>
-                            <img src={playcircle} className='circle-icon' onClick={toggleVideo} />
-                            <div className='triangle-div' onClick={toggleVideo}>
-                                <img src={playtriangle} className='triangle-icon' />
-                            </div>
-                        </div>
-                    </>
-                )}
-                {!isPlaying && (
-                    <>
-                        <div className="herovid-see-more-container">
-                            <Link to="/event" className="herovid-see-more-btn">SEE MORE</Link>
-                        </div>
-                    </>
-                )}
+            <h1 id="textOverlay">
+                    {words.map((word, wordIndex) => (
+                    <span key={wordIndex} style={{ marginRight: '0.5em' }}>
+                    {word.split('').map((char, charIndex) => (
+                    <span
+                        key={charIndex}
+                        className={dissolveState ? 'dissolve' : ''}
+                        style={{ '--delay': `${(wordIndex * word.length + charIndex) * 0.2}s` }}
+                    >
+                        {char}
+                    </span>
+                    ))}
+                </span>
+                ))}
+            </h1>
+                
+                    
+                {/* <div className='icondiv'>
+                    <img src={playcircle} className='circle-icon' id='muteButton' onClick={toggleMute}/>
+                    <div className='triangle-div' >
+                        <img src={playtriangle} className='triangle-icon' />
+                    </div>
+                </div> */}
+
+                <div className='mute-icon-div'>
+                    <img src={mute} id='muteButton' onClick={toggleMute}/>
+                </div>
+                    
+            
+                
             </div>
 
             <div className='event-wrapper' ref={eventWrapperRef}>
@@ -1058,32 +1097,36 @@ const Home = () => {
                 </div>
             </div>
 
-             {/* <div className="events-container" ref={eventContainerRef}>
-//                 <h1>Upcoming Events</h1>
-//                 <div className="events-list">
-//                     {displayedEvents.map((event, index) => (
-//                         <div 
-//                             key={event._id} 
-//                             className={`event-item ${index === 1 ? 'middle-event' : 'corner-event'}`}
-//                         >
-//                             <img src={event.img} alt={event.title} className="event-image" />
-//                             <div className="event-details">
-//                                 <h3>{event.title}</h3>
-//                                 <p className="event-date">{event.date}</p>
-//                                 <div className="event-buttons">
-//                                 <button className="buy-now-btn" onClick={() => handleBookNow(event)}>BOOK NOW</button>
+            <div className="herovid-see-more-container">
+                <Link to="/event" className="herovid-see-more-btn">OTHER EVENTS</Link>
+            </div>
+
+            {/* <div className="events-container" ref={eventContainerRef}>
+                <h1>Upcoming Events</h1>
+                <div className="events-list">
+                   {displayedEvents.map((event, index) => (
+                        <div 
+                            key={event._id} 
+                            className={`event-item ${index === 1 ? 'middle-event' : 'corner-event'}`}
+                        >
+                            <img src={event.img} alt={event.title} className="event-image" />
+                            <div className="event-details">
+                                <h3>{event.title}</h3>
+                                <p className="event-date">{event.date}</p>
+                                <div className="event-buttons">
+                                <button className="buy-now-btn" onClick={() => handleBookNow(event)}>BOOK NOW</button>
                                     
-//                                     <Link to={`/event/${event._id}`} className="read-more-btn">READ MORE</Link>
-//                                 </div>
-//                             </div>
-//                         </div>
-//                     ))}
-//                 </div>
-//                 <div className="see-more-container">
-//                     <Link to="/event" className="see-more-btn">SEE MORE</Link>
-//                 </div>
-//                 {isCartModalOpen && <CartModal onClose={() => setIsCartModalOpen(false)} />} 
-//             </div> */}
+                                    <Link to={`/event/${event._id}`} className="read-more-btn">READ MORE</Link>
+                                </div>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+                <div className="see-more-container">
+                   <Link to="/event" className="see-more-btn">SEE MORE</Link>
+                </div>
+                {isCartModalOpen && <CartModal onClose={() => setIsCartModalOpen(false)} />} 
+            </div>  */}
 
 
             <div className='home-newsletter-div'><Newsletter /></div>

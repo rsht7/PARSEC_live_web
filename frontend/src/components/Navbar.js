@@ -75,7 +75,7 @@ const Navbar = () => {
         </h1>
 
         <div className='cart-ham'>
-          <button className='cart-btn-phone' onClick={handleAddToCart}>CART</button>
+          <button className='cart-btn-phone' onClick={handleAddToCart}>TICKETS</button>
 
           <div className={`hamburger ${showNav ? 'open' : ''}`} onClick={toggleNav}>
             <div></div>
@@ -98,7 +98,7 @@ const Navbar = () => {
             <Link to='/contactus' className={getLinkClass('/contactus')} onClick={handleNavLinkClick}>CONTACT</Link>
           </li>
         </ul>
-        <button className='cart-btn' onClick={handleAddToCart}>CART</button>
+        <button className='cart-btn' onClick={handleAddToCart}>TICKETS</button>
         {isCartModalOpen && <CartModal onClose={() => setIsCartModalOpen(false)} />} {/* Render the modal */}
       </nav>
     </header>
