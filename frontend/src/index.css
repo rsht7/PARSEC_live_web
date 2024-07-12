@@ -190,6 +190,9 @@ button {
   
 } */
 
+
+
+
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -446,10 +449,10 @@ button {
 .main h1{
   font-size: 4vw;
   font-weight: 700;
-  letter-spacing: 1px;
+  letter-spacing: 2px;
   line-height: 4.5vw;
   position: absolute;
-  padding: 15vw 24vw 0 24vw;
+  padding: 15vw 22vw 0 22vw;
   text-align: center;
   z-index: 2;
   margin: 0;
@@ -3261,6 +3264,100 @@ h1 {
 
 
 
+/* ADMIN PAGE */
+
+
+
+.multer-page{
+    
+  height: 80vh;
+  padding-top: 20vh;
+  padding-left: 20vw;
+  
+}
+
+
+.multer-page h2{
+  font-size: 3vmax;
+}
+
+.multer-page p{
+  font-size: 2vmax;
+}
+.multer-form{
+  /* gap: 4vw; */
+  display:flex ;
+  /* height: 5vw; */
+  margin-top: 5vmax;
+}
+
+.multer-form form{
+  display: flex;
+  flex-direction: column;
+  gap: 4vmax;
+}
+
+.multer-form form input{
+  font-size: 1.5vmax;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+  height: 3vmax;
+  width: auto;
+  font-weight: 600;
+
+}
+
+
+
+.multer-form form button{
+  font-size: 1.2vmax;
+  font-family: "Inter", sans-serif;
+  height: 3vmax;
+  width: 15vmax;
+  font-weight: 600;
+
+}
+
+
+.login-form{
+  gap: 2vmax;
+  display: flex;
+  flex-direction: column;
+
+}
+
+
+.login-inputs{
+  display: flex;
+  flex-direction: column;
+  width: 20vmax;
+  gap: 1vmax;
+}
+
+
+.login-inputs label{
+  font-size: 1.5vmax ;
+}
+.login-inputs input{
+  height: 2.5vmax;
+  font-size: 1.3vmax;
+}
+
+.login-btn{
+  width: 20vmax;
+  height: 2.5vmax;
+  font-size: 1.2vmax;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+
+
+
+
+
+
+
 /* Add additional styles as needed */
 
 
@@ -3273,6 +3370,104 @@ h1 {
 
 
  @media (max-width: 600px) {
+
+
+
+
+
+
+/* ADMIN PAGE   */
+
+.multer-page{
+    
+  height: 80vh;
+  padding-top: 20vh;
+  padding-left: 20vw;
+  box-sizing: border-box;
+  
+}
+
+
+.multer-page h2{
+  font-size: 4vmax;
+}
+
+.multer-page p{
+  font-size: 2vmax;
+}
+.multer-form{
+  /* gap: 4vw; */
+  display:flex ;
+  /* height: 5vw; */
+  margin-top: 5vmax;
+}
+
+.multer-form form{
+  display: flex;
+  flex-direction: column;
+  gap: 4vmax;
+  width: 60vw;
+}
+
+.multer-form form input{
+  font-size: 2.5vmax;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+  height: 5vmax;
+  width: auto;
+  font-weight: 600;
+
+}
+
+
+
+.multer-form form button{
+  font-size: 2vmax;
+  font-family: "Inter", sans-serif;
+  height: 5vmax;
+  width: 15vmax;
+  font-weight: 600;
+
+}
+
+
+.login-form{
+  gap: 4vmax;
+  display: flex;
+  flex-direction: column;
+
+}
+
+
+.login-inputs{
+  display: flex;
+  flex-direction: column;
+  width: 30vmax;
+  gap: 1vmax;
+}
+
+
+.login-inputs label{
+  font-size: 2vmax ;
+}
+.login-inputs input{
+  height: 5vmax;
+  font-size: 2vmax;
+}
+
+.login-btn{
+  width: 30vmax;
+  height: 6vmax;
+  font-size: 2vmax;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+
+
+
+
+
 
 
 
@@ -8426,3 +8621,8 @@ h1 {
       margin-right: 0;
     }
   }
+
+
+
+
+  
