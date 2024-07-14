@@ -832,6 +832,8 @@ import CartModal from '../CartModal';
 // import useDissolve from './Dissolve'
 
 const Home = () => {
+    const API = process.env.REACT_APP_API_URL;
+
     const [events, setEvents] = useState([]);
     const [video, setVideo] = useState(null);
     const [isVisible, setIsVisible] = useState(false);
@@ -853,7 +855,7 @@ const Home = () => {
 
     useEffect(() => {
         const fetchEvents = async () => {
-            const response = await fetch('/api/events');
+            const response = await fetch(`${API}/api/events`);
             const json = await response.json();
 
             if (response.ok) {
@@ -921,7 +923,7 @@ const Home = () => {
 
     useEffect(() => {
         const fetchVideo = async () => {
-            const response = await fetch('/api/videourl');
+            const response = await fetch(`${API}/api/videourl`);
             const json = await response.json();
 
             if (response.ok) {

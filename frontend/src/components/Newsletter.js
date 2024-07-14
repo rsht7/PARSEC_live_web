@@ -217,10 +217,12 @@ const Newsletter = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
 
   const handlenewSubmit = async (e) => {
+    const API = process.env.REACT_APP_API_URL;
+
     e.preventDefault();
 
     const querydata = { email: nlemail };
-    const response = await fetch('/api/newslettersubs', {
+    const response = await fetch(`${API}/api/newslettersubs`, {
       method: 'POST',
       body: JSON.stringify(querydata),
       headers: {

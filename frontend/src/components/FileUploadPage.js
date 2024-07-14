@@ -145,6 +145,9 @@ const FileUploadPage = ({ token, onLogout }) => {
   };
 
   const handleUpload = (e) => {
+    const API = process.env.REACT_APP_API_URL;
+
+
     e.preventDefault();
 
     if (!file) {
@@ -155,7 +158,7 @@ const FileUploadPage = ({ token, onLogout }) => {
     const formData = new FormData();
     formData.append('file', file);
 
-    fetch('/api/upload', {
+    fetch (`${API}/api/upload`, {
       method: 'POST',
       headers: {
         'Authorization': `Bearer ${token}`

@@ -204,10 +204,13 @@ const Events = () => {
         window.scrollTo(0, 0);
     }, []);
 
+    const API = process.env.REACT_APP_API_URL;
+
+
     useEffect(() => {
         const fetchEvents = async () => {
             try {
-                const response = await fetch('/api/events');
+                const response = await fetch(`${API}/api/events`);
                 if (!response.ok) {
                     throw new Error('Failed to fetch events');
                 }

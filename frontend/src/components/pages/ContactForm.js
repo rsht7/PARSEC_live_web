@@ -10,6 +10,10 @@ import phonepic from './phone.png'
 
 const ContactForm = () => {
 
+
+
+    const API = process.env.REACT_APP_API_URL;
+
     useEffect(()=>{
         window.scrollTo(0,0);
     },[]);
@@ -30,7 +34,7 @@ const ContactForm = () => {
 
         const querydata = {name, email, query}
         
-            const response = await fetch('api/contactus', {
+            const response = await fetch(`${API}/api/contactus`, {
                 method: 'POST',
                 body:JSON.stringify(querydata),
                 headers:{
