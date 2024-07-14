@@ -176,6 +176,9 @@ function EventDetails() {
     window.scrollTo(0, 0);
   }, []);
 
+  const API = process.env.REACT_APP_API_URL;
+
+
   // const [isMobile, setIsMobile] = useState(false);
 
   // useEffect(() => {
@@ -190,7 +193,7 @@ function EventDetails() {
   const [isCartModalOpen, setIsCartModalOpen] = useState(false); // State to control modal visibility
 
   useEffect(() => {
-    fetch(`/api/events/${id}`)
+    fetch(`${API}/api/events/${id}`)
       .then((response) => response.json())
       .then((data) => setEvent(data))
       .catch((error) => console.error('Error fetching event details:', error));

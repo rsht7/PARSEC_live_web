@@ -237,6 +237,7 @@ import facebook3 from './compassets/facebook3.png';
 import instagram from './compassets/instagram.png';
 
 const Footer = () => {
+
   const location = useLocation();
   const [nlError, setNlError] = useState('');
   const [nlEmail, setNlMail] = useState('');
@@ -247,10 +248,12 @@ const Footer = () => {
   };
 
   const handleNewSubmit = async (e) => {
+    const API = process.env.REACT_APP_API_URL;
+    
     e.preventDefault();
 
     const querydata = { email: nlEmail };
-    const response = await fetch('/api/newslettersubs', {
+    const response = await fetch(`${API}/api/newslettersubs`, {
       method: 'POST',
       body: JSON.stringify(querydata),
       headers: {

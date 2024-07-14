@@ -178,9 +178,12 @@ const CartModal = ({ onClose }) => {
   }, []);
 
   const handleCheckout = async () => {
+    const API = process.env.REACT_APP_API_URL;
+
+
     const stripe = await stripePromise;
 
-    const response = await fetch('/api/payment/create-checkout-session', {
+    const response = await fetch(`${API}/api/payment/create-checkout-session`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ items: cartItems }),
