@@ -775,7 +775,7 @@ app.post('/api/upload', authenticateToken, upload.single('file'), (req, res) => 
 });
 
 // CORS configuration
-const allowedOrigins = ['https://parsec-live-web.vercel.app', 'https://parsec-live-web-b4u1.onrender.com', 'http://localhost:3000', 'http://localhost:4000/'];
+const allowedOrigins = ['https://parsec-live-web.vercel.app', 'https://parsec-live-web-b4u1.onrender.com', 'http://localhost:3000', 'http://localhost:4000/', 'https://parseclive.com', 'https://api.parseclive.com'];
 
 const corsOptions = {
   origin: function (origin, callback) {
