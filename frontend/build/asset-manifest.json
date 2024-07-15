@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.20c66c06.css",
-    "main.js": "/static/js/main.0fe61d7d.js",
+    "main.js": "/static/js/main.bdaca93e.js",
     "static/media/contactcover.jpg": "/static/media/contactcover.b187e2eb054aef5def75.jpg",
     "static/media/aboutpic2.jpeg": "/static/media/aboutpic2.0cae59dcec2cf5784b13.jpeg",
     "static/media/nwsltr22.jpeg": "/static/media/nwsltr22.a1d7fd122832d404a821.jpeg",
@@ -13,10 +13,10 @@
     "static/media/events-page-pic.jpeg": "/static/media/events-page-pic.5c0a2752774a86ea98bd.jpeg",
     "index.html": "/index.html",
     "main.20c66c06.css.map": "/static/css/main.20c66c06.css.map",
-    "main.0fe61d7d.js.map": "/static/js/main.0fe61d7d.js.map"
+    "main.bdaca93e.js.map": "/static/js/main.bdaca93e.js.map"
   },
   "entrypoints": [
     "static/css/main.20c66c06.css",
-    "static/js/main.0fe61d7d.js"
+    "static/js/main.bdaca93e.js"
   ]
 }
