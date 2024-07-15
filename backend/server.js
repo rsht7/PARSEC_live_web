@@ -734,6 +734,29 @@ const adminCredentials = [
 ];
 
 // Multer configuration
+
+// CORS configuration
+const allowedOrigins = ['https://parsec-live-web.vercel.app', 'https://parsec-live-web-b4u1.onrender.com', 'http://localhost:3000', 'http://localhost:4000/', 'https://parseclive.com', 'https://api.parseclive.com'];
+
+const corsOptions = {
+  origin: function (origin, callback) {
+    console.log(`Request Origin: ${origin}`);
+    if (!origin) {
+      // Allow requests with no origin (e.g., same-origin requests)
+      return callback(null, true);
+    }
+    if (allowedOrigins.indexOf(origin) !== -1) {
+      return callback(null, true);
+    }
+    console.error(`Blocked by CORS: Origin - ${origin}`);
+    return callback(new Error('Not allowed by CORS'));
+  }
+};
+
+app.use(cors(corsOptions));
+
+
+
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
     cb(null, path.join(__dirname, '..', 'frontend', 'public', 'uploads')); // Adjust path as per your backend structure
@@ -773,26 +796,6 @@ const authenticateToken = (req, res, next) => {
 app.post('/api/upload', authenticateToken, upload.single('file'), (req, res) => {
   res.json({ file: req.file });
 });
-
-// CORS configuration
-const allowedOrigins = ['https://parsec-live-web.vercel.app', 'https://parsec-live-web-b4u1.onrender.com', 'http://localhost:3000', 'http://localhost:4000/', 'https://parseclive.com', 'https://api.parseclive.com'];
-
-const corsOptions = {
-  origin: function (origin, callback) {
-    console.log(`Request Origin: ${origin}`);
-    if (!origin) {
-      // Allow requests with no origin (e.g., same-origin requests)
-      return callback(null, true);
-    }
-    if (allowedOrigins.indexOf(origin) !== -1) {
-      return callback(null, true);
-    }
-    console.error(`Blocked by CORS: Origin - ${origin}`);
-    return callback(new Error('Not allowed by CORS'));
-  }
-};
-
-app.use(cors(corsOptions));
 
 // Middleware to log requests
 app.use((req, res, next) => {
