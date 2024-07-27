@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "/static/css/main.20c66c06.css",
-    "main.js": "/static/js/main.e690f5dd.js",
-    "static/media/contactcover.jpg": "/static/media/contactcover.b187e2eb054aef5def75.jpg",
-    "static/media/aboutpic2.jpeg": "/static/media/aboutpic2.0cae59dcec2cf5784b13.jpeg",
+    "main.js": "/static/js/main.f34f56c1.js",
+    "static/media/Contact_webp_comp.webp": "/static/media/Contact_webp_comp.e77ebdcfb7781f0e4520.webp",
+    "static/media/AboutUs_webp_comp.webp": "/static/media/AboutUs_webp_comp.bed53d273fed168cfe31.webp",
+    "static/media/Events_webp_comp.webp": "/static/media/Events_webp_comp.065c8a4cd3db249b736d.webp",
     "static/media/nwsltr22.jpeg": "/static/media/nwsltr22.a1d7fd122832d404a821.jpeg",
     "static/media/sherin1.JPG": "/static/media/sherin1.380352e3fce4afa71740.JPG",
     "static/media/eli2.JPG": "/static/media/eli2.1b661e7e7de07385ba52.JPG",
     "static/media/logo.png": "/static/media/logo.cef6e91cf4c967b213d0.png",
-    "static/media/fulllogo.png": "/static/media/fulllogo.402ad3922fafd545a32a.png",
     "static/media/homepic2.jpeg": "/static/media/homepic2.4120a6169861e26741af.jpeg",
-    "static/media/events-page-pic.jpeg": "/static/media/events-page-pic.5c0a2752774a86ea98bd.jpeg",
+    "static/media/pl_hori.webp": "/static/media/pl_hori.3d507fd81021935d1872.webp",
     "index.html": "/index.html",
     "main.20c66c06.css.map": "/static/css/main.20c66c06.css.map",
-    "main.e690f5dd.js.map": "/static/js/main.e690f5dd.js.map"
+    "main.f34f56c1.js.map": "/static/js/main.f34f56c1.js.map"
   },
   "entrypoints": [
     "static/css/main.20c66c06.css",
-    "static/js/main.e690f5dd.js"
+    "static/js/main.f34f56c1.js"
   ]
 }

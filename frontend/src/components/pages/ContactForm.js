@@ -1,5 +1,5 @@
 import {useState,useEffect} from 'react'
-import contactpic from './contactcover.jpg'
+import contactpic from './Contact_webp_comp.webp'
 import Headname from '../Headname'
 import emailpic from './email.png'
 import phonepic from './phone.png'
