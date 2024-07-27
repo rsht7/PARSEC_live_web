@@ -232,7 +232,7 @@
 
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import fulllogo from './compassets/fulllogo.png';
+import fulllogo from './compassets/pl_hori.webp';
 import facebook3 from './compassets/facebook3.png';
 import instagram from './compassets/instagram.png';
 

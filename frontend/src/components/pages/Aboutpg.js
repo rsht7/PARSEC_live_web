@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import aboutpic2 from './aboutpic2.jpeg';
+import aboutpic2 from './AboutUs_webp_comp.webp';
 import Headname from '../Headname';
 import elipic from './eli2.JPG'
 import sherinpic from './sherin1.JPG';
@@ -193,7 +193,7 @@ const About = () => {
                 
                 <div className='our-story'>
                     <div className='os-lhs' ref={outFoundRef2}>
-                        <p className='os-head fade-in' >Our Founders</p>
+                        <p className='os-head fade-in' >The Founders</p>
                         <p className='os-belowhead fade-in' >Eli Staples</p>
                         <p className='os-below2 fade-in' > With 30+ years of experience in the music performance world at all levels, Eli has performed and produced with artists all across the spectrum of music, ranging from R&B stars like, Ashanti, Mya and  Robin Thicke, pop stars like Journey, DC’s own Chuck Brown and jazz luminaries like Nneena Freelon, Brian Lynch, Karen Briggs, and Cindy Bradley. With an incredible mastery and repertoire of pop, Latin, R&B, Jazz, Afro-Cuban & classical music, his unique skill set in genre bending acts and performances makes for a rare lens into producing a spectacular musical feast.</p>
                         <p className='os-belowhead fade-in' >Sherin Koshy</p>

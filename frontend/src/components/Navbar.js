@@ -1,5 +1,5 @@
 import { useLocation, Link } from 'react-router-dom';
-import fulllogo from './compassets/fulllogo.png';
+import fulllogo from './compassets/pl_hori.webp';
 import { useState, useEffect, useContext, useRef } from 'react';
 import { CartContext } from '../contexts/CartContext';
 import CartModal from './CartModal'; // Import the CartModal component
