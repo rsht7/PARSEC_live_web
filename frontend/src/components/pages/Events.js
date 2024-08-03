@@ -189,6 +189,7 @@ import Newsletter from '../Newsletter';
 import eventspic from './Events_webp_comp.webp';
 import { CartContext } from '../../contexts/CartContext';
 import CartModal from '../CartModal';
+// import './Events.css';
 
 const Events = () => {
     const [currentSlide, setCurrentSlide] = useState(0);
@@ -364,8 +365,8 @@ const Events = () => {
                                             <h3>{event.title}</h3>
                                             <p className="up_event-date">{event.date}</p>
                                             <div className="up_event-buttons">
-                                                {/* <button className="up_buy-now-btn" onClick={() => handleBookNow(event)}>BOOK NOW</button>
-                                                <Link to={`/event/${event._id}`} className="up_read-more-btn">READ MORE</Link> */}
+                                                <button className="up_buy-now-btn" onClick={() => handleBookNow(event)}>BOOK NOW</button>
+                                                <Link to={`/event/${event._id}`} className="up_read-more-btn">READ MORE</Link>
                                             </div>
                                         </div>
                                     </div>

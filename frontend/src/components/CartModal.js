@@ -160,7 +160,13 @@ import deleteicon from './compassets/delete-icon.png';
 
 
 
-const stripePromise = loadStripe('pk_test_51MBkelSFOq4LXdKRBM4NquESXAFAX0FRoW6yNmIJH9Zeibj6NSwKrBNh23rhOjHjHw4VN63Rx9LdYD0GLC1Pt0DK00wgWTfKGR');
+// const stripePromise = loadStripe('pk_test_51MBkelSFOq4LXdKRBM4NquESXAFAX0FRoW6yNmIJH9Zeibj6NSwKrBNh23rhOjHjHw4VN63Rx9LdYD0GLC1Pt0DK00wgWTfKGR');
+
+// const stripePromise = loadStripe('pk_test_51PQ6f0P1OUdP3qcAdAZeyLNuzw7Kz9jmttWFs1ORxLHy5x1wnUlnWt54fEeuzV6UMSzw9afuSVhpW0m4iExq7UAq00v77A3PQh');
+
+const stripePromise = loadStripe('pk_live_51PQ6f0P1OUdP3qcAVZ5iiFldOUck2akREgDQMKDGEK00IYZMqA9iORcbBKeakpg3TImMQNoglNTyVaydDM6uLdFr00dYlLRyBT');
+
+
 
 const CartModal = ({ onClose }) => {
   const { cartItems, setCartItems, clearCart } = useContext(CartContext);

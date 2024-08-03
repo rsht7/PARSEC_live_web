@@ -132,8 +132,11 @@
 
 const express = require('express');
 const router = express.Router();
-const Stripe = require('stripe');
-const stripe = Stripe(process.env.STRIPE_SECRET_KEY);
+// const Stripe = require('stripe');
+// const stripe = Stripe(process.env.STRIPE_SECRET_KEY);
+const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY); // Add this line at the top
+
+
 const Client = process.env.CLIENT_URL || 'http://localhost:3000';
 
 // Create checkout session

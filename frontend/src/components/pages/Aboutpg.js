@@ -5,6 +5,7 @@ import elipic from './eli2-webp.webp';
 import sherinpic from './SherinKoshy-webp.webp';
 import newstltterpic from '../compassets/nwsltr22.jpeg';
 import Newsletter from '../Newsletter';
+// import './Aboutpg.css';
 
 
 const About = () => {

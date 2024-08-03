@@ -8,7 +8,7 @@ const Headname = (props) =>{
         return(
         <div className='head-name'> 
 
-            <div className='page-img'><img src={props.pic} loading='lazy'></img></div>
+            <div className='page-img'><img src={props.pic} ></img></div>
             <div className='bglogo'>
                     <img src={logo}></img>
             </div>
