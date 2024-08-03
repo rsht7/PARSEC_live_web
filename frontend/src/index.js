@@ -14,7 +14,12 @@ root.render(
       <App />
     </BrowserRouter>
   </React.StrictMode>
+
+
 );
+
+// document.querySelector('.initial-preloader').style.display = 'none';
+
 
 
 

@@ -821,8 +821,7 @@ import { useEffect, useState, useRef, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import Singleevent from '../Singleevent';
 import logo from './logo.png';
-// import playcircle from './playbtn-circle.png';
-// import playtriangle from './playbtn.png';
+
 
 import sound from './sound4.png';
 import mute from'./mute2.png';
@@ -866,6 +865,37 @@ const Home = () => {
     }, []);
 
 
+    useEffect(() => {
+        const fetchVideo = async () => {
+            const response = await fetch(`${API}/api/videourl`);
+            const json = await response.json();
+
+            if (response.ok) {
+                setVideo(json);
+            }
+        };
+        fetchVideo();
+    }, []);
+
+
+    const displayedVideo = video ? video[1] : null;
+
+    const videoRef = useRef(null);
+    const textRef = useRef(null)
+    const [isPlaying, setIsPlaying] = useState(false);
+
+    const toggleVideo = () => {
+        if (videoRef.current) {
+            if (videoRef.current.paused) {
+                videoRef.current.play();
+            } else {
+                videoRef.current.pause();
+            }
+        }
+    };
+
+    
+
 
 
 
@@ -892,7 +922,7 @@ const Home = () => {
                             }
                         });
                     },
-                    { threshold: 0.1 }
+                    { threshold: [0,1] }
                 );
         
                 const eventItems = eventContainerRef.current.querySelectorAll('.event-item');
@@ -920,37 +950,50 @@ const Home = () => {
 
 
 
+// SINGLE EVENT CODE STARTS
 
-    useEffect(() => {
-        const fetchVideo = async () => {
-            const response = await fetch(`${API}/api/videourl`);
-            const json = await response.json();
-
-            if (response.ok) {
-                setVideo(json);
-            }
-        };
-        fetchVideo();
-    }, []);
+    
 
     // const displayedEvents = events.slice(1, 2);
-    const displayedVideo = video ? video[1] : null;
+    
 
-    const videoRef = useRef(null);
-    const textRef = useRef(null)
-    const [isPlaying, setIsPlaying] = useState(false);
-
-    const toggleVideo = () => {
-        if (videoRef.current) {
-            if (videoRef.current.paused) {
-                videoRef.current.play();
-            } else {
-                videoRef.current.pause();
-            }
-        }
-    };
+    
 
     // useEffect(() => {
+    //     const observer = new IntersectionObserver(
+    //         (entries) => {
+    //             entries.forEach((entry) => {
+    //                 if (entry.isIntersecting) {
+    //                     entry.target.classList.add('animate');
+    //                 } 
+    //                 else {
+    //                     entry.target.classList.remove('animate');
+    //                 }
+    //             });
+    //         },
+    //         {
+    //             threshold: [0,1] // Adjusted to handle complete visibility and out of visibility
+    //         }
+    //     );
+
+    //     const eventWrapper = document.querySelector('.event-wrapper');
+    //     if (eventWrapper) {
+    //         observer.observe(eventWrapper);
+    //     }
+
+    //     return () => {
+    //         observer.disconnect();
+    //     };
+    // }, []);
+
+
+
+    // SINGLE EVENT CODE ENDS
+
+
+
+
+   // useEffect(() => {
     //     const handleScroll = () => {
     //         if (videoRef.current && !videoRef.current.paused) {
     //             videoRef.current.pause();
@@ -963,37 +1006,6 @@ const Home = () => {
     //         window.removeEventListener('scroll', handleScroll);
     //     };
     // }, []);
-
-    useEffect(() => {
-        const observer = new IntersectionObserver(
-            (entries) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('animate');
-                    } 
-                    else {
-                        entry.target.classList.remove('animate');
-                    }
-                });
-            },
-            {
-                threshold: [0,1] // Adjusted to handle complete visibility and out of visibility
-            }
-        );
-
-        const eventWrapper = document.querySelector('.event-wrapper');
-        if (eventWrapper) {
-            observer.observe(eventWrapper);
-        }
-
-        return () => {
-            observer.disconnect();
-        };
-    }, []);
-
-
-
-   
     
 
     
@@ -1115,11 +1127,11 @@ const Home = () => {
                             <div className="event-details">
                                 <h3>{event.title}</h3>
                                 <p className="event-date">{event.date}</p>
-                                {/* <div className="event-buttons">
+                                <div className="event-buttons">
                                 <button className="buy-now-btn" onClick={() => handleBookNow(event)}>TICKETS</button>
                                     
                                     <Link to={`/event/${event._id}`} className="read-more-btn">READ MORE</Link>
-                                </div> */}
+                                </div>
                             </div>
                         </div>
                     ))}
