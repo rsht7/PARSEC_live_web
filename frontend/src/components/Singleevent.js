@@ -1,4 +1,5 @@
 import {Link} from 'react-router-dom'
+// import comingsoon from './compassets/comingsoonhp.webp'
 
 
 
@@ -8,6 +9,8 @@ const Singleevent = ({event})=> {
         <div className="single-event">
 
             <div className="se-lhs"><img src={event.img}></img></div>
+            {/* <div className="se-lhs"><img src={comingsoon}></img></div> */}
+
 
             <div className="se-rhs">  
                 <div className="se-text">

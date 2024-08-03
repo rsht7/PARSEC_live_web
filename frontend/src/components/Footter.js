@@ -286,10 +286,10 @@ const Footer = () => {
   return (
     <footer className="footer">
       <div className="footone">
-        <Link to="/"><img src={fulllogo} alt="PARSEC" /></Link>
+        <Link to="/"><img src={fulllogo} alt="PARSEC" loading='lazy' /></Link>
         <ul>
-          <li><Link to="https://www.facebook.com/people/Parsec-LIVE/61560272072500/"><img src={facebook3} alt="Facebook" /></Link></li>
-          <li><Link to="https://www.instagram.com/parseclive"><img src={instagram} alt="Instagram" /></Link></li>
+          <li><Link to="https://www.facebook.com/people/Parsec-LIVE/61560272072500/"><img src={facebook3} alt="Facebook" loading='lazy'/></Link></li>
+          <li><Link to="https://www.instagram.com/parseclive"><img src={instagram} alt="Instagram" loading='lazy'/></Link></li>
         </ul>
       </div>
       <div className="foottwo">
