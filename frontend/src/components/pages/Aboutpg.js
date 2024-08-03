@@ -1,8 +1,8 @@
 import React, { useEffect, useRef } from 'react';
 import aboutpic2 from './AboutUs_webp_comp.webp';
 import Headname from '../Headname';
-import elipic from './eli2.JPG'
-import sherinpic from './sherin1.JPG';
+import elipic from './eli2-webp.webp';
+import sherinpic from './SherinKoshy-webp.webp';
 import newstltterpic from '../compassets/nwsltr22.jpeg';
 import Newsletter from '../Newsletter';
 
@@ -203,7 +203,7 @@ const About = () => {
                     <div className='os-rhs' ref={outFoundRef3}>
                         <div className='eli'>
                             <div className='os-info'>
-                                <img src={elipic} alt='Eli Staples'></img>
+                                <img src={elipic} alt='Eli Staples' loading='lazy'></img>
                                 <div className='os-info-text'>
                                     <p className='os-names'>Eli Staples</p>
                                     <p className='os-position'>Co-Founder</p>
@@ -213,7 +213,7 @@ const About = () => {
 
                         <div className='sherin'>
                             <div className='os-info'> 
-                                <img src={sherinpic} alt='Sherin Koshy'></img>
+                                <img src={sherinpic} alt='Sherin Koshy' loading='lazy'></img>
                                 <div className='os-info-text'>
                                     <p className='os-names'>Sherin Koshy</p>
                                     <p className='os-position'>Co-Founder</p> 

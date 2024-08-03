@@ -160,7 +160,7 @@ import deleteicon from './compassets/delete-icon.png';
 
 
 
-const stripePromise = loadStripe(process.env.PUBLISHABLE_KEY);
+const stripePromise = loadStripe('pk_test_51MBkelSFOq4LXdKRBM4NquESXAFAX0FRoW6yNmIJH9Zeibj6NSwKrBNh23rhOjHjHw4VN63Rx9LdYD0GLC1Pt0DK00wgWTfKGR');
 
 const CartModal = ({ onClose }) => {
   const { cartItems, setCartItems, clearCart } = useContext(CartContext);

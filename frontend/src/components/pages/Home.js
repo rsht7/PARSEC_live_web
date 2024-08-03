@@ -838,7 +838,7 @@ const Home = () => {
     const [video, setVideo] = useState(null);
     const [isVisible, setIsVisible] = useState(false);
     const eventWrapperRef = useRef(null);
-    // const eventContainerRef = useRef(null)
+    const eventContainerRef = useRef(null)
 
     const [dissolveState, setDissolveState] = useState(false);
 
@@ -874,46 +874,46 @@ const Home = () => {
     // 3 EVENTS CODE
 
 
-    // const { addToCart } = useContext(CartContext);
-    // const [isCartModalOpen, setIsCartModalOpen] = useState(false);
-    // const [selectedEvent, setSelectedEvent] = useState(null);
+    const { addToCart } = useContext(CartContext);
+    const [isCartModalOpen, setIsCartModalOpen] = useState(false);
+    const [selectedEvent, setSelectedEvent] = useState(null);
 
 
 
 
-    // useEffect(() => {
-    //             const observer = new IntersectionObserver(
-    //                 (entries) => {
-    //                     entries.forEach((entry) => {
-    //                         if (entry.isIntersecting) {
-    //                             entry.target.classList.add('animate');
-    //                         } else {
-    //                             entry.target.classList.remove('animate');
-    //                         }
-    //                     });
-    //                 },
-    //                 { threshold: 0.1 }
-    //             );
+    useEffect(() => {
+                const observer = new IntersectionObserver(
+                    (entries) => {
+                        entries.forEach((entry) => {
+                            if (entry.isIntersecting) {
+                                entry.target.classList.add('animate');
+                            } else {
+                                entry.target.classList.remove('animate');
+                            }
+                        });
+                    },
+                    { threshold: 0.1 }
+                );
         
-    //             const eventItems = eventContainerRef.current.querySelectorAll('.event-item');
-    //             eventItems.forEach((item) => {
-    //                 observer.observe(item);
-    //             });
+                const eventItems = eventContainerRef.current.querySelectorAll('.event-item');
+                eventItems.forEach((item) => {
+                    observer.observe(item);
+                });
         
-    //             return () => {
-    //                 observer.disconnect();
-    //             };
-    //         }, [events]);
+                return () => {
+                    observer.disconnect();
+                };
+            }, [events]);
 
-    // const displayedEvents = events.slice(0, 3);
+    const displayedEvents = events.slice(0, 3);
 
 
 
-    // const handleBookNow = (event) => {
-    //     setSelectedEvent(event);
-    //     addToCart(event, 1);
-    //     setIsCartModalOpen(true);
-    // };
+    const handleBookNow = (event) => {
+        setSelectedEvent(event);
+        addToCart(event, 1);
+        setIsCartModalOpen(true);
+    };
 
 
 // END OF 3 EVENTS CODE REQUIREMENTS
@@ -933,7 +933,7 @@ const Home = () => {
         fetchVideo();
     }, []);
 
-    const displayedEvents = events.slice(1, 2);
+    // const displayedEvents = events.slice(1, 2);
     const displayedVideo = video ? video[1] : null;
 
     const videoRef = useRef(null);
@@ -1090,7 +1090,7 @@ const Home = () => {
                 
             </div>
 
-            <div className='event-wrapper' ref={eventWrapperRef}>
+            {/* <div className='event-wrapper' ref={eventWrapperRef}>
                 <p className='upc-event'>Upcoming Events</p>
                 <div className={`home-event ${isVisible ? 'slide-up' : ''}`}>
                     {displayedEvents && displayedEvents.map((event) => (
@@ -1101,9 +1101,9 @@ const Home = () => {
 
             <div className="herovid-see-more-container">
                 <Link to="/event" className="herovid-see-more-btn">OTHER EVENTS</Link>
-            </div>
+            </div> */}
 
-            {/* <div className="events-container" ref={eventContainerRef}>
+            <div className="events-container" ref={eventContainerRef}>
                 <h1>Upcoming Events</h1>
                 <div className="events-list">
                    {displayedEvents.map((event, index) => (
@@ -1115,20 +1115,20 @@ const Home = () => {
                             <div className="event-details">
                                 <h3>{event.title}</h3>
                                 <p className="event-date">{event.date}</p>
-                                <div className="event-buttons">
-                                <button className="buy-now-btn" onClick={() => handleBookNow(event)}>BOOK NOW</button>
+                                {/* <div className="event-buttons">
+                                <button className="buy-now-btn" onClick={() => handleBookNow(event)}>TICKETS</button>
                                     
                                     <Link to={`/event/${event._id}`} className="read-more-btn">READ MORE</Link>
-                                </div>
+                                </div> */}
                             </div>
                         </div>
                     ))}
                 </div>
                 <div className="see-more-container">
-                   <Link to="/event" className="see-more-btn">SEE MORE</Link>
+                   <Link to="/event" className="see-more-btn">OTHER EVENTS</Link>
                 </div>
                 {isCartModalOpen && <CartModal onClose={() => setIsCartModalOpen(false)} />} 
-            </div>  */}
+            </div> 
 
 
             <div className='home-newsletter-div'><Newsletter /></div>
