@@ -63,7 +63,7 @@
 
 import React, { useEffect, useState } from 'react';
 import './Preloader.css'; // Import the CSS file for styling
-import loadgif from './compassets/download.gif';
+import loadgif from './compassets/download4.gif';
 
 const Preloader = ({ loading }) => {
 
