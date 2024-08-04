@@ -386,13 +386,13 @@ button {
 
 
 .bglogo img{
-  width: 70vw;
+  width: 65vw;
   height: 170vh;
   position: fixed;
   top: 0;
   z-index: -999;
   opacity: 20%;
-  left: -33vw;
+  left: -31vw;
   top: -25vh;
 }
 .main{
@@ -2220,6 +2220,7 @@ h1 {
 
 .main-newsletter-stuff h2 {
   font-size: 1.1vmax;
+  /* font-size: 0.1vw; */
   font-weight: 400;
   text-align: left;
   margin-top: 0;
@@ -2986,8 +2987,8 @@ h1 {
   flex-direction: column;
   padding: 0 6vw 5vh 6vw;
   font-weight: 600;
-  /* height: 35.65vh; */
-  height: 15.12vw;
+  /* height: 31.5vh; */
+  height: 17.12vw;
   /* width: 100vw; */
  
   

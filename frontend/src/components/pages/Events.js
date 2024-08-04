@@ -186,7 +186,7 @@ import React, { useEffect, useState, useRef, useMemo, useCallback, useContext } 
 import { Link } from 'react-router-dom';
 import Headname from '../Headname';
 import Newsletter from '../Newsletter';
-import eventspic from './Events_webp_comp.webp';
+import eventspic from './Events_webp_comp2.webp';
 import { CartContext } from '../../contexts/CartContext';
 import CartModal from '../CartModal';
 // import './Events.css';

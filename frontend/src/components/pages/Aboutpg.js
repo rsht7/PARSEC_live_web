@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import aboutpic2 from './AboutUs_webp_comp.webp';
+import aboutpic2 from './AboutUs_webp_comp2.webp';
 import Headname from '../Headname';
 import elipic from './eli2-webp.webp';
 import sherinpic from './SherinKoshy-webp.webp';

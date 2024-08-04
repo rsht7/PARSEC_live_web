@@ -717,7 +717,7 @@ const multer = require('multer');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
 
-const workoutRoutes = require('./routes/workouts');
+// const workoutRoutes = require('./routes/workouts');
 const contactusRoute = require('./routes/contactus');
 const newslettersubsRoutes = require('./routes/newslettersubscription');
 const eventRoutes = require('./routes/events');
@@ -833,7 +833,7 @@ app.post('/login', async (req, res) => {
 // Define routes
 app.use('/api/contactus', contactusRoute);
 app.use('/api/newslettersubs', newslettersubsRoutes);
-app.use('/api/workouts', workoutRoutes);
+// app.use('/api/workouts', workoutRoutes);
 app.use('/api/events', eventRoutes);
 app.use('/api/payment', paymentRoutes);
 app.use('/api/videourl', videourlRoute);
