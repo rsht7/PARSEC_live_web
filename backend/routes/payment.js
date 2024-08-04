@@ -157,12 +157,12 @@ router.post('/create-checkout-session', async (req, res) => {
 
   try {
     const session = await stripe.checkout.sessions.create({
-      payment_method_types: ['card'],
+      payment_method_types: ['card','cashapp'],
       line_items: lineItems,
       mode: 'payment',
       
       success_url: `${Client}/success`,
-      cancel_url: `${Client}/cart`,
+      cancel_url: `${Client}/event`,
     });
 
     res.json({ id: session.id });
