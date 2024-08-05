@@ -820,11 +820,11 @@ function usePageTitle(defaultTitle) {
             case '/event':
                 pageTitle += ' - Events';
                 break;
-            case '/contactus':
-                pageTitle += ' - Contact Us';
+            case '/contact':
+                pageTitle += ' - Contact';
                 break;
-            case '/about':
-                pageTitle += ' - About';
+            case '/aboutus':
+                pageTitle += ' - About Us';
                 break;
             case '/privacy-policy':
                 pageTitle += ' - Privacy Policy';
@@ -835,7 +835,7 @@ function usePageTitle(defaultTitle) {
             case '/failure':
                 pageTitle += ' - Failure';
                 break;
-            case '/admin':
+            case '/adminpanel13579':
                 pageTitle += ' - Admin';
                 break;
             default:

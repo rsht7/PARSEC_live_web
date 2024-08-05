@@ -90,9 +90,9 @@ const LoginPage = ({ onLogin }) => {
       <h2>Login</h2>
       <form onSubmit={handleSubmit} className='login-form'>
         <div className='login-inputs'>
-          <label>Email:</label>
+          <label>Username:</label>
           <input
-            type="email"
+            type="text"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
