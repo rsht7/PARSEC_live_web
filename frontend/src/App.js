@@ -904,13 +904,13 @@ function AppRoutes() {
         <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/event" element={<Events />} />
-            <Route path="/contactus" element={<ContactForm />} />
-            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<ContactForm />} />
+            <Route path="/aboutus" element={<About />} />
             <Route path="/event/:id" element={<EventDetails />} />
             <Route path="/privacy-policy" element={<Privacy />} />
             <Route path="/success" element={<SuccessPage />} />
             <Route path="/failure" element={<FailurePage />} />
-            <Route path="/admin" element={<UploadApp />} />
+            <Route path="/adminpanel13579" element={<UploadApp />} />
         </Routes>
     );
 }

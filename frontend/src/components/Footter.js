@@ -297,8 +297,8 @@ const Footer = () => {
           <ul className="ula">
             <li><Link to="/" className={getLinkClass('/')}>HOME</Link></li>
             <li><Link to="/event" className={getLinkClass('/event')}>EVENTS</Link></li>
-            <li><Link to="/about" className={getLinkClass('/about')}>ABOUT US</Link></li>
-            <li><Link to="/contactus" className={getLinkClass('/contactus')}>CONTACT</Link></li>
+            <li><Link to="/aboutus" className={getLinkClass('/about')}>ABOUT US</Link></li>
+            <li><Link to="/contact" className={getLinkClass('/contactus')}>CONTACT</Link></li>
           </ul>
           {isSubmitted ? (
             <p className='return-msg'>Thank you for subscribing to our Newsletter!</p>

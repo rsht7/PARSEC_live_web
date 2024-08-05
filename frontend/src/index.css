@@ -2322,18 +2322,19 @@ h1 {
 
 .head-name{
   width: 100%;
-  display:grid;
+  /* display:grid; */
   
 }
 .page-img{
-  height: 33.6vmax;
+  height: 50vmax;
   margin-top: 12.5vh;
-  /* width: 88vw;
-  justify-self: center; */
   margin-left: 6vw;
   margin-right: 6vw;
   overflow: hidden; 
-  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  /* position: relative; */
 }
 
 
@@ -2361,14 +2362,17 @@ h1 {
 
 
 .Page-head{
-  position: absolute;
-  top: 25vmax;
+  /* position: absolute;
+  top: 25vmax; */
   /* top: 50%; */
   display: flex;
   flex-direction: column;
   gap: 0vmin;
+  /* padding: 36px 0px; */
   z-index: 2;
-  justify-self: center;
+  justify-content: center;
+  align-items: end;  
+  padding-bottom: 100px;
   
 }
 
@@ -2391,6 +2395,7 @@ h1 {
   text-align: center;
   margin-top: 0;
   color: rgba(194, 194, 194, 1);
+  width: 100%;
 
 }
 
@@ -4501,6 +4506,8 @@ h1 {
     overflow: hidden; 
     position: relative;
     margin-top: 10vh;
+    display: flex;
+    justify-content: end;
   }
   .page-img img{
     width: 100%;
@@ -4512,14 +4519,14 @@ h1 {
   }
   
   .Page-head{
-    position: absolute;
-    top: 35vh;
+    /* position: absolute;
+    top: 35vh; */
     margin:0 8vw 0 0;
     right: 0;
     display: flex;
     flex-direction: column;
-    
-    
+    justify-content: end;
+    padding-bottom: 36px;
   }
   
   .page-name{
@@ -4968,10 +4975,14 @@ h1 {
 
   .page-img{
     margin-top: 8.5vh;
+    display: flex;
+    justify-content: center;
+    align-items: end;
   }
 
   .Page-head{
-    top: 27vh;
+    /* top: 27vh; */
+    padding-bottom: 50px;
   }
 
   .event-wrapper{
@@ -5717,9 +5728,17 @@ h1 {
     line-height: 1.75vw;
   }
   
+  .page-img{
+    margin-top: 8.5vh;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+  }
 
   .Page-head{
-    top: 33%;
+    /* top: 33%; */
+    display: flex;
+    justify-content: center;
   }
 
   .page-name{
@@ -5728,6 +5747,8 @@ h1 {
 
   .page-path{
    font-size: 1.25vmax;
+   display: flex;
+   justify-content: center;
   }
 
   .page-path a{
@@ -6422,6 +6443,9 @@ h1 {
     margin-right: 6vw;
     overflow: hidden; 
     position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: end;
   }
   .page-img::after{
     content: '';
@@ -6448,15 +6472,15 @@ h1 {
   
   
   .Page-head{
-    position: absolute;
-    top: 25vmax;
+    /* position: absolute;
+    top: 25vmax; */
     /* top: 50%; */
     display: flex;
     flex-direction: column;
     gap: 0vmin;
     z-index: 2;
     justify-self: center;
-    
+    padding-bottom: 70px;
   }
   
   
