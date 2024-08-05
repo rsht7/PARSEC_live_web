@@ -92,10 +92,10 @@ const Navbar = () => {
             <Link to="/event" className={getLinkClass('/event')} onClick={handleNavLinkClick}>EVENTS</Link>
           </li>
           <li>
-            <Link to='/about' className={getLinkClass('/about')} onClick={handleNavLinkClick}>ABOUT US</Link>
+            <Link to='/aboutus' className={getLinkClass('/aboutus')} onClick={handleNavLinkClick}>ABOUT US</Link>
           </li>
           <li>
-            <Link to='/contactus' className={getLinkClass('/contactus')} onClick={handleNavLinkClick}>CONTACT</Link>
+            <Link to='/contact' className={getLinkClass('/contact')} onClick={handleNavLinkClick}>CONTACT</Link>
           </li>
         </ul>
         <button className='cart-btn' onClick={handleAddToCart}>TICKETS</button>
